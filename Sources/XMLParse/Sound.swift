@@ -49,10 +49,10 @@ import SWXMLHash
 //  </RSE>
 // </Sound>
 
-struct Sound: XMLIndexerDeserializable {
+public struct Sound: XMLIndexerDeserializable {
 	var name: String
 
-	static func deserialize(_ node: XMLIndexer) throws -> Self {
+	public static func deserialize(_ node: XMLIndexer) throws -> Self {
 		try Sound(
 			name: node["Name"].value()
 		)

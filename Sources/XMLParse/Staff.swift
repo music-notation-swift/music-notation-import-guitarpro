@@ -25,20 +25,20 @@ import SWXMLHash
 //  </Properties>
 // </Staff>
 
-typealias TuningPitch = Int
+public typealias TuningPitch = Int
 
-enum StaffPropertyParseError: Error {
+public enum StaffPropertyParseError: Error {
 	case unsupportedPropertyAttribute(String)
 }
 
-struct StaffPropertyItem: XMLIndexerDeserializable {
-	static func deserialize(_ node: XMLIndexer) throws -> Self {
+public struct StaffPropertyItem: XMLIndexerDeserializable {
+	public static func deserialize(_ node: XMLIndexer) throws -> Self {
 		StaffPropertyItem(
 		)
 	}
 }
 
-enum StaffProperty: XMLIndexerDeserializable {
+public enum StaffProperty: XMLIndexerDeserializable {
 	case capoFret(Int)
 	case fretCount(Int)
 	case partialCapoFret(Int)
@@ -50,7 +50,7 @@ enum StaffProperty: XMLIndexerDeserializable {
 	case diagramWorkingSet([StaffPropertyItem])
 	case tuningFlat(Bool)
 
-	static func deserialize(_ node: XMLIndexer) throws -> Self {
+	public static func deserialize(_ node: XMLIndexer) throws -> Self {
 		let propertyAttribute: String = try node.value(ofAttribute: "name")
 
 		switch propertyAttribute {
@@ -92,11 +92,11 @@ enum StaffProperty: XMLIndexerDeserializable {
 
 // NB: The <Properties> array is malformed XML in that it isn't just a list of <Property> entries, but also
 // contains a <Name> entry. I will have to manually pull all of array entries out and then the <Name>.
-struct Staff: XMLIndexerDeserializable {
+public struct Staff: XMLIndexerDeserializable {
 	var properties: [StaffProperty]
 	var name: String
 
-	static func deserialize(_ node: XMLIndexer) throws -> Self {
+	public static func deserialize(_ node: XMLIndexer) throws -> Self {
 		try Staff(
 			properties: node["Properties"]["Property"].value(),
 			name: node["Properties"]["Name"].value()

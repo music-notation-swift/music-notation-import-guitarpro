@@ -115,11 +115,11 @@ import SWXMLHash
 //  <Beats>4 5 6 7 8 9</Beats>
 // </Voice>
 
-struct Voice: XMLIndexerDeserializable {
+public struct Voice: XMLIndexerDeserializable {
 	var id: Int
-	var beats: String
+	public var beats: String
 
-	static func deserialize(_ node: XMLIndexer) throws -> Self {
+	public static func deserialize(_ node: XMLIndexer) throws -> Self {
 		try Voice(
 			id: node.value(ofAttribute: "id"),
 			beats: node["Beats"].value()

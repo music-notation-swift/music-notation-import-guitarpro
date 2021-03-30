@@ -31,10 +31,10 @@ import SWXMLHash
 //  </Automations>
 // </ChannelStrip>
 
-struct ChannelStrip: XMLIndexerDeserializable {
+public struct ChannelStrip: XMLIndexerDeserializable {
 	var parameters: String
 
-	static func deserialize(_ node: XMLIndexer) throws -> Self {
+	public static func deserialize(_ node: XMLIndexer) throws -> Self {
 		try ChannelStrip(
 			parameters: node["Parameters"].value()
 		)

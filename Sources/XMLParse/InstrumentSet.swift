@@ -34,11 +34,11 @@ import SWXMLHash
 //	</Elements>
 //  </InstrumentSet>
 
-struct InstrumentSet: XMLIndexerDeserializable {
+public struct InstrumentSet: XMLIndexerDeserializable {
 	var name: String
 	var instrumentType: String
 
-	static func deserialize(_ node: XMLIndexer) throws -> Self {
+	public static func deserialize(_ node: XMLIndexer) throws -> Self {
 		try InstrumentSet(
 			name: node["Name"].value(),
 			instrumentType: node["Type"].value()

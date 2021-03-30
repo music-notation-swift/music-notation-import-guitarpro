@@ -9,27 +9,27 @@
 import Foundation
 import SWXMLHash
 
-struct Track: XMLIndexerDeserializable {
+public struct Track: XMLIndexerDeserializable {
 	var id: Int
 
-	var name: String
-	var shortName: String
-	var color: String
-	var systemsDefautLayout: Int
+	public var name: String
+	public var shortName: String
+	public var color: String
+	public var systemsDefautLayout: Int
 
-	var systemsLayout: String
-	var palmMute: Bool
-	var playingStyle: String
+	public var systemsLayout: String
+	public var palmMute: Bool
+	public var playingStyle: String
 
-	var iconId: Int
-	var forcedSound: Int
-	var playbackState: String
+	public var iconId: Int
+	public var forcedSound: Int
+	public var playbackState: String
 
-	var audioEngineState: String
-	var staves: [Staff]
-	var automations: [Automation]
+	public var audioEngineState: String
+	public var staves: [Staff]
+	public var automations: [Automation]
 
-	static func deserialize(_ node: XMLIndexer) throws -> Self {
+	public static func deserialize(_ node: XMLIndexer) throws -> Self {
 		try Track(
 			id: node.value(ofAttribute: "id"),
 			name: node["Name"].value(),

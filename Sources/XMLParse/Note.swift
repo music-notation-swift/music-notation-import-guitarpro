@@ -9,14 +9,14 @@
 import Foundation
 import SWXMLHash
 
-enum VibratoParseError: Error { case unsupportedVibratoValue(String) }
+public enum VibratoParseError: Error { case unsupportedVibratoValue(String) }
 
 //	 <Vibrato>Slight</Step>
-enum Vibrato: XMLIndexerDeserializable {
+public enum Vibrato: XMLIndexerDeserializable {
 	case slight
 	case wide
 
-	static func deserialize(_ node: XMLIndexer) throws -> Self {
+	public static func deserialize(_ node: XMLIndexer) throws -> Self {
 		let value: String = try node.value()
 
 		switch value {
@@ -28,10 +28,10 @@ enum Vibrato: XMLIndexerDeserializable {
 	}
 }
 
-enum StepParseError: Error { case unsupportedStepValue(String) }
+public enum StepParseError: Error { case unsupportedStepValue(String) }
 
 //	 <Step>G</Step>
-enum Step: XMLIndexerDeserializable {
+public enum Step: XMLIndexerDeserializable {
 	case aPitch
 	case bPitch
 	case cPitch
@@ -40,7 +40,7 @@ enum Step: XMLIndexerDeserializable {
 	case fPitch
 	case gPitch
 
-	static func deserialize(_ node: XMLIndexer) throws -> Self {
+	public static func deserialize(_ node: XMLIndexer) throws -> Self {
 		let value: String = try node.value()
 
 		switch value {
@@ -57,10 +57,10 @@ enum Step: XMLIndexerDeserializable {
 	}
 }
 
-enum AccidentalParseError: Error { case unsupportedAccidentalValue(String) }
+public enum AccidentalParseError: Error { case unsupportedAccidentalValue(String) }
 
 //	 <Accidental>#</Accidental>
-enum Accidental: XMLIndexerDeserializable {
+public enum Accidental: XMLIndexerDeserializable {
 	case none
 	case sharp
 	case doubleSharp
@@ -68,7 +68,7 @@ enum Accidental: XMLIndexerDeserializable {
 	case doubleFlat
 	case natural
 
-	static func deserialize(_ node: XMLIndexer) throws -> Self {
+	public static func deserialize(_ node: XMLIndexer) throws -> Self {
 		let value: String = try node.value()
 
 		switch value {
@@ -90,12 +90,12 @@ enum Accidental: XMLIndexerDeserializable {
 //	 <Octave>5</Octave>
 // </Pitch>
 
-struct Pitch: XMLIndexerDeserializable {
+public struct Pitch: XMLIndexerDeserializable {
 	var step: Step
 	var accidental: Accidental
 	var octave: Int
 
-	static func deserialize(_ node: XMLIndexer) throws -> Self {
+	public static func deserialize(_ node: XMLIndexer) throws -> Self {
 		try Pitch(
 			step: node["Step"].value(),
 			accidental: node["Accidental"].value(),
@@ -151,9 +151,9 @@ struct Pitch: XMLIndexerDeserializable {
 //    </Property>
 // </NoteProperties>
 
-enum NotePropertyParseError: Error { case unsupportedPropertyAttribute(String) }
+public enum NotePropertyParseError: Error { case unsupportedPropertyAttribute(String) }
 
-enum NoteProperty: XMLIndexerDeserializable {
+public enum NoteProperty: XMLIndexerDeserializable {
 	case concertPitch(Pitch)
 	case fret(Int)
 	case midi(Int)
@@ -175,7 +175,7 @@ enum NoteProperty: XMLIndexerDeserializable {
 	case bendOriginOffset(Float)
 	case bendOriginValue(Float)
 
-	static func deserialize(_ node: XMLIndexer) throws -> Self {
+	public static func deserialize(_ node: XMLIndexer) throws -> Self {
 		let propertyAttribute: String = try node.value(ofAttribute: "name")
 
 		switch propertyAttribute {
@@ -208,11 +208,11 @@ enum NoteProperty: XMLIndexerDeserializable {
 
 //  <Tie origin="true" destination="false" />
 
-struct Tie: XMLIndexerDeserializable {
+public struct Tie: XMLIndexerDeserializable {
 	var origin: Bool
 	var destination: Bool
 
-	static func deserialize(_ node: XMLIndexer) throws -> Self {
+	public static func deserialize(_ node: XMLIndexer) throws -> Self {
 		try Tie(
 			origin: node.value(ofAttribute: "origin"),
 			destination: node.value(ofAttribute: "destination")
@@ -266,17 +266,17 @@ private var vibratoCount = 0
 private var letRingCount = 0
 #endif
 
-struct Note: XMLIndexerDeserializable {
+public struct Note: XMLIndexerDeserializable {
 	var id: Int
-	var tie: Tie?
-	var accent: Int?
-	var antiAccent: String?
-	var vibrato: Vibrato?
-	var letRing: Bool?
-	var instrumentArticulation: Int
-	var properties: [NoteProperty]
+	public var tie: Tie?
+	public var accent: Int?
+	public var antiAccent: String?
+	public var vibrato: Vibrato?
+	public var letRing: Bool?
+	public var instrumentArticulation: Int
+	public var properties: [NoteProperty]
 
-	static func deserialize(_ node: XMLIndexer) throws -> Self {
+	public static func deserialize(_ node: XMLIndexer) throws -> Self {
 		let note = try Note(
 			id: node.value(ofAttribute: "id"),
 			tie: node["Tie"].value(),

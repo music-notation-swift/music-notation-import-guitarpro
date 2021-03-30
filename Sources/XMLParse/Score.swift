@@ -9,7 +9,7 @@
 import Foundation
 import SWXMLHash
 
-struct Score: XMLIndexerDeserializable {
+public struct Score: XMLIndexerDeserializable {
 	var title: String
 	var subtitle: String
 	var artist: String
@@ -31,7 +31,7 @@ struct Score: XMLIndexerDeserializable {
 	var zoom: Float
 	var multiVoice: String
 
-	static func deserialize(_ node: XMLIndexer) throws -> Self {
+	public static func deserialize(_ node: XMLIndexer) throws -> Self {
 		try Score(
 			title: node["Title"].value(),
 			subtitle: node["SubTitle"].value(),

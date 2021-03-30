@@ -14,10 +14,10 @@ import SWXMLHash
 //	<Octave>0</Octave>
 // </Transpose>
 
-struct Transpose: XMLIndexerDeserializable {
+public struct Transpose: XMLIndexerDeserializable {
 	var chromatic: Bool
 
-	static func deserialize(_ node: XMLIndexer) throws -> Self {
+	public static func deserialize(_ node: XMLIndexer) throws -> Self {
 		try Transpose(
 			chromatic: Bool(node["Chromatic"].value())
 		)

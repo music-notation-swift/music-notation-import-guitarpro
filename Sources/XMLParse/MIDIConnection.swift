@@ -16,10 +16,10 @@ import SWXMLHash
 //  <ForeOneChannelPerString>false</ForeOneChannelPerString>
 // </MidiConnection>
 
-struct MIDIConnection: XMLIndexerDeserializable {
+public struct MIDIConnection: XMLIndexerDeserializable {
 	var port: Int
 
-	static func deserialize(_ node: XMLIndexer) throws -> Self {
+	public static func deserialize(_ node: XMLIndexer) throws -> Self {
 		try MIDIConnection(
 			port: node["Port"].value()
 		)

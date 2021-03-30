@@ -15,12 +15,12 @@ import SWXMLHash
 //   <TransposeAs>Sharps</TransposeAs>
 // </Key>
 
-struct Key: XMLIndexerDeserializable {
+public struct Key: XMLIndexerDeserializable {
 	var accidentalCount: Int
 	var mode: String
 	var transposeAs: String
 
-	static func deserialize(_ node: XMLIndexer) throws -> Self {
+	public static func deserialize(_ node: XMLIndexer) throws -> Self {
 		try Key(
 			accidentalCount: node["AccidentalCount"].value(),
 			mode: node["Mode"].value(),

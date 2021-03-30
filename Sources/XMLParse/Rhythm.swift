@@ -9,10 +9,10 @@
 import Foundation
 import SWXMLHash
 
-struct Rhythm: XMLIndexerDeserializable {
+public struct Rhythm: XMLIndexerDeserializable {
 	var id: Int
 
-	static func deserialize(_ node: XMLIndexer) throws -> Self {
+	public static func deserialize(_ node: XMLIndexer) throws -> Self {
 		try Rhythm(
 			id: node.value(ofAttribute: "id")
 		)

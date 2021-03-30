@@ -15,7 +15,7 @@ enum Direction: XMLIndexerDeserializable {
 	case down
 	case up
 
-	static func deserialize(_ node: XMLIndexer) throws -> Self {
+	public static func deserialize(_ node: XMLIndexer) throws -> Self {
 		let value: String = try node.value()
 		switch value {
 		case "Down":	return .down
@@ -32,7 +32,7 @@ enum BeatProperty: XMLIndexerDeserializable {
 	case primaryPickupTone(Float)
 	case brush(Direction)
 
-	static func deserialize(_ node: XMLIndexer) throws -> Self {
+	public static func deserialize(_ node: XMLIndexer) throws -> Self {
 		let propertyAttribute: String = try node.value(ofAttribute: "name")
 
 		switch propertyAttribute {
@@ -92,7 +92,7 @@ enum ExtraProperty: XMLIndexerDeserializable {
 	case x687935490(Float)
 
 	// swiftlint:disable cyclomatic_complexity
-	static func deserialize(_ node: XMLIndexer) throws -> Self {
+	public static func deserialize(_ node: XMLIndexer) throws -> Self {
 		let propertyAttribute: String = try node.value(ofAttribute: "id")
 
 		switch propertyAttribute {
@@ -159,7 +159,7 @@ enum ExtraProperty: XMLIndexerDeserializable {
 //   </Properties>
 // </Beat>
 
-struct Beat: XMLIndexerDeserializable {
+public struct Beat: XMLIndexerDeserializable {
 	var id: Int
 	var dynamic: String
 	var rhythm: Int
@@ -168,7 +168,7 @@ struct Beat: XMLIndexerDeserializable {
 	var properties: [BeatProperty]
 	var extraProperties: [ExtraProperty]?
 
-	static func deserialize(_ node: XMLIndexer) throws -> Self {
+	public static func deserialize(_ node: XMLIndexer) throws -> Self {
 		try Beat(
 			id: node.value(ofAttribute: "id"),
 			dynamic: node["Dynamic"].value(),

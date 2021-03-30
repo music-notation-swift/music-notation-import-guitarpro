@@ -28,7 +28,7 @@ import SWXMLHash
 //  </Automation>
 // </Automations>
 
-struct Automation: XMLIndexerDeserializable {
+public struct Automation: XMLIndexerDeserializable {
 	var type: String
 	var linear: Bool
 	var bar: Int
@@ -36,7 +36,7 @@ struct Automation: XMLIndexerDeserializable {
 	var visible: Bool
 	var value: [Float]
 
-	static func deserialize(_ node: XMLIndexer) throws -> Self {
+	public static func deserialize(_ node: XMLIndexer) throws -> Self {
 		let values: String = try node["Value"].value()
 		let valuesArray = values.split(separator: " ")
 

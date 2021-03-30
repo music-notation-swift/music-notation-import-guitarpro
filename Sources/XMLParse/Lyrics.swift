@@ -42,10 +42,10 @@ import SWXMLHash
 //	</Line>
 // </Lyrics>
 
-struct Lyrics: XMLIndexerDeserializable {
+public struct Lyrics: XMLIndexerDeserializable {
 	var dispatched: Bool
 
-	static func deserialize(_ node: XMLIndexer) throws -> Self {
+	public static func deserialize(_ node: XMLIndexer) throws -> Self {
 		try Lyrics(
 			dispatched: node.value(ofAttribute: "dispatched")
 		)

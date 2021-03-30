@@ -146,7 +146,7 @@ enum TimeSignature: XMLIndexerDeserializable {
 		}
 	}
 
-	static func deserialize(_ node: XMLIndexer) throws -> Self {
+	public static func deserialize(_ node: XMLIndexer) throws -> Self {
 		try TimeSignature.type(from: try node.value())
 	}
 }
