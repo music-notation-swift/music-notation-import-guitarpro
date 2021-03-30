@@ -3,7 +3,7 @@
 [![Platform](https://img.shields.io/badge/Platforms-macOS%20-lightgrey.svg)](https://github.com/music-notation-swift/music-notation-import-guitarpro)
 ![Swift 5.3](https://img.shields.io/badge/Swift-5.3-F28D00.svg)
 [![Build & Test](https://github.com/music-notation-swift/music-notation-import-guitarpro/actions/workflows/build-test.yml/badge.svg)](https://github.com/music-notation-swift/music-notation-import-guitarpro/actions/workflows/build-test.yml)
-![Coverage Badge](https://img.shields.io/endpoint?url=https://gist.githubusercontent.com/woolie/b9f858cfba09911bd1755bdc40dd5a35/raw/music-notation-import-guitarpro__heads_main.json)
+![Coverage Badge](https://img.shields.io/endpoint?url=https://gist.githubusercontent.com/woolie/b9f858cfba09911bd1755bdc40dd5a35/raw/b861e6e02966972879694500375ce9bb8c3874a1/music-notation-import-guitarpro__heads_main.json)
 
 # music-notation-import-guitarpro
 
