@@ -250,12 +250,21 @@ struct Tie: XMLIndexerDeserializable {
 //  </Properties>
 // </Note>
 
-var noteCount = 0
-var tieCount = 0
-var accentCount = 0
-var antiAccentCount = 0
-var vibratoCount = 0
-var letRingCount = 0
+#if DEBUG
+public var noteCount = 0
+public var tieCount = 0
+public var accentCount = 0
+public var antiAccentCount = 0
+public var vibratoCount = 0
+public var letRingCount = 0
+#else
+private var noteCount = 0
+private var tieCount = 0
+private var accentCount = 0
+private var antiAccentCount = 0
+private var vibratoCount = 0
+private var letRingCount = 0
+#endif
 
 struct Note: XMLIndexerDeserializable {
 	var id: Int
