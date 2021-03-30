@@ -1,6 +1,5 @@
 # Xcode
 #
-.build/
 *.pbxuser
 !default.pbxuser
 *.mode1v3
@@ -17,5 +16,29 @@ DerivedData
 *.ipa
 *.xcuserstate
 *.lcov
+
+## Playgrounds
+timeline.xctimeline
+playground.xcworkspace
+
+# Swift Package Manager
+#
+# Add this line if you want to avoid checking in source code from Swift Package Manager dependencies.
+# Packages/
+# Package.pins
+.build/
+.swiftpm/xcode/
+
+# fastlane
+#
+# It is recommended to not store the screenshots in the git repo. Instead, use fastlane to re-generate the
+# screenshots whenever they are needed.
+# For more information about the recommended setup visit:
+# https://docs.fastlane.tools/best-practices/source-control/#source-control
+
+fastlane/report.xml
+fastlane/Preview.html
+fastlane/screenshots
+fastlane/test_output
 
 .DS_Store
