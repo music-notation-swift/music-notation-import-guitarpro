@@ -16,15 +16,8 @@ jobs:
       - name: Checkout the Git repository
         uses: actions/checkout@v2
 
-      - name: Run Tests 
-        run: xcodebuild test -project "music-notation-import.xcodeproj" -scheme "music-notation-import-tests" CODE_SIGN_IDENTITY="" CODE_SIGNING_REQUIRED=NO -derivedDataPath .build/ -enableCodeCoverage YES | xcpretty && exit ${PIPESTATUS[0]}
-
-      - name: Gather test coverage
-        run: |
-          # Programmatically get the path for the profdata
-          PROFDATA=$(find .build/Build/ProfileData/ -name "Coverage.profdata" -maxdepth 2 -print -quit)
-
-          xcrun llvm-cov export -summary-only .build/Build/Products/Debug/music-notation-import-tests.xctest/Contents/MacOS/music-notation-import-tests -instr-profile ${PROFDATA} > .build/coverage.json
+      - name: Run tests
+        run: swift test -c debug -Xswiftc -enable-testing --enable-code-coverage
 
       - name: Get Coverage Total Percent  
         run: |
@@ -45,7 +38,7 @@ jobs:
         with:
           auth: ${{ secrets.GIST_SECRET }}
           gistID: b9f858cfba09911bd1755bdc40dd5a35
-          filename: music-notation-import__${{ env.BRANCH }}.json
+          filename: music-notation__${{ env.BRANCH }}.json
           label: Coverage
           message: ${{ env.COVERAGE }}
           color: green
