@@ -49,7 +49,7 @@ struct Bar: XMLIndexerDeserializable {
 	}
 }
 
-struct GuitarProInterchangeFormat: XMLIndexerDeserializable {
+public struct GuitarProInterchangeFormat: XMLIndexerDeserializable {
 	var version: Int
 	var revision: Revision
 	var encoding: String
@@ -63,7 +63,7 @@ struct GuitarProInterchangeFormat: XMLIndexerDeserializable {
 	var notes: [Note]
 	var rhythms: [Rhythm]
 
-	static func deserialize(_ node: XMLIndexer) throws -> Self {
+	public static func deserialize(_ node: XMLIndexer) throws -> Self {
 		try GuitarProInterchangeFormat(
 			version: node["GPVersion"].value(),
 			revision: node["GPRevision"].value(),

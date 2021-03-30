@@ -10,11 +10,11 @@ import Foundation
 
 // MARK: Parser composable base
 
-struct Parser<A> {
+public struct Parser<A> {
 	let run: (inout Substring) -> A?
 }
 
-func literal(_ literal: String) -> Parser<Void> {
+public func literal(_ literal: String) -> Parser<Void> {
 	return Parser<Void> { str in
 		guard str.hasPrefix(literal) else { return nil }
 		str.removeFirst(literal.count)
