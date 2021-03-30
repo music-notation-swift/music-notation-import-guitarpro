@@ -19,8 +19,8 @@ jobs:
       - name: Run tests
         run: swift test -c debug -Xswiftc -enable-testing --enable-code-coverage
 
-     - name: Gather test coverage
-        run: xcrun llvm-cov export -summary-only -ignore-filename-regex MusicNotationTests .build/debug/music-notationPackageTests.xctest/Contents/MacOS/music-notationPackageTests -instr-profile .build/debug/codecov/default.profdata > .build/coverage.json
+      - name: Gather test coverage
+        run: xcrun llvm-cov export -summary-only -ignore-filename-regex MusicNotationImportGuitarProTests .build/debug/music-notation-import-guitarproPackageTests.xctest/Contents/MacOS/music-notation-import-guitarproPackageTests -instr-profile .build/debug/codecov/default.profdata > .build/coverage.json
 
       - name: Get Coverage Total Percent  
         run: |
