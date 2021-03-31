@@ -9,7 +9,7 @@
 import MusicNotation
 
 public extension MusicNotation.Staff {
-	init(with: Track) {
-		self.init(clef: Clef.treble, instrument: .guitar6)
+	init(with track: Track) {
+		self.init(clef: Clef.treble, instrument: Instrument())
 	}
 }
