@@ -31,16 +31,15 @@ public enum StaffPropertyParseError: Error {
 	case unsupportedPropertyAttribute(String)
 }
 
-public struct StaffPropertyItem: XMLIndexerDeserializable {
+public struct StaffPropertyItem: XMLIndexerDeserializable, Equatable {
 	public static func deserialize(_ node: XMLIndexer) throws -> Self {
-		StaffPropertyItem(
-		)
+		StaffPropertyItem()
 	}
 }
 
 public enum StaffProperty: XMLIndexerDeserializable {
-	case capoFret(Int)
-	case fretCount(Int)
+	case capoFret(_ fret: Int)
+	case fretCount(_ frets: Int)
 	case partialCapoFret(Int)
 	case partialCapoStringFlags(String)
 	case tuning(pitches: [TuningPitch], flat: Int?, instrument: String, label: String, labelVisible: Bool)
@@ -86,6 +85,35 @@ public enum StaffProperty: XMLIndexerDeserializable {
 			return .tuningFlat(node["Enable"].element != nil)
 		default:
 			throw StaffPropertyParseError.unsupportedPropertyAttribute(propertyAttribute)
+		}
+	}
+}
+
+extension StaffProperty: Equatable {
+	public static func == (lhs: StaffProperty, rhs: StaffProperty) -> Bool {
+		switch (lhs, rhs) {
+		case let (.capoFret(lhsFret), .capoFret(rhsFret)) where lhsFret == rhsFret:
+			return true
+		case let (.fretCount(lhsFrets), .fretCount(rhsFrets)) where lhsFrets == rhsFrets:
+			return true
+		case let (.partialCapoFret(lhsFret), .partialCapoFret(rhsFret)) where lhsFret == rhsFret:
+			return true
+		case let (.chordCollection(lhsItems), .chordCollection(rhsItems)) where lhsItems == rhsItems:
+			return true
+		case let (.chordWorkingSet(lhsItems), .chordWorkingSet(rhsItems)) where lhsItems == rhsItems:
+			return true
+		case let (.diagramCollection(lhsItems), .diagramCollection(rhsItems)) where lhsItems == rhsItems:
+			return true
+		case let (.diagramWorkingSet(lhsItems), .diagramWorkingSet(rhsItems)) where lhsItems == rhsItems:
+			return true
+		case let (.tuning(lhsPitches, lhsFlat, lhsInstrument, lhsLabel, lhsLabelVisible),
+				  .tuning(rhsPitches, rhsFlat, rhsInstrument, rhsLabel, rhsLabelVisible))
+				where lhsPitches == rhsPitches && lhsFlat == rhsFlat && lhsInstrument == rhsInstrument && lhsLabel == rhsLabel && lhsLabelVisible == rhsLabelVisible:
+			return true
+		case let (.tuningFlat(lhsFlat), .tuningFlat(rhsFlat)) where lhsFlat == rhsFlat:
+			return true
+		default:
+			return false
 		}
 	}
 }
