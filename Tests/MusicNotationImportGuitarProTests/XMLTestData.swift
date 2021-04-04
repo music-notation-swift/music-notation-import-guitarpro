@@ -10,7 +10,7 @@ import XCTest
 import SWXMLHash
 @testable import MusicNotationImportGuitarPro
 
-// MARK:- Staff
+// MARK: - Staff
 
 let track0Open = "<Track id=\"0\">\n"
 let track1Open = "<Track id=\"1\">\n"
@@ -209,7 +209,7 @@ let testTrackBody = track0Information + track0MusicNotation + track0Interpretati
 					track0InstrumentSet + track0Transpose + track0RSE + track0Sounds + track0MidiConnection + track0Audio +
 					track0Staves + track0Automations
 
-// MARK:- Staff
+// MARK: - Staff
 
 let testStaffOpen = "\t<Staff>\n"
 let testStaffClose = "\t</Staff>\n"
