@@ -22,6 +22,9 @@ The source files in the GuitarPro7 folder are those specific to parsing this fil
 
 `music-notation-import-guitarpro` supports specifying the `gpif` file alone, or specifying the container `gp` file. Using the [ZIPFoundation](https://github.com/weichsel/ZIPFoundation) the process will pull out the `score.gpif` file and parse that directly.
 
+####
+
+There are two folders of code in the Guitar Pro 7 parser. One contains the parsing code (XML to Swift structured data), the other contains extension to the `music-notation` library that adds initializers that understand the parse data from the XML file.
 
 ## Notes
 
