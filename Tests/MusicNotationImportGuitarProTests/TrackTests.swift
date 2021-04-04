@@ -10,21 +10,27 @@ import XCTest
 import SWXMLHash
 @testable import MusicNotationImportGuitarPro
 
-let testTrack1 = """
-<Track id="0">
+let track0Open = "<Track id=\"0\">\n"
+let track1Open = "<Track id=\"1\">\n"
+let track2Open = "<Track id=\"2\">\n"
+let trackClose = "\n</Track>"
+let track0Information = """
 	<Name><![CDATA[trackNameString]]></Name>
 	<ShortName><![CDATA[tns.]]></ShortName>
 	<Color>1 2 3</Color>
-
+	<IconId>10</IconId>
+"""
+let track0MusicNotation = """
 	<SystemsDefautLayout>3</SystemsDefautLayout>
 	<SystemsLayout>1</SystemsLayout>
-	<LetRingThroughout />
 
+"""
+let track0Interpretation = """
+	<LetRingThroughout />
 	<PalmMute>0.5</PalmMute>
 	<PlayingStyle>Default</PlayingStyle>
-
-	<IconId>10</IconId>
-
+"""
+let track0InstrumentSet = """
 	<InstrumentSet>
 		<Name>Acoustic Piano</Name>
 		<Type>acousticPiano</Type>
@@ -49,17 +55,23 @@ let testTrack1 = """
 			</Element>
 		</Elements>
 	</InstrumentSet>
+"""
+let track0Transpose = """
 
 	<Transpose>
 		<Chromatic>0</Chromatic>
 		<Octave>0</Octave>
 	</Transpose>
+"""
+let track0RSE = """
 
 	<RSE>
 		<ChannelStrip version="E56">
 		<Parameters>0.5 0.5 0.5 0.5 0.5 0.5 0.5 0.5 0.5 1 0.5 0.5 0.795 0.5 0.5 0.5</Parameters>
 		</ChannelStrip>
 	</RSE>
+"""
+let track0Sounds = """
 
 	<ForcedSound>-1</ForcedSound>
 	<Sounds>
@@ -93,6 +105,8 @@ let testTrack1 = """
 			</RSE>
 		</Sound>
 	</Sounds>
+"""
+let track0MidiConnection = """
 
 	<MidiConnection>
 		<Port>0</Port>
@@ -100,9 +114,13 @@ let testTrack1 = """
 		<SecondaryChannel>1</SecondaryChannel>
 		<ForeOneChannelPerString>false</ForeOneChannelPerString>
 	</MidiConnection>
+"""
+let track0Audio = """
 
 	<PlaybackState>Default</PlaybackState>
 	<AudioEngineState>RSE</AudioEngineState>
+"""
+let track0Lyrics = """
 
 	<Lyrics dispatched="true">
 		<Line>
@@ -126,6 +144,8 @@ let testTrack1 = """
 		<Offset>0</Offset>
 		</Line>
 	</Lyrics>
+"""
+let track0Staves = """
 
 	<Staves>
 		<Staff>
@@ -168,6 +188,8 @@ let testTrack1 = """
 			</Properties>
 		</Staff>
 	</Staves>
+"""
+let track0Automations = """
 
 	<Automations>
 		<Automation>
@@ -179,29 +201,55 @@ let testTrack1 = """
 			<Value><![CDATA[Orchestra/Keyboard/Acoustic Piano;Acoustic Piano;Factory]]></Value>
 		</Automation>
 	</Automations>
-</Track>
 """
+
+let testTrackBody = track0Information + track0MusicNotation + track0Interpretation +
+					track0InstrumentSet + track0Transpose + track0RSE + track0Sounds + track0MidiConnection + track0Audio +
+					track0Staves + track0Automations
+
+let testTrack0 = track0Open + testTrackBody + trackClose
+let testTrack1 = track1Open + testTrackBody + trackClose
+let testTrack2 = track2Open + testTrackBody + trackClose
 
 /// GuitarPro 7 has a concept of a Track. This is part of a song, which roughly corresponds to a MusicNotation.Part.
 class TrackTests: XCTestCase {
 	func testParse() {
-		let xmlParser = SWXMLHash.parse(testTrack1)
+		let xmlParser = SWXMLHash.parse(testTrack0)
 
 		do {
-			let track1: Track = try xmlParser["Track"].value()
-			XCTAssertEqual(track1.name, "trackNameString")
-			XCTAssertEqual(track1.shortName, "tns.")
-			XCTAssertEqual(track1.color, [1, 2, 3])
+			let track0: Track = try xmlParser["Track"].value()
 
-			XCTAssertEqual(track1.systemsDefautLayout, 3)
-			XCTAssertEqual(track1.systemsLayout, 1)
+			XCTAssertEqual(track0.id, 0)
+			XCTAssertEqual(track0.name, "trackNameString")
+			XCTAssertEqual(track0.shortName, "tns.")
+			XCTAssertEqual(track0.color, [1, 2, 3])
 
-			XCTAssertEqual(track1.palmMute, 0.5)
-			XCTAssertEqual(track1.playingStyle, .defaultStyle)
-			XCTAssertEqual(track1.letRingThroughout, true)
-			XCTAssertEqual(track1.autoBrush, false)
-			XCTAssertEqual(track1.useOneChannelPerString, false)
+			XCTAssertEqual(track0.systemsDefautLayout, 3)
+			XCTAssertEqual(track0.systemsLayout, 1)
 
+			XCTAssertEqual(track0.palmMute, 0.5)
+			XCTAssertEqual(track0.playingStyle, .defaultStyle)
+			XCTAssertEqual(track0.letRingThroughout, true)
+			XCTAssertEqual(track0.autoBrush, false)
+			XCTAssertEqual(track0.useOneChannelPerString, false)
+
+		} catch {
+			XCTFail("\(error)")
+		}
+	}
+
+	func testIds() {
+		let xmlParser0 = SWXMLHash.parse(testTrack0)
+		let xmlParser1 = SWXMLHash.parse(testTrack1)
+		let xmlParser2 = SWXMLHash.parse(testTrack2)
+
+		do {
+			let track0: Track = try xmlParser0["Track"].value()
+			XCTAssertEqual(track0.id, 0)
+			let track1: Track = try xmlParser1["Track"].value()
+			XCTAssertEqual(track1.id, 1)
+			let track2: Track = try xmlParser2["Track"].value()
+			XCTAssertEqual(track2.id, 2)
 		} catch {
 			XCTFail("\(error)")
 		}
