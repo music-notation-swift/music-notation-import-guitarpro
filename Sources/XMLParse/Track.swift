@@ -13,10 +13,10 @@ public enum TrackErrorPlayingStyleError: Error { case unsupportedPlayingStyle(St
 
 public enum PlayingStyle: String {
 	case defaultStyle = "Default"
-	case stringedPick = "stringedPick"
+	case stringedPick = "StringedPick"
 	case stringedFinger = "StringedFinger"
-	case stringedFingerPicking = "stringedFingerPicking"
-	case bassSlap = "bassSlap"
+	case stringedFingerPicking = "StringedFingerPicking"
+	case bassSlap = "BassSlap"
 
 	static func withString(_ string: String) throws -> Self {
 		switch string {
@@ -45,10 +45,11 @@ public struct Track: XMLIndexerDeserializable {
 	public var iconId: Int
 
 	public var systemsDefautLayout: Int
-	public var systemsLayout: Int
+	public var systemsLayout: [Int]
 
 	public var playingStyle: PlayingStyle
 	public var palmMute: Double					// 0-1 (percent)
+	public var autoAccentuation: Double?		// 0-1 (percent)
 	public var letRingThroughout: Bool			// Shows as "Auto let ring" in the user interface
 	public var autoBrush: Bool
 	public var useOneChannelPerString: Bool		// Shows as "Stringed" in the user interface
@@ -63,6 +64,10 @@ public struct Track: XMLIndexerDeserializable {
 	public static func deserialize(_ node: XMLIndexer) throws -> Self {
 		let colors: String = try node["Color"].value()
 		let colorsArray = colors.split(separator: " ")
+		let layouts: String = try node["SystemsLayout"].value()
+		let layoutsArray = layouts.split(separator: " ")
+		let id: Int = try node.value(ofAttribute: "id")
+		print("Track(id=\(id))")
 
 		return try Track(
 			id: node.value(ofAttribute: "id"),
@@ -71,12 +76,13 @@ public struct Track: XMLIndexerDeserializable {
 			color: colorsArray.compactMap { Int($0) },
 			iconId: node["IconId"].value(),
 			systemsDefautLayout: node["SystemsDefautLayout"].value(),
-			systemsLayout: node["SystemsLayout"].value(),
+			systemsLayout: layoutsArray.compactMap { Int($0) },
 			playingStyle: PlayingStyle.withString(node["PlayingStyle"].value()),
 			palmMute: node["PalmMute"].value(),
+			autoAccentuation: node["AutoAccentuation"].value(),
 			letRingThroughout: (node["LetRingThroughout"].element != nil) ? true : false,
-			autoBrush: (node["AutoBrush"].element != nil) ? node["AutoBrush"].value() : false,
-			useOneChannelPerString: (node["UseOneChannelPerString"].element != nil) ? node["UseOneChannelPerString"].value() : false,
+			autoBrush: (node["AutoBrush"].element != nil) ? true : false,
+			useOneChannelPerString: (node["UseOneChannelPerString"].element != nil) ? true : false,
 			forcedSound: node["ForcedSound"].value(),
 			playbackState: node["PlaybackState"].value(),
 			audioEngineState: node["AudioEngineState"].value(),
