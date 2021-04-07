@@ -15,7 +15,7 @@ public struct Parser<A> {
 }
 
 public func literal(_ literal: String) -> Parser<Void> {
-	return Parser<Void> { str in
+	Parser<Void> { str in
 		guard str.hasPrefix(literal) else { return nil }
 		str.removeFirst(literal.count)
 		return ()

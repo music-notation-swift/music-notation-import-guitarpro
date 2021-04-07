@@ -9,9 +9,9 @@
 import Foundation
 import SWXMLHash
 
-enum BeatDirectionPropertyParseError: Error { case unsupportedPropertyAttribute(String) }
+public enum BeatDirectionPropertyParseError: Error { case unsupportedPropertyAttribute(String) }
 
-enum Direction: XMLIndexerDeserializable {
+public enum Direction: XMLIndexerDeserializable {
 	case down
 	case up
 
@@ -25,9 +25,9 @@ enum Direction: XMLIndexerDeserializable {
 	}
 }
 
-enum BeatPropertyParseError: Error { case unsupportedPropertyAttribute(String) }
+public enum BeatPropertyParseError: Error { case unsupportedPropertyAttribute(String) }
 
-enum BeatProperty: XMLIndexerDeserializable {
+public enum BeatProperty: XMLIndexerDeserializable {
 	case primaryPickupVolume(Float)
 	case primaryPickupTone(Float)
 	case brush(Direction)
@@ -46,9 +46,9 @@ enum BeatProperty: XMLIndexerDeserializable {
 	}
 }
 
-enum ExtraPropertyParseError: Error { case unsupportedPropertyAttribute(String) }
+public enum ExtraPropertyParseError: Error { case unsupportedPropertyAttribute(String) }
 
-enum ExtraProperty: XMLIndexerDeserializable {
+public enum ExtraProperty: XMLIndexerDeserializable {
 	case x1124139010(Int)
 	case x1124139264(Int)
 	case x1124139265(Int)

@@ -6,9 +6,9 @@
 //	Copyright © 2021 Steven Woolgar. All rights reserved.
 //
 
-import XCTest
-import SWXMLHash
 @testable import MusicNotationImportGuitarPro
+import SWXMLHash
+import XCTest
 
 let testTrack0 = track0Open + testTrackBody + trackClose
 let testTrack1 = track1Open + testTrackBody + trackClose
@@ -28,14 +28,13 @@ class TrackTests: XCTestCase {
 			XCTAssertEqual(track0.color, [1, 2, 3])
 
 			XCTAssertEqual(track0.systemsDefautLayout, 3)
-			XCTAssertEqual(track0.systemsLayout, 1)
+			XCTAssertEqual(track0.systemsLayout, [1])
 
 			XCTAssertEqual(track0.palmMute, 0.5)
 			XCTAssertEqual(track0.playingStyle, .defaultStyle)
 			XCTAssertEqual(track0.letRingThroughout, true)
 			XCTAssertEqual(track0.autoBrush, false)
 			XCTAssertEqual(track0.useOneChannelPerString, false)
-
 		} catch {
 			XCTFail("\(error)")
 		}

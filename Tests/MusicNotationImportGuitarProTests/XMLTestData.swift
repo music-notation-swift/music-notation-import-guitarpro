@@ -6,8 +6,6 @@
 //	Copyright © 2021 Steven Woolgar. All rights reserved.
 //
 
-import XCTest
-import SWXMLHash
 @testable import MusicNotationImportGuitarPro
 
 // MARK: - Staff

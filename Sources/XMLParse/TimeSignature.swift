@@ -101,7 +101,7 @@ enum TimeSignatureError: Error {
 ///	divided into three in a compound meter, the beat is always three times as long as the division note, and
 ///	_the beat is always dotted_.
 
-enum TimeSignature: XMLIndexerDeserializable {
+public enum TimeSignature: XMLIndexerDeserializable {
 	case simple(_ beatsPerBar: Int, _ beatUnit: Int)		// `2/4`, `3/4`, `4/4`, `common` and `cut-common`
 	case compound(_ beatsPerBar: Int, _ beatUnit: Int)		// `9/8` and `12/8`
 	case additive(_ beatsPerBar: [Int], _ beatUnit: Int)	// `3 + 2/8 + 3` (NB: I have seen `3/8 & 2/8`)
@@ -125,7 +125,7 @@ enum TimeSignature: XMLIndexerDeserializable {
 		}
 	}
 
-	static func type(from: String) throws -> Self {
+	public static func type(from: String) throws -> Self {
 		var timeSignatureSubstring = from[...]
 		guard let timeSignature = timeSignatureParse.run(&timeSignatureSubstring) else { throw TimeSignatureError.timeSignatureParseError(from) }
 		return timeSignature
@@ -213,7 +213,6 @@ let timeSignatureParse = Parser<TimeSignature> { str in
 		}
 
 		return beatUnits == 0 ? nil : TimeSignature.additive(beatGroupings, beatUnits)
-
 	} else if str.contains(".") {	// Check for fractional signature (`2.5/4`)
 		guard let beatsPerBar = float.run(&str),
 			  literal("/").run(&str) != nil,
@@ -221,7 +220,6 @@ let timeSignatureParse = Parser<TimeSignature> { str in
 		else { return nil }
 
 		return TimeSignature.fractional(beatsPerBar, beatUnit)
-
 	} else {						// Parse one of the normal signatures
 		guard let beatsPerBar = int.run(&str),
 			  literal("/").run(&str) != nil,

@@ -6,9 +6,9 @@
 //	Copyright © 2021 Steven Woolgar. All rights reserved.
 //
 
-import XCTest
-import SWXMLHash
 @testable import MusicNotationImportGuitarPro
+import SWXMLHash
+import XCTest
 
 /// GuitarPro 7 has a concept of a Track. This is part of a song, which roughly corresponds to a MusicNotation.Part.
 class StaffTests: XCTestCase {

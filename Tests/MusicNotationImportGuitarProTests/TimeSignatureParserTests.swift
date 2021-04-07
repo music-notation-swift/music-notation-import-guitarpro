@@ -6,8 +6,8 @@
 //	Copyright © 2021 Steven Woolgar. All rights reserved.
 //
 
-import XCTest
 @testable import MusicNotationImportGuitarPro
+import XCTest
 
 /// There are issues with the domain knowledge acquired and that needed to properly implement
 /// a good deal of Time Signatures parsing.

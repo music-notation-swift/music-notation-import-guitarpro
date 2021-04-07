@@ -295,8 +295,7 @@ public struct Note: XMLIndexerDeserializable {
 		if note.vibrato != nil { vibratoCount += 1 }
 		if note.letRing != nil { letRingCount += 1 }
 
-		assert(!(node.children.count == 3 && note.tie == nil && note.vibrato == nil && note.accent == nil && note.antiAccent == nil && note.letRing == nil),
-				 "unhandled child")
+		assert(!(node.children.count == 3 && note.tie == nil && note.vibrato == nil && note.accent == nil && note.antiAccent == nil && note.letRing == nil), "unhandled child")
 
 		return note
 	}
