@@ -68,11 +68,12 @@ public enum StaffProperty: XMLIndexerDeserializable {
 
 			let flat: String = try node["Flat"].value()
 
-			return .tuning(pitches: pitches,
-						   flat: Int(flat),
-						   instrument: try node["Instrument"].value(),
-						   label: try node["Label"].value(),
-						   labelVisible: try node["LabelVisible"].value())
+			return .tuning(
+				pitches: pitches,
+				flat: Int(flat),
+				instrument: try node["Instrument"].value(),
+				label: try node["Label"].value(),
+				labelVisible: try node["LabelVisible"].value())
 		case "ChordCollection":
 			return .chordCollection([])
 		case "ChordWorkingSet":

@@ -115,7 +115,7 @@ public enum TimeSignature: XMLIndexerDeserializable {
 			switch (beatsPerBar, beatUnit) {
 			case (5, 4), (7, 4), (7, 8), (8, 8), (5, 8), (11, 8):
 				return true
-			case (let beatsPerBar, 16):
+			case let (beatsPerBar, 16):
 				return beatsPerBar % 2 != 0
 			default:
 				return false
@@ -133,7 +133,7 @@ public enum TimeSignature: XMLIndexerDeserializable {
 
 	/// Based on the provided parameters, determine what kind of regular type the time signature represents.
 	/// - Note: This is not meant for `.fractional` or `.additive` time signatures.
-	/// TODO: This is not a good way to determine the type. It should be calculated based on rules instead of a list of
+	// TODO: This is not a good way to determine the type. It should be calculated based on rules instead of a list of
 	/// cases that fit in each bucket.
 	static func commonType(beatsPerBar: Int, beatUnit: Int) -> Self {
 		switch (beatsPerBar, beatUnit) {
