@@ -1,5 +1,5 @@
 //
-//	TrackTests.swift
+//	StaffTests.swift
 //	music-notation-import-tests
 //
 //	Created by Steven Woolgar on 2021-04-01.
@@ -12,7 +12,7 @@ import XCTest
 
 /// GuitarPro 7 has a concept of a Track. This is part of a song, which roughly corresponds to a MusicNotation.Part.
 class StaffTests: XCTestCase {
-	func testParse() {
+	func testParse() throws {
 		let xmlParser = SWXMLHash.parse(testStaff0)
 		print("\(testStaff0)")
 

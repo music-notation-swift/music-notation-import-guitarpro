@@ -3,7 +3,7 @@
 //	music-notation-import
 //
 //	Created by Steven Woolgar on 2021-02-09.
-//	Copyright © 2020-2021 Steven Woolgar. All rights reserved.
+//	Copyright © 2021 Steven Woolgar. All rights reserved.
 //
 
 import Foundation
