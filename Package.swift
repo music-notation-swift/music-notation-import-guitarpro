@@ -19,7 +19,7 @@ let package = Package(
 				.product(name: "MusicNotation", package: "music-notation")
 			],
 			path: "Sources",
-			exclude: ["images"]
+			exclude: ["../images"]
 		),
 		.testTarget(
 			name: "MusicNotationImportGuitarProTests",
