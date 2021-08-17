@@ -1,9 +1,9 @@
-// swift-tools-version:5.3
+// swift-tools-version:5.4
 import PackageDescription
 
 let package = Package(
 	name: "music-notation-import-guitarpro",
-	platforms: [.macOS(.v10_15)],
+	platforms: [.macOS(.v11)],
 	products: [.library(name: "MusicNotationImportGuitarPro", targets: ["MusicNotationImportGuitarPro"])],
 
 	dependencies: [
