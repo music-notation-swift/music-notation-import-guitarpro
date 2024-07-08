@@ -1,4 +1,11 @@
-// swift-tools-version:5.4
+// swift-tools-version:6.0
+//
+//  Package.swift
+//  MusicNotationImport
+//
+//  Created by Steven Woolgar on 10/16/2020.
+//  Copyright © 2020 Steven Woolgar. All rights reserved.
+//
 import PackageDescription
 
 let package = Package(

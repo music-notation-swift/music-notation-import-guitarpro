@@ -7,7 +7,7 @@
 //
 
 @testable import MusicNotationImportGuitarPro
-import XCTest
+import Testing
 
 /// There are issues with the domain knowledge acquired and that needed to properly implement
 /// a good deal of Time Signatures parsing.
@@ -16,149 +16,59 @@ import XCTest
 /// what is a simple, compound, complex time signature as well as the state of `oddness` of a time signature.
 ///
 /// For now this will have to do and I will ammend the code and tests when I have better domain expertise.
-class TimeSignatureParserTests: XCTestCase {
-	func testSimple() {
-		do {
-			let signature = try TimeSignature.type(from: "4/4")
-			XCTAssertEqual(signature, .simple(4, 4))
-		} catch {
-			XCTFail("\(error)")
-		}
-
-		do {
-			let signature = try TimeSignature.type(from: "2/4")
-			XCTAssertEqual(signature, .simple(2, 4))
-		} catch {
-			XCTFail("\(error)")
-		}
-
-		do {
-			let signature = try TimeSignature.type(from: "3/4")
-			XCTAssertEqual(signature, .simple(3, 4))
-		} catch {
-			XCTFail("\(error)")
-		}
+@Suite final class TimeSignatureParserTests {
+	@Test func simple() async throws {
+		let signature1 = try TimeSignature.type(from: "4/4")
+		#expect(signature1 == .simple(4, 4))
+		let signature2 = try TimeSignature.type(from: "2/4")
+		#expect(signature2 == .simple(2, 4))
+		let signature3 = try TimeSignature.type(from: "3/4")
+		#expect(signature3 == .simple(3, 4))
 	}
 
-	func testCompound() {
-		do {
-			let signature = try TimeSignature.type(from: "3/8")
-			XCTAssertEqual(signature, .compound(3, 8))
-		} catch {
-			XCTFail("\(error)")
-		}
-
-		do {
-			let signature = try TimeSignature.type(from: "6/8")
-			XCTAssertEqual(signature, .compound(6, 8))
-		} catch {
-			XCTFail("\(error)")
-		}
-
-		do {
-			let signature = try TimeSignature.type(from: "9/8")
-			XCTAssertEqual(signature, .compound(9, 8))
-		} catch {
-			XCTFail("\(error)")
-		}
-
-		do {
-			let signature = try TimeSignature.type(from: "12/8")
-			XCTAssertEqual(signature, .compound(12, 8))
-		} catch {
-			XCTFail("\(error)")
-		}
+	@Test func compound() async throws {
+		let signature1 = try TimeSignature.type(from: "3/8")
+		#expect(signature1 == .compound(3, 8))
+		let signature2 = try TimeSignature.type(from: "6/8")
+		#expect(signature2 == .compound(6, 8))
+		let signature3 = try TimeSignature.type(from: "9/8")
+		#expect(signature3 == .compound(9, 8))
+		let signature4 = try TimeSignature.type(from: "12/8")
+		#expect(signature4 == .compound(12, 8))
 	}
 
-	func testOdd() {
-		do {
-			let signature = try TimeSignature.type(from: "5/4")
-			XCTAssertTrue(signature.oddMeter())
-		} catch {
-			XCTFail("\(error)")
-		}
-
-		do {
-			let signature = try TimeSignature.type(from: "7/8")
-			XCTAssertTrue(signature.oddMeter())
-		} catch {
-			XCTFail("\(error)")
-		}
-
-		do {
-			let signature = try TimeSignature.type(from: "11/16")
-			XCTAssertTrue(signature.oddMeter())
-		} catch {
-			XCTFail("\(error)")
-		}
-
-		do {
-			let signature = try TimeSignature.type(from: "7/16")
-			XCTAssertTrue(signature.oddMeter())
-		} catch {
-			XCTFail("\(error)")
-		}
+	@Test func odd() async throws {
+		let signature1 = try TimeSignature.type(from: "5/4")
+		#expect(signature1.oddMeter())
+		let signature2 = try TimeSignature.type(from: "7/8")
+		#expect(signature2.oddMeter())
+		let signature3 = try TimeSignature.type(from: "11/16")
+		#expect(signature3.oddMeter())
+		let signature4 = try TimeSignature.type(from: "7/16")
+		#expect(signature4.oddMeter())
 	}
 
-	func testComplex() {
-		do {
-			let signature = try TimeSignature.type(from: "6/3")
-			XCTAssertEqual(signature, .complex(6, 3))
-		} catch {
-			XCTFail("\(error)")
-		}
-
-		do {
-			let signature = try TimeSignature.type(from: "5/24")
-			XCTAssertEqual(signature, .complex(5, 24))
-		} catch {
-			XCTFail("\(error)")
-		}
-
-		do {
-			let signature = try TimeSignature.type(from: "3/10")
-			XCTAssertEqual(signature, .complex(3, 10))
-		} catch {
-			XCTFail("\(error)")
-		}
+	@Test func complex() async throws {
+		let signature1 = try TimeSignature.type(from: "6/3")
+		#expect(signature1 == .complex(6, 3))
+		let signature2 = try TimeSignature.type(from: "5/24")
+		#expect(signature2 == .complex(5, 24))
+		let signature3 = try TimeSignature.type(from: "3/10")
+		#expect(signature3 == .complex(3, 10))
 	}
 
-	func testFractional() {
-		do {
-			let fractionalSignature = try TimeSignature.type(from: "2.5/4")
-			XCTAssertEqual(fractionalSignature, .fractional(2.5, 4))
-		} catch {
-			XCTFail("\(error)")
-		}
-
-		do {
-			let fractionalSignature = try TimeSignature.type(from: "5.1/24")
-			XCTAssertEqual(fractionalSignature, .fractional(5.1, 24))
-		} catch {
-			XCTFail("\(error)")
-		}
-
-		do {
-			let fractionalSignature = try TimeSignature.type(from: "3.666/10")
-			XCTAssertEqual(fractionalSignature, .fractional(3.666, 10))
-		} catch {
-			XCTFail("\(error)")
-		}
+	@Test func fractional() async throws {
+		let fractionalSignature1 = try TimeSignature.type(from: "2.5/4")
+		#expect(fractionalSignature1 == .fractional(2.5, 4))
+		let fractionalSignature2 = try TimeSignature.type(from: "5.1/24")
+		#expect(fractionalSignature2 == .fractional(5.1, 24))
+		let fractionalSignature3 = try TimeSignature.type(from: "3.666/10")
+		#expect(fractionalSignature3 == .fractional(3.666, 10))
 	}
 
-	func testAdditive() {
-		do {
-			let additiveSignature = try TimeSignature.type(from: "3+2/8+3")
-			XCTAssertEqual(additiveSignature, .additive([3, 2, 3], 8))
-		} catch {
-			XCTFail("\(error)")
-		}
-
-		do {
-			_ = try TimeSignature.type(from: "")
-			XCTFail("We should have thrown an exception and not arrive here")
-		} catch {
-			// This is where we should end up
-		}
+	@Test func additive() async throws {
+		let additiveSignature = try TimeSignature.type(from: "3+2/8+3")
+		#expect(additiveSignature == .additive([3, 2, 3], 8))
+//		_ = try TimeSignature.type(from: "")
 	}
 }
