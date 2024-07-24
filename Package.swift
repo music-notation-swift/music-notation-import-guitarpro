@@ -32,5 +32,7 @@ let package = Package(
 			name: "MusicNotationImportGuitarProTests",
 			dependencies: ["MusicNotationImportGuitarPro"]
 		)
-	]
+	],
+
+	swiftLanguageVersions: [ .v6 ]
 )

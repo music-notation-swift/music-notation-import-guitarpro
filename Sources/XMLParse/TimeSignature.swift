@@ -1,6 +1,6 @@
 //
 //	TimeSignature.swift
-//	music-notation-import
+//	music-notation-import-guitarpro
 //
 //	Created by Steven Woolgar on 2021-02-23.
 //	Copyright © 2021 Steven Woolgar. All rights reserved.
@@ -101,7 +101,7 @@ enum TimeSignatureError: Error {
 ///	divided into three in a compound meter, the beat is always three times as long as the division note, and
 ///	_the beat is always dotted_.
 
-public enum TimeSignature: XMLIndexerDeserializable {
+public enum TimeSignature: @preconcurrency XMLIndexerDeserializable {
 	case simple(_ beatsPerBar: Int, _ beatUnit: Int)		// `2/4`, `3/4`, `4/4`, `common` and `cut-common`
 	case compound(_ beatsPerBar: Int, _ beatUnit: Int)		// `9/8` and `12/8`
 	case additive(_ beatsPerBar: [Int], _ beatUnit: Int)	// `3 + 2/8 + 3` (NB: I have seen `3/8 & 2/8`)
@@ -125,7 +125,7 @@ public enum TimeSignature: XMLIndexerDeserializable {
 		}
 	}
 
-	public static func type(from: String) throws -> Self {
+	@MainActor public static func type(from: String) throws -> Self {
 		var timeSignatureSubstring = from[...]
 		guard let timeSignature = timeSignatureParse.run(&timeSignatureSubstring) else { throw TimeSignatureError.timeSignatureParseError(from) }
 		return timeSignature
@@ -146,7 +146,7 @@ public enum TimeSignature: XMLIndexerDeserializable {
 		}
 	}
 
-	public static func deserialize(_ node: XMLIndexer) throws -> Self {
+	@MainActor public static func deserialize(_ node: XMLIndexer) throws -> Self {
 		try TimeSignature.type(from: try node.value())
 	}
 }
@@ -174,7 +174,7 @@ extension TimeSignature: Equatable {
 // MARK: - Time Signature String Parsing
 
 // Used to find and consume `5` in a time signature like `5/4`.
-let int = Parser<Int> { str in
+@MainActor let int = Parser<Int> { str in
 	let prefix = str.prefix(while: { $0.isNumber })
 	let match = Int(prefix)
 	str.removeFirst(prefix.count)
@@ -182,14 +182,14 @@ let int = Parser<Int> { str in
 }
 
 // Used to find and consume `2.5` in a time signature like `2.5/4`.
-let float = Parser<Float> { str in
+@MainActor let float = Parser<Float> { str in
 	let prefix = str.prefix(while: { $0.isNumber || $0 == "." })
 	let match = Float(prefix)
 	str.removeFirst(prefix.count)
 	return match
 }
 
-let timeSignatureParse = Parser<TimeSignature> { str in
+@MainActor let timeSignatureParse = Parser<TimeSignature> { str in
 	if str.contains("+") {			// Check for additive signature (`3+2/8+3`)
 		let beatGroupingStrings = str.split(separator: "+")
 

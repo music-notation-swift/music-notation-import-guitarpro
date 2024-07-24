@@ -1,6 +1,6 @@
 //
 //	Note.swift
-//	music-notation-import
+//	music-notation-import-guitarpro
 //
 //	Created by Steven Woolgar on 2021-02-09.
 //	Copyright © 2021 Steven Woolgar. All rights reserved.
@@ -251,22 +251,22 @@ public struct Tie: XMLIndexerDeserializable {
 // </Note>
 
 #if DEBUG
-public var noteCount = 0
-public var tieCount = 0
-public var accentCount = 0
-public var antiAccentCount = 0
-public var vibratoCount = 0
-public var letRingCount = 0
+@MainActor public var noteCount = 0
+@MainActor public var tieCount = 0
+@MainActor public var accentCount = 0
+@MainActor public var antiAccentCount = 0
+@MainActor public var vibratoCount = 0
+@MainActor public var letRingCount = 0
 #else
-private var noteCount = 0
-private var tieCount = 0
-private var accentCount = 0
-private var antiAccentCount = 0
-private var vibratoCount = 0
-private var letRingCount = 0
+@MainActor private var noteCount = 0
+@MainActor private var tieCount = 0
+@MainActor private var accentCount = 0
+@MainActor private var antiAccentCount = 0
+@MainActor private var vibratoCount = 0
+@MainActor private var letRingCount = 0
 #endif
 
-public struct Note: XMLIndexerDeserializable {
+public struct Note: @preconcurrency XMLIndexerDeserializable {
 	var id: Int
 	public var tie: Tie?
 	public var accent: Int?
@@ -276,6 +276,7 @@ public struct Note: XMLIndexerDeserializable {
 	public var instrumentArticulation: Int
 	public var properties: [NoteProperty]
 
+	@MainActor
 	public static func deserialize(_ node: XMLIndexer) throws -> Self {
 		let note = try Note(
 			id: node.value(ofAttribute: "id"),
