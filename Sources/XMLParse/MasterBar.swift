@@ -11,7 +11,7 @@ import SWXMLHash
 
 /// NB: As per the XML file, order of masterbars are important.
 
-public struct MasterBar: XMLIndexerDeserializable {
+public struct MasterBar: XMLObjectDeserialization {
 	var key: Key
 	var timeSignature: TimeSignature
 

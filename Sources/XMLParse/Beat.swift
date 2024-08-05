@@ -11,7 +11,7 @@ import SWXMLHash
 
 public enum BeatDirectionPropertyParseError: Error { case unsupportedPropertyAttribute(String) }
 
-public enum Direction: XMLIndexerDeserializable {
+public enum Direction: XMLObjectDeserialization {
 	case down
 	case up
 
@@ -27,7 +27,7 @@ public enum Direction: XMLIndexerDeserializable {
 
 public enum BeatPropertyParseError: Error { case unsupportedPropertyAttribute(String) }
 
-public enum BeatProperty: XMLIndexerDeserializable {
+public enum BeatProperty: XMLObjectDeserialization {
 	case primaryPickupVolume(Float)
 	case primaryPickupTone(Float)
 	case brush(Direction)
@@ -48,7 +48,7 @@ public enum BeatProperty: XMLIndexerDeserializable {
 
 public enum ExtraPropertyParseError: Error { case unsupportedPropertyAttribute(String) }
 
-public enum ExtraProperty: XMLIndexerDeserializable {
+public enum ExtraProperty: XMLObjectDeserialization {
 	case x1124139010(Int)
 	case x1124139264(Int)
 	case x1124139265(Int)
@@ -159,7 +159,7 @@ public enum ExtraProperty: XMLIndexerDeserializable {
 //   </Properties>
 // </Beat>
 
-public struct Beat: XMLIndexerDeserializable {
+public struct Beat: XMLObjectDeserialization {
 	var id: Int
 	var dynamic: String
 	var rhythm: Int

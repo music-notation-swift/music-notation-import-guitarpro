@@ -28,7 +28,7 @@ import SWXMLHash
 //  </Automation>
 // </Automations>
 
-public struct Automation: XMLIndexerDeserializable {
+public struct Automation: XMLObjectDeserialization {
 	var type: String
 	var linear: Bool
 	var bar: Int

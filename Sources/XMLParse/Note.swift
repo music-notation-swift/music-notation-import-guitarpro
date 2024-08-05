@@ -12,7 +12,7 @@ import SWXMLHash
 public enum VibratoParseError: Error { case unsupportedVibratoValue(String) }
 
 //	 <Vibrato>Slight</Step>
-public enum Vibrato: XMLIndexerDeserializable {
+public enum Vibrato: XMLObjectDeserialization {
 	case slight
 	case wide
 
@@ -31,7 +31,7 @@ public enum Vibrato: XMLIndexerDeserializable {
 public enum StepParseError: Error { case unsupportedStepValue(String) }
 
 //	 <Step>G</Step>
-public enum Step: XMLIndexerDeserializable {
+public enum Step: XMLObjectDeserialization {
 	case aPitch
 	case bPitch
 	case cPitch
@@ -60,7 +60,7 @@ public enum Step: XMLIndexerDeserializable {
 public enum AccidentalParseError: Error { case unsupportedAccidentalValue(String) }
 
 //	 <Accidental>#</Accidental>
-public enum Accidental: XMLIndexerDeserializable {
+public enum Accidental: XMLObjectDeserialization {
 	case none
 	case sharp
 	case doubleSharp
@@ -90,7 +90,7 @@ public enum Accidental: XMLIndexerDeserializable {
 //	 <Octave>5</Octave>
 // </Pitch>
 
-public struct Pitch: XMLIndexerDeserializable {
+public struct Pitch: XMLObjectDeserialization {
 	var step: Step
 	var accidental: Accidental
 	var octave: Int
@@ -153,7 +153,7 @@ public struct Pitch: XMLIndexerDeserializable {
 
 public enum NotePropertyParseError: Error { case unsupportedPropertyAttribute(String) }
 
-public enum NoteProperty: XMLIndexerDeserializable {
+public enum NoteProperty: XMLObjectDeserialization {
 	case concertPitch(Pitch)
 	case fret(Int)
 	case midi(Int)
@@ -208,7 +208,7 @@ public enum NoteProperty: XMLIndexerDeserializable {
 
 //  <Tie origin="true" destination="false" />
 
-public struct Tie: XMLIndexerDeserializable {
+public struct Tie: XMLObjectDeserialization {
 	var origin: Bool
 	var destination: Bool
 
@@ -266,7 +266,7 @@ private var vibratoCount = 0
 private var letRingCount = 0
 #endif
 
-public struct Note: XMLIndexerDeserializable {
+public struct Note: XMLObjectDeserialization {
 	var id: Int
 	public var tie: Tie?
 	public var accent: Int?

@@ -31,7 +31,7 @@ import SWXMLHash
 //  </Automations>
 // </ChannelStrip>
 
-public struct ChannelStrip: XMLIndexerDeserializable {
+public struct ChannelStrip: XMLObjectDeserialization {
 	var parameters: String
 
 	public static func deserialize(_ node: XMLIndexer) throws -> Self {

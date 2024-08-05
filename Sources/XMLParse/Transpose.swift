@@ -14,7 +14,7 @@ import SWXMLHash
 //	<Octave>0</Octave>
 // </Transpose>
 
-public struct Transpose: XMLIndexerDeserializable {
+public struct Transpose: XMLObjectDeserialization {
 	var chromatic: Bool
 
 	public static func deserialize(_ node: XMLIndexer) throws -> Self {

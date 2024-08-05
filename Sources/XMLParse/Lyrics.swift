@@ -42,7 +42,7 @@ import SWXMLHash
 //	</Line>
 // </Lyrics>
 
-public struct Lyrics: XMLIndexerDeserializable {
+public struct Lyrics: XMLObjectDeserialization {
 	var dispatched: Bool
 
 	public static func deserialize(_ node: XMLIndexer) throws -> Self {

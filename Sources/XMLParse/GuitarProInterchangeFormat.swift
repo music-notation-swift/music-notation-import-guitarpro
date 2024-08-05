@@ -9,7 +9,7 @@
 import Foundation
 import SWXMLHash
 
-public struct GuitarProInterchangeFormat: XMLIndexerDeserializable {
+public struct GuitarProInterchangeFormat: XMLObjectDeserialization {
 	public var version: Int
 	public var revision: Revision
 	public var encoding: String

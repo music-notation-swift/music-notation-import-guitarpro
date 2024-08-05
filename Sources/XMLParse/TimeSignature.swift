@@ -101,7 +101,7 @@ enum TimeSignatureError: Error {
 ///	divided into three in a compound meter, the beat is always three times as long as the division note, and
 ///	_the beat is always dotted_.
 
-public enum TimeSignature: XMLIndexerDeserializable {
+public enum TimeSignature: XMLObjectDeserialization {
 	case simple(_ beatsPerBar: Int, _ beatUnit: Int)		// `2/4`, `3/4`, `4/4`, `common` and `cut-common`
 	case compound(_ beatsPerBar: Int, _ beatUnit: Int)		// `9/8` and `12/8`
 	case additive(_ beatsPerBar: [Int], _ beatUnit: Int)	// `3 + 2/8 + 3` (NB: I have seen `3/8 & 2/8`)
