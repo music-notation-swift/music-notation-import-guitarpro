@@ -36,7 +36,7 @@ public enum PlayingStyle: String {
 	}
 }
 
-public struct Track: XMLIndexerDeserializable {
+public struct Track: XMLObjectDeserialization {
 	var id: Int
 
 	public var name: String

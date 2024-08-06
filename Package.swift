@@ -1,16 +1,16 @@
 // swift-tools-version:5.10
 //
 //  Package.swift
-//  MusicNotationImport
+//  MusicNotationImportGuitarPro
 //
-//  Created by Steven Woolgar on 10/16/2020.
+//  Created by Steven Woolgar on 2020-10-16.
 //  Copyright © 2020 Steven Woolgar. All rights reserved.
 //
 import PackageDescription
 
 let package = Package(
 	name: "music-notation-import-guitarpro",
-	platforms: [.macOS(.v11)],
+	platforms: [.macOS(.v14)],
 	products: [.library(name: "MusicNotationImportGuitarPro", targets: ["MusicNotationImportGuitarPro"])],
 
 	dependencies: [

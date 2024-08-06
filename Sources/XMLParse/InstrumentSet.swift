@@ -34,7 +34,7 @@ import SWXMLHash
 //	</Elements>
 //  </InstrumentSet>
 
-public struct InstrumentSet: XMLIndexerDeserializable {
+public struct InstrumentSet: XMLObjectDeserialization {
 	var name: String
 	var instrumentType: String
 

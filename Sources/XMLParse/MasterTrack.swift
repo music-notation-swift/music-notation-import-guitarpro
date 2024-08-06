@@ -8,7 +8,7 @@
 
 import SWXMLHash
 
-public struct MasterTrack: XMLIndexerDeserializable {
+public struct MasterTrack: XMLObjectDeserialization {
 	var tracks: String
 
 	public static func deserialize(_ node: XMLIndexer) throws -> Self {

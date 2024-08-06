@@ -9,7 +9,7 @@
 import Foundation
 import SWXMLHash
 
-public struct Bar: XMLIndexerDeserializable {
+public struct Bar: XMLObjectDeserialization {
 	var clef: String
 	var voices: [Int]
 

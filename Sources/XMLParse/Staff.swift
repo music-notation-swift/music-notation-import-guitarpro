@@ -31,13 +31,13 @@ public enum StaffPropertyParseError: Error {
 	case unsupportedPropertyAttribute(String)
 }
 
-public struct StaffPropertyItem: XMLIndexerDeserializable, Equatable {
+public struct StaffPropertyItem: XMLObjectDeserialization, Equatable {
 	public static func deserialize(_ node: XMLIndexer) throws -> Self {
 		StaffPropertyItem()
 	}
 }
 
-public enum StaffProperty: XMLIndexerDeserializable {
+public enum StaffProperty: XMLObjectDeserialization {
 	case capoFret(_ fret: Int)
 	case fretCount(_ frets: Int)
 	case partialCapoFret(Int)
@@ -121,7 +121,7 @@ extension StaffProperty: Equatable {
 
 // NB: The <Properties> array is malformed XML in that it isn't just a list of <Property> entries, but also
 // contains a <Name> entry. I will have to manually pull all of array entries out and then the <Name>.
-public struct Staff: XMLIndexerDeserializable {
+public struct Staff: XMLObjectDeserialization {
 	var properties: [StaffProperty]
 	var name: String
 

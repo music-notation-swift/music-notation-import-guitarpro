@@ -15,7 +15,7 @@ import SWXMLHash
 //   <TransposeAs>Sharps</TransposeAs>
 // </Key>
 
-public struct Key: XMLIndexerDeserializable {
+public struct Key: XMLObjectDeserialization {
 	var accidentalCount: Int
 	var mode: String
 	var transposeAs: String

@@ -1,6 +1,6 @@
 //
 //	Note.swift
-//	music-notation-import-guitarpro
+//	music-notation-import
 //
 //	Created by Steven Woolgar on 2021-02-09.
 //	Copyright © 2021 Steven Woolgar. All rights reserved.
@@ -12,7 +12,7 @@ import SWXMLHash
 public enum VibratoParseError: Error { case unsupportedVibratoValue(String) }
 
 //	 <Vibrato>Slight</Step>
-public enum Vibrato: XMLIndexerDeserializable {
+public enum Vibrato: XMLObjectDeserialization {
 	case slight
 	case wide
 
@@ -31,7 +31,7 @@ public enum Vibrato: XMLIndexerDeserializable {
 public enum StepParseError: Error { case unsupportedStepValue(String) }
 
 //	 <Step>G</Step>
-public enum Step: XMLIndexerDeserializable {
+public enum Step: XMLObjectDeserialization {
 	case aPitch
 	case bPitch
 	case cPitch
@@ -60,7 +60,7 @@ public enum Step: XMLIndexerDeserializable {
 public enum AccidentalParseError: Error { case unsupportedAccidentalValue(String) }
 
 //	 <Accidental>#</Accidental>
-public enum Accidental: XMLIndexerDeserializable {
+public enum Accidental: XMLObjectDeserialization {
 	case none
 	case sharp
 	case doubleSharp
@@ -90,7 +90,7 @@ public enum Accidental: XMLIndexerDeserializable {
 //	 <Octave>5</Octave>
 // </Pitch>
 
-public struct Pitch: XMLIndexerDeserializable {
+public struct Pitch: XMLObjectDeserialization {
 	var step: Step
 	var accidental: Accidental
 	var octave: Int
@@ -153,7 +153,7 @@ public struct Pitch: XMLIndexerDeserializable {
 
 public enum NotePropertyParseError: Error { case unsupportedPropertyAttribute(String) }
 
-public enum NoteProperty: XMLIndexerDeserializable {
+public enum NoteProperty: XMLObjectDeserialization {
 	case concertPitch(Pitch)
 	case fret(Int)
 	case midi(Int)
@@ -208,7 +208,7 @@ public enum NoteProperty: XMLIndexerDeserializable {
 
 //  <Tie origin="true" destination="false" />
 
-public struct Tie: XMLIndexerDeserializable {
+public struct Tie: XMLObjectDeserialization {
 	var origin: Bool
 	var destination: Bool
 
@@ -251,22 +251,22 @@ public struct Tie: XMLIndexerDeserializable {
 // </Note>
 
 #if DEBUG
-@MainActor public var noteCount = 0
-@MainActor public var tieCount = 0
-@MainActor public var accentCount = 0
-@MainActor public var antiAccentCount = 0
-@MainActor public var vibratoCount = 0
-@MainActor public var letRingCount = 0
+public var noteCount = 0
+public var tieCount = 0
+public var accentCount = 0
+public var antiAccentCount = 0
+public var vibratoCount = 0
+public var letRingCount = 0
 #else
-@MainActor private var noteCount = 0
-@MainActor private var tieCount = 0
-@MainActor private var accentCount = 0
-@MainActor private var antiAccentCount = 0
-@MainActor private var vibratoCount = 0
-@MainActor private var letRingCount = 0
+private var noteCount = 0
+private var tieCount = 0
+private var accentCount = 0
+private var antiAccentCount = 0
+private var vibratoCount = 0
+private var letRingCount = 0
 #endif
 
-public struct Note: @preconcurrency XMLIndexerDeserializable {
+public struct Note: XMLObjectDeserialization {
 	var id: Int
 	public var tie: Tie?
 	public var accent: Int?
@@ -276,7 +276,6 @@ public struct Note: @preconcurrency XMLIndexerDeserializable {
 	public var instrumentArticulation: Int
 	public var properties: [NoteProperty]
 
-	@MainActor
 	public static func deserialize(_ node: XMLIndexer) throws -> Self {
 		let note = try Note(
 			id: node.value(ofAttribute: "id"),

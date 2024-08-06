@@ -9,7 +9,7 @@
 import Foundation
 import SWXMLHash
 
-public struct Score: XMLIndexerDeserializable {
+public struct Score: XMLObjectDeserialization {
 	var title: String
 	var subtitle: String
 	var artist: String

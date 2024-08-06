@@ -8,7 +8,7 @@
 
 import SWXMLHash
 
-public struct Revision: XMLIndexerDeserializable {
+public struct Revision: XMLObjectDeserialization {
 	var value: Int
 
 	var required: Int

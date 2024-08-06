@@ -115,7 +115,7 @@ import SWXMLHash
 //  <Beats>4 5 6 7 8 9</Beats>
 // </Voice>
 
-public struct Voice: XMLIndexerDeserializable {
+public struct Voice: XMLObjectDeserialization {
 	var id: Int
 	public var beats: String
 
