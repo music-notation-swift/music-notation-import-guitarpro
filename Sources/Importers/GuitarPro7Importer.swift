@@ -27,37 +27,56 @@ public struct GuitarPro7Importer {
 		defer { if verbose { print("--- Ending parsing of: \(file) ---") } }
 
 		var xmlString: String
-        var partConfigurations: [PartConfiguration]
+        var partConfigurationsData: Data
 
 		switch file.pathExtension {
 		case "gpif":
 			guard let string = try? String(contentsOf: file) else { throw GuitarProImportError(file: file, "Could not open gpif file") }
 			xmlString = string
+            partConfigurationsData = Data()
 
 		case "gp":
 			guard let archive = Archive(url: file, accessMode: .read) else { throw GuitarProImportError(file: file, "Could not open gp archive") }
 			guard let scoreEntry = archive["Content/score.gpif"] else { throw GuitarProImportError(file: file, "Could not open score.gpif inside gp archive") }
             guard let partConfigurationEntry = archive["Content/PartConfiguration"] else { throw GuitarProImportError(file: file, "Could not open PartConfiguration inside gp archive") }
 
-			var xmlData = Data()
-
-			_ = try archive.extract(scoreEntry, consumer: { data in
-				xmlData.append(data)
-			})
-
-			guard let string = String(data: xmlData, encoding: .utf8) else { throw GuitarProImportError(file: file, "Could not convert data from archive to string") }
-			xmlString = string
-            partConfigurations = parsePartConfigurations(partConfigurationEntry)
+			xmlString = try unzipToString(archive, entry: scoreEntry)
+            partConfigurationsData = try unzipToData(archive, entry: partConfigurationEntry)
 
 		default:
 			xmlString = ""
+            partConfigurationsData = Data()
 		}
 
-        return try createNotation(with: try parseXML(xmlString), partConfigurations: partConfigurations)
+        return try createNotation(
+            with: try parseXML(xmlString),
+            partConfigurations: parsePartConfigurations(partConfigurationsData)
+        )
 	}
 
+    func unzipToString(_ archive: Archive, entry: Entry) throws -> String {
+        var xmlData = Data()
+
+        _ = try archive.extract(entry, consumer: { data in
+            xmlData.append(data)
+        })
+
+        guard let string = String(data: xmlData, encoding: .utf8) else { throw GuitarProImportError(file: file, "Could not convert data from archive to string") }
+        return string
+    }
+
+    func unzipToData(_ archive: Archive, entry: Entry) throws -> Data {
+        var entryData = Data()
+
+        _ = try archive.extract(entry, consumer: { data in
+            entryData.append(data)
+        })
+
+        return entryData
+    }
+
     // Parse the XML of the score
-    public func parseXML(_ xmlString: String) throws -> MusicNotationImportGuitarPro.GuitarProInterchangeFormat {
+    func parseXML(_ xmlString: String) throws -> MusicNotationImportGuitarPro.GuitarProInterchangeFormat {
 		let xml = XMLHash.config { config in
 			config.shouldProcessLazily = lazy
 			config.detectParsingErrors = true
@@ -67,7 +86,8 @@ public struct GuitarPro7Importer {
 	}
 
     // Parse the part configuration binary file
-    public func parsePartConfigurations(_ configuration: Data) throws -> [PartConfiguration] {
+    func parsePartConfigurations(_ configuration: Data) throws -> [PartConfiguration] {
+        return []
     }
 
     public func createNotation(
