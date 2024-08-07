@@ -1,0 +1,96 @@
+//
+//	GuitarPro7Importer.swift
+//	music-notation-import-guitarpro
+//
+//	Created by Steven Woolgar on 2024-08-06.
+//	Copyright © 2024 Steven Woolgar. All rights reserved.
+//
+
+import Foundation
+import MusicNotation
+import SWXMLHash
+import ZIPFoundation
+
+public struct GuitarPro7Importer {
+    public let file: URL
+    public let verbose: Bool
+    public let lazy: Bool
+
+    public init(file: URL, verbose: Bool, lazy: Bool) {
+        self.file = file
+        self.verbose = verbose
+        self.lazy = lazy
+    }
+
+    public func consume() throws -> MusicNotation.Score {
+		if verbose { print("--- Starting parsing of: \(file) ---") }
+		defer { if verbose { print("--- Ending parsing of: \(file) ---") } }
+
+		var xmlString: String
+        var partConfigurations: [PartConfiguration]
+
+		switch file.pathExtension {
+		case "gpif":
+			guard let string = try? String(contentsOf: file) else { throw GuitarProImportError(file: file, "Could not open gpif file") }
+			xmlString = string
+
+		case "gp":
+			guard let archive = Archive(url: file, accessMode: .read) else { throw GuitarProImportError(file: file, "Could not open gp archive") }
+			guard let scoreEntry = archive["Content/score.gpif"] else { throw GuitarProImportError(file: file, "Could not open score.gpif inside gp archive") }
+            guard let partConfigurationEntry = archive["Content/PartConfiguration"] else { throw GuitarProImportError(file: file, "Could not open PartConfiguration inside gp archive") }
+
+			var xmlData = Data()
+
+			_ = try archive.extract(scoreEntry, consumer: { data in
+				xmlData.append(data)
+			})
+
+			guard let string = String(data: xmlData, encoding: .utf8) else { throw GuitarProImportError(file: file, "Could not convert data from archive to string") }
+			xmlString = string
+            partConfigurations = parsePartConfigurations(partConfigurationEntry)
+
+		default:
+			xmlString = ""
+		}
+
+        return try createNotation(with: try parseXML(xmlString), partConfigurations: partConfigurations)
+	}
+
+    // Parse the XML of the score
+    public func parseXML(_ xmlString: String) throws -> MusicNotationImportGuitarPro.GuitarProInterchangeFormat {
+		let xml = XMLHash.config { config in
+			config.shouldProcessLazily = lazy
+			config.detectParsingErrors = true
+		}.parse(xmlString)
+
+		return try xml["GPIF"].value()
+	}
+
+    // Parse the part configuration binary file
+    public func parsePartConfigurations(_ configuration: Data) throws -> [PartConfiguration] {
+    }
+
+    public func createNotation(
+        with interchangeFormat: MusicNotationImportGuitarPro.GuitarProInterchangeFormat,
+        partConfigurations: [PartConfiguration]
+    ) throws -> MusicNotation.Score {
+        let parts = interchangeFormat.tracks.map { track in
+			MusicNotation.Part(with: track)
+		}
+
+		return MusicNotation.Score(parts: parts)
+	}
+}
+
+public struct GuitarProImportError: Error, CustomStringConvertible {
+    public internal(set) var file: URL
+    public internal(set) var message: String
+
+    /// Creates a new validation error with the given message.
+    public init(file: URL, _ message: String) {
+        self.file = file
+        self.message = message
+    }
+
+    public var description: String { message }
+}
