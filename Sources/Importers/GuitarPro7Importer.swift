@@ -36,7 +36,7 @@ public struct GuitarPro7Importer {
             partConfigurationsData = Data()
 
 		case "gp":
-			guard let archive = Archive(url: file, accessMode: .read) else { throw GuitarProImportError(file: file, "Could not open gp archive") }
+            guard let archive = try? Archive(url: file, accessMode: .read, pathEncoding: nil) else { throw GuitarProImportError(file: file, "Could not open gp archive") }
 			guard let scoreEntry = archive["Content/score.gpif"] else { throw GuitarProImportError(file: file, "Could not open score.gpif inside gp archive") }
             guard let partConfigurationEntry = archive["Content/PartConfiguration"] else { throw GuitarProImportError(file: file, "Could not open PartConfiguration inside gp archive") }
 
@@ -48,11 +48,13 @@ public struct GuitarPro7Importer {
             partConfigurationsData = Data()
 		}
 
-        return try createNotation(
+        let notation = try createNotation(
             with: try parseXML(xmlString),
             partConfigurations: parsePartConfigurations(partConfigurationsData)
         )
-	}
+
+        return notation
+    }
 
     func unzipToString(_ archive: Archive, entry: Entry) throws -> String {
         var xmlData = Data()
