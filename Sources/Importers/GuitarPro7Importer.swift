@@ -50,7 +50,7 @@ public struct GuitarPro7Importer {
 
         let notation = try createNotation(
             with: try parseXML(xmlString),
-            partConfigurations: parsePartConfigurations(partConfigurationsData)
+            partConfigurations: try PartConfiguration.partConfigurationArrayFrom(data: partConfigurationsData)
         )
 
         return notation
@@ -86,11 +86,6 @@ public struct GuitarPro7Importer {
 
 		return try xml["GPIF"].value()
 	}
-
-    // Parse the part configuration binary file
-    func parsePartConfigurations(_ configuration: Data) throws -> [PartConfiguration] {
-        return []
-    }
 
     public func createNotation(
         with interchangeFormat: MusicNotationImportGuitarPro.GuitarProInterchangeFormat,
