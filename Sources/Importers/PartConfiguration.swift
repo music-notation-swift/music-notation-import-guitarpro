@@ -31,7 +31,7 @@ extension PartConfiguration {
             offset += MemoryLayout<UInt32>.size
         }
 
-         return partConfigurations
+		return partConfigurations
     }
 }
 

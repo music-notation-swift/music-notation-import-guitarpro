@@ -10,7 +10,7 @@ import Foundation
 import SWXMLHash
 
 public struct GuitarProInterchangeFormat: XMLObjectDeserialization {
-	public var version: Int
+	public var version: String
 	public var revision: Revision
 	public var encoding: String
 	public var score: Score
