@@ -1,4 +1,4 @@
-// swift-tools-version:5.10
+// swift-tools-version:6.0
 //
 //  Package.swift
 //  MusicNotationImportGuitarPro
@@ -36,5 +36,5 @@ let package = Package(
 		)
 	],
 
-	swiftLanguageVersions: [ .v5 ]
+	swiftLanguageVersions: [ .v6 ]
 )

@@ -174,7 +174,7 @@ extension TimeSignature: Equatable {
 // MARK: - Time Signature String Parsing
 
 // Used to find and consume `5` in a time signature like `5/4`.
-let int = Parser<Int> { str in
+nonisolated(unsafe) let int = Parser<Int> { str in
 	let prefix = str.prefix(while: { $0.isNumber })
 	let match = Int(prefix)
 	str.removeFirst(prefix.count)
@@ -182,14 +182,14 @@ let int = Parser<Int> { str in
 }
 
 // Used to find and consume `2.5` in a time signature like `2.5/4`.
-let float = Parser<Float> { str in
+nonisolated(unsafe) let float = Parser<Float> { str in
 	let prefix = str.prefix(while: { $0.isNumber || $0 == "." })
 	let match = Float(prefix)
 	str.removeFirst(prefix.count)
 	return match
 }
 
-let timeSignatureParse = Parser<TimeSignature> { str in
+nonisolated(unsafe) let timeSignatureParse = Parser<TimeSignature> { str in
 	if str.contains("+") {			// Check for additive signature (`3+2/8+3`)
 		let beatGroupingStrings = str.split(separator: "+")
 

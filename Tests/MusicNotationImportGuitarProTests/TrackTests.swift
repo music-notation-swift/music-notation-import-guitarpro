@@ -17,7 +17,7 @@ let testTrack2 = track2Open + testTrackBody + trackClose
 /// GuitarPro 7 has a concept of a Track. This is part of a song, which roughly corresponds to a MusicNotation.Part.
 @Suite final class TrackTests {
 	@Test func parse() async throws {
-		let xmlParser = SWXMLHash.parse(testTrack0)
+		let xmlParser = XMLHash.parse(testTrack0)
 
 		let track0: Track = try xmlParser["Track"].value()
 
@@ -37,9 +37,9 @@ let testTrack2 = track2Open + testTrackBody + trackClose
 	}
 
 	@Test func ids() async throws {
-		let xmlParser0 = SWXMLHash.parse(testTrack0)
-		let xmlParser1 = SWXMLHash.parse(testTrack1)
-		let xmlParser2 = SWXMLHash.parse(testTrack2)
+		let xmlParser0 = XMLHash.parse(testTrack0)
+		let xmlParser1 = XMLHash.parse(testTrack1)
+		let xmlParser2 = XMLHash.parse(testTrack2)
 
 		let track0: Track = try xmlParser0["Track"].value()
 		#expect(track0.id == 0)

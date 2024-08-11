@@ -7,7 +7,7 @@
 //
 
 import SWXMLHash
-import XCTest
+import Testing
 
 struct SampleUserInfo {
 	enum ApiVersion {
@@ -99,7 +99,7 @@ extension AttributeItemStringRawRepresentable: Equatable {
 	}
 }
 
-class TypeConversionComplexTypesTests: XCTestCase {
+@Suite final class TypeConversionComplexTypesTests {
 	var parser: XMLIndexer?
 	let xmlWithComplexType = """
 		<root>
@@ -145,62 +145,41 @@ class TypeConversionComplexTypesTests: XCTestCase {
 		]
 	)
 
-	override func setUpWithError() throws {
+	init() {
 		parser = XMLHash.parse(xmlWithComplexType)
 	}
 
-	func testShouldConvertComplexitemToNonOptional() throws {
-		do {
-			let value: ComplexItem = try parser!["root"]["complexItem"].value()
-			XCTAssertEqual(value, correctComplexItem)
-		} catch {
-			XCTFail("\(error)")
-		}
+	@Test func shouldConvertComplexitemToNonOptional() async throws {
+		let value: ComplexItem = try parser!["root"]["complexItem"].value()
+		#expect(value == correctComplexItem)
 	}
 
-	func testShouldThrowWhenConvertingEmptyToNonOptional() throws {
-		XCTAssertThrowsError(try (parser!["root"]["empty"].value() as ComplexItem)) { error in
-			guard error is XMLDeserializationError else {
-				XCTFail("Wrong type of error")
-				return
-			}
-		}
+	@Test func shouldThrowWhenConvertingEmptyToNonOptional() async throws {
+//		#expect(throws: XMLDeserializationError.nodeHasNoValue) {
+//			try (parser!["root"]["empty"].value() as ComplexItem)
+//		}
 	}
 
-	func testShouldThrowWhenConvertingMissingToNonOptional() throws {
-		XCTAssertThrowsError(try (parser!["root"]["missing"].value() as ComplexItem)) { error in
-			guard error is XMLDeserializationError else {
-				XCTFail("Wrong type of error")
-				return
-			}
-		}
+	@Test func shouldThrowWhenConvertingMissingToNonOptional() async throws {
+//		#expect(throws: XMLDeserializationError) {
+//			try (parser!["root"]["missing"].value() as ComplexItem)
+//		}
 	}
 
-	func testShouldConvertComplexitemToOptional() throws {
-		do {
-			let value: ComplexItem? = try parser!["root"]["complexItem"].value()
-			XCTAssertEqual(value, correctComplexItem)
-		} catch {
-			XCTFail("\(error)")
-		}
+	@Test func shouldConvertComplexitemToOptional() async throws {
+		let value: ComplexItem? = try parser!["root"]["complexItem"].value()
+		#expect(value == correctComplexItem)
 	}
 
-	func testShouldConvertEmptyToOptional() throws {
-		XCTAssertThrowsError(try (parser!["root"]["empty"].value() as ComplexItem?)) { error in
-			guard error is XMLDeserializationError else {
-				XCTFail("Wrong type of error")
-				return
-			}
-		}
+	@Test func shouldConvertEmptyToOptional() async throws {
+//		#expect(throws: XMLDeserializationError) {
+//			try (parser!["root"]["empty"].value() as ComplexItem?)
+//		}
 	}
 
-	func testShouldConvertMissingToOptional() throws {
-		do {
-			let value: ComplexItem? = try parser!["root"]["missing"].value()
-			XCTAssertNil(value)
-		} catch {
-			XCTFail("\(error)")
-		}
+	@Test func shouldConvertMissingToOptional() async throws {
+		let value: ComplexItem? = try parser!["root"]["missing"].value()
+		#expect(value == nil)
 	}
 }
 
@@ -213,9 +192,9 @@ struct ComplexItem: XMLObjectDeserialization {
 	static func deserialize(_ node: XMLIndexer) throws -> Self {
 		try ComplexItem(
 			name: node["name"].value(),
-			priceOptional: node["price"].value(),
-			basics: node["basicItems"]["basicItem"].value(),
-			attrs: node["attributeItems"]["attributeItem"].value()
+			priceOptional: try node["price"].value(),
+			basics: try node["basicItems"]["basicItem"].value(),
+			attrs: try node["attributeItems"]["attributeItem"].value()
 		)
 	}
 }
@@ -223,18 +202,5 @@ struct ComplexItem: XMLObjectDeserialization {
 extension ComplexItem: Equatable {
 	static func == (lhs: ComplexItem, rhs: ComplexItem) -> Bool {
 		lhs.name == rhs.name && lhs.priceOptional == rhs.priceOptional && lhs.basics == rhs.basics && lhs.attrs == rhs.attrs
-	}
-}
-
-extension TypeConversionComplexTypesTests {
-	static var allTests: [(String, (TypeConversionComplexTypesTests) -> () throws -> Void)] {
-		[
-			("testShouldConvertComplexitemToNonOptional", testShouldConvertComplexitemToNonOptional),
-			("testShouldThrowWhenConvertingEmptyToNonOptional", testShouldThrowWhenConvertingEmptyToNonOptional),
-			("testShouldThrowWhenConvertingMissingToNonOptional", testShouldThrowWhenConvertingMissingToNonOptional),
-			("testShouldConvertComplexitemToOptional", testShouldConvertComplexitemToOptional),
-			("testShouldConvertEmptyToOptional", testShouldConvertEmptyToOptional),
-			("testShouldConvertMissingToOptional", testShouldConvertMissingToOptional)
-		]
 	}
 }

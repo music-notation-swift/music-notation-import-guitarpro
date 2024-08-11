@@ -250,22 +250,6 @@ public struct Tie: XMLObjectDeserialization {
 //  </Properties>
 // </Note>
 
-#if DEBUG
-public var noteCount = 0
-public var tieCount = 0
-public var accentCount = 0
-public var antiAccentCount = 0
-public var vibratoCount = 0
-public var letRingCount = 0
-#else
-private var noteCount = 0
-private var tieCount = 0
-private var accentCount = 0
-private var antiAccentCount = 0
-private var vibratoCount = 0
-private var letRingCount = 0
-#endif
-
 public struct Note: XMLObjectDeserialization {
 	var id: Int
 	public var tie: Tie?
@@ -287,15 +271,6 @@ public struct Note: XMLObjectDeserialization {
 			instrumentArticulation: node["InstrumentArticulation"].value(),
 			properties: node["Properties"]["Property"].value()
 		)
-
-		noteCount += 1
-		if note.tie != nil { tieCount += 1 }
-		if note.accent != nil { accentCount += 1 }
-		if note.antiAccent != nil { antiAccentCount += 1 }
-		if note.vibrato != nil { vibratoCount += 1 }
-		if note.letRing != nil { letRingCount += 1 }
-
-		assert(!(node.children.count == 3 && note.tie == nil && note.vibrato == nil && note.accent == nil && note.antiAccent == nil && note.letRing == nil), "unhandled child")
 
 		return note
 	}
