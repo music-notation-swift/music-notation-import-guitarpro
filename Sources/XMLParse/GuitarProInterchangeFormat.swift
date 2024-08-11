@@ -10,7 +10,7 @@ import Foundation
 import SWXMLHash
 
 public struct GuitarProInterchangeFormat: XMLObjectDeserialization {
-	public var version: String
+	public var version: Version
 	public var revision: Revision
 	public var encoding: String
 	public var score: Score
@@ -25,7 +25,7 @@ public struct GuitarProInterchangeFormat: XMLObjectDeserialization {
 
 	public static func deserialize(_ node: XMLIndexer) throws -> Self {
 		try GuitarProInterchangeFormat(
-			version: node["GPVersion"].value(),
+			version: Version.withString(node["GPVersion"].value()),
 			revision: node["GPRevision"].value(),
 			encoding: node["Encoding"].value(),
 			score: node["Score"].value(),
