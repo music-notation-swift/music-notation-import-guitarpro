@@ -1,6 +1,6 @@
 //
 //	mnc_import_tests.swift
-//	music-notation-import-tests
+//	music-notation-import-guitarpro-tests
 //
 //	Created by Steven Woolgar on 2021-02-10.
 //	Copyright © 2021 Steven Woolgar. All rights reserved.

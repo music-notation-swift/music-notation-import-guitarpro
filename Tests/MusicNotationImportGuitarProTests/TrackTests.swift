@@ -1,6 +1,6 @@
 //
 //	TrackTests.swift
-//	music-notation-import-tests
+//	music-notation-import-guitarpro-tests
 //
 //	Created by Steven Woolgar on 2021-04-01.
 //	Copyright © 2021 Steven Woolgar. All rights reserved.
