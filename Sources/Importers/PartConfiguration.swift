@@ -19,16 +19,14 @@ extension PartConfiguration {
         let dataSize = data.count
         let offsetToTrackCount = 8
 
-        let binaryData = BinaryData(data: data)
+        let binaryData = BinaryDataReader(BinaryData(data: data), readIndex: offsetToTrackCount)
         guard dataSize > offsetToTrackCount else { throw PartConfigurationError.DataTooSmallToContainTracks }
 
-        let trackCount: UInt16 = try binaryData.get(offsetToTrackCount)
+        let trackCount: UInt16 = try binaryData.read()
 
         var partConfigurations: [PartConfiguration] = []
-        var offset: Int = offsetToTrackCount + MemoryLayout<UInt16>.size
         for _ in 0 ..< trackCount {
-            partConfigurations.append(PartConfiguration(options: try binaryData.get(offset)))
-            offset += MemoryLayout<UInt32>.size
+            partConfigurations.append(PartConfiguration(options: try binaryData.read()))
         }
 
 		return partConfigurations
