@@ -9,7 +9,7 @@
 import Foundation
 
 public struct PartConfiguration {
-    let options: UInt32
+    let options: UInt8
 }
 
 // MARK: - BinaryData Importer
@@ -19,10 +19,10 @@ extension PartConfiguration {
         let dataSize = data.count
         let offsetToTrackCount = 8
 
-        let binaryData = BinaryDataReader(BinaryData(data: data), readIndex: offsetToTrackCount)
         guard dataSize > offsetToTrackCount else { throw PartConfigurationError.DataTooSmallToContainTracks }
 
-        let trackCount: UInt16 = try binaryData.read()
+        let binaryData = BinaryDataReader(BinaryData(data: data, bigEndian: true), readIndex: offsetToTrackCount)
+        let trackCount: UInt8 = try binaryData.read()
 
         var partConfigurations: [PartConfiguration] = []
         for _ in 0 ..< trackCount {
