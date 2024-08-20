@@ -32,7 +32,7 @@ import SWXMLHash
 //	 </Pickups>
 //	 <EffectChain>
 //	   <Effect id="M08_GraphicEQ10Band">
-//       <Parameters>1 1 0.25 0.5 0.5 0.5 0.5 0.346939 0.612245 0.632653 0.5 0.693878 0.5</Parameters>
+//			<Parameters>1 1 0.25 0.5 0.5 0.5 0.5 0.346939 0.612245 0.632653 0.5 0.693878 0.5</Parameters>
 // 	   </Effect>
 // 	   <Effect id="M13_ModulationDigitalChorus">
 // 		 <Parameters>0.28 0.5 0.5 0.64</Parameters>
@@ -41,7 +41,7 @@ import SWXMLHash
 //		 <Parameters>0.77 0.5 0.3209</Parameters>
 //	   </Effect>
 //	   <Effect id="M02_StudioReverbHallSmallTheater">
-//	     <Parameters>1 0.43 0.27 0.37 0.6</Parameters>
+//			<Parameters>1 0.43 0.27 0.37 0.6</Parameters>
 //	   </Effect>
 //	   <Effect />
 //	   <Effect />

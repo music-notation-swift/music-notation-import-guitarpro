@@ -148,7 +148,7 @@ public struct Pitch: XMLObjectDeserialization {
 // <Property name="BendOriginValue">
 //  <Float>0.000000</Float>
 // </Property>
-//    </Property>
+//	</Property>
 // </NoteProperties>
 
 public enum NotePropertyParseError: Error { case unsupportedPropertyAttribute(String) }

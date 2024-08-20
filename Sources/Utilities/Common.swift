@@ -9,10 +9,10 @@
 import Foundation
 
 func unsafeConversion<FROM, TO>(_ from: FROM) -> TO {
-    func ptr(_ fromPtr: UnsafePointer<FROM>) -> UnsafePointer<TO> {
-        fromPtr.withMemoryRebound(to: TO.self, capacity: 1) {  $0 }
-    }
+	func ptr(_ fromPtr: UnsafePointer<FROM>) -> UnsafePointer<TO> {
+		fromPtr.withMemoryRebound(to: TO.self, capacity: 1) {  $0 }
+	}
 
-    var fromVar = from
-    return ptr(&fromVar).pointee
+	var fromVar = from
+	return ptr(&fromVar).pointee
 }
