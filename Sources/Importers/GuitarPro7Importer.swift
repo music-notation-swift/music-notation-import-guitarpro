@@ -95,6 +95,8 @@ public struct GuitarPro7Importer {
 			MusicNotation.Part(with: track)
 		}
 
+        // Collect score field names
+        
 		return MusicNotation.Score(parts: parts)
 	}
 }

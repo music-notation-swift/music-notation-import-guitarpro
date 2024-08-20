@@ -8,8 +8,18 @@
 
 import Foundation
 
+public struct PartsConfigurationBinaryFile {
+    let version: UInt32
+    let unknown1: UInt32
+}
+
 public struct PartConfiguration {
-    let options: UInt8
+    let rawValue: Int
+
+	static let standard		= PartConfiguration(rawValue: 1 << 0)
+    static let tablature    = PartConfiguration(rawValue: 1 << 1)
+    static let slash    	= PartConfiguration(rawValue: 1 << 2)
+    static let numbered 	= PartConfiguration(rawValue: 1 << 3)
 }
 
 // MARK: - BinaryData Importer
@@ -17,11 +27,14 @@ public struct PartConfiguration {
 extension PartConfiguration {
     static func partConfigurationArrayFrom(data: Data) throws -> [PartConfiguration] {
         let dataSize = data.count
-        let offsetToTrackCount = 8
+        let minimumPartConfig = MemoryLayout<UInt32> /* Version */ +
+                                MemoryLayout<UInt32> /* Unknown1 */ +
+                                MemoryLayout<UInt8>  /* Notation settings count */
 
-        guard dataSize > offsetToTrackCount else { throw PartConfigurationError.DataTooSmallToContainTracks }
+        guard dataSize > minimumPartConfig else { throw PartConfigurationError.DataTooSmallToContainTracks }
 
-        let binaryData = BinaryDataReader(BinaryData(data: data, bigEndian: true), readIndex: offsetToTrackCount)
+        let binaryData = BinaryDataReader(BinaryData(data: data, bigEndian: true), readIndex: 0)
+        let PartsConfiguration
         let trackCount: UInt8 = try binaryData.read()
 
         var partConfigurations: [PartConfiguration] = []
