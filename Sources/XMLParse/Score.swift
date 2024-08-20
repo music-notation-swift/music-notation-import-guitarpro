@@ -9,6 +9,86 @@
 import Foundation
 import SWXMLHash
 
+//	<Score>
+//	  <Title>
+//	<![CDATA[]]>
+//	  </Title>
+//	  <SubTitle>
+//	<![CDATA[]]>
+//	  </SubTitle>
+//	  <Artist>
+//	<![CDATA[]]>
+//	  </Artist>
+//	  <Album>
+//	<![CDATA[]]>
+//	  </Album>
+//	  <Words>
+//	<![CDATA[]]>
+//	  </Words>
+//	  <Music>
+//	<![CDATA[]]>
+//	  </Music>
+//	  <WordsAndMusic>
+//	<![CDATA[]]>
+//	  </WordsAndMusic>
+//	  <Copyright>
+//	<![CDATA[]]>
+//	  </Copyright>
+//	  <Tabber>
+//	<![CDATA[]]>
+//	  </Tabber>
+//	  <Instructions>
+//	<![CDATA[]]>
+//	  </Instructions>
+//	  <Notices>
+//	<![CDATA[]]>
+//	  </Notices>
+//	  <FirstPageHeader>
+//	<![CDATA[<html><head><meta name="qrichtext" content="1" /><style type="text/css">p,
+//		li { white-space: pre-wrap; }</style></head><body style=
+//			" font-family:'Times New Roman';font-size:16pt; font-weight:400; font-style:normal;">
+//			<p align="center" style=" margin-top:0px; margin-bottom:0px; margin-left:0px;
+//			margin-right:0px; -qt-block-indent:0; text-indent:0px; font-family:'Sans Serif';
+//			font-size:10pt;"><span style=" font-family:'Times New Roman'; font-size:35pt;">%TITLE%</span></p>
+//			<p align="center" style=" margin-top:0px; margin-bottom:0px; margin-left:0px;
+//			margin-right:0px; -qt-block-indent:0; text-indent:0px; font-family:'Sans Serif';
+//			font-size:10pt;"><span style=" font-family:'Times New Roman'; font-size:16pt;">%SUBTITLE%</span></p>
+//			<p align="center" style=" margin-top:0px; margin-bottom:0px; margin-left:0px;
+//			margin-right:0px; -qt-block-indent:0; text-indent:0px; font-family:'Sans Serif';
+//			font-size:10pt;"><span style=" font-family:'Times New Roman'; font-size:16pt;">%ARTIST%</span></p>
+//			<p align="center" style=" margin-top:0px; margin-bottom:0px; margin-left:0px;
+//			margin-right:0px; -qt-block-indent:0; text-indent:0px; font-family:'Sans Serif';
+//			font-size:10pt;"><span style=" font-family:'Times New Roman'; font-size:16pt;">%ALBUM%</span></p>
+//			<p align="center" style=" margin-top:0px; margin-bottom:0px; margin-left:0px;
+//			margin-right:0px; -qt-block-indent:0; text-indent:0px; font-family:'Sans Serif';
+//			font-size:10pt;"><span style=" font-family:'Times New Roman'; font-size:12pt;">%WORDS&MUSIC%</span></p>
+//		</body></html>]]>
+//	  </FirstPageHeader>
+//	  <FirstPageFooter>
+//	<![CDATA[<html><head><meta name="qrichtext" content="1" />
+//		<style type="text/css">p, li { white-space: pre-wrap; }</style></head><body style="
+//		font-family:'Lucida Grande'; font-size:13pt; font-weight:400; font-style:normal;">
+//		<p align="right" style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px;
+//		-qt-block-indent:0; text-indent:0px; font-family:'Times';
+//		font-size:14pt;">Page %page%/%pages%</p></body></html>]]>
+//	  </FirstPageFooter>
+//	  <PageHeader>
+//	<![CDATA[]]>
+//	  </PageHeader>
+//	  <PageFooter>
+//	<![CDATA[<html><head><meta name="qrichtext" content="1" /><style type="text/css">p,
+//		li { white-space: pre-wrap; }</style></head><body style=" font-family:'Lucida Grande';
+//		font-size:13pt; font-weight:400; font-style:normal;"><p align="right" style=" margin-top:0px;
+//		margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;
+//		font-family:'Times'; font-size:14pt;">Page %page%/%pages%</p></body></html>]]>
+//	  </PageFooter>
+//	  <ScoreSystemsDefaultLayout>4</ScoreSystemsDefaultLayout>
+//	  <ScoreSystemsLayout>4</ScoreSystemsLayout>
+//	  <ScoreZoomPolicy>Value</ScoreZoomPolicy>
+//	  <ScoreZoom>1</ScoreZoom>
+//	  <MultiVoice>0&gt;</MultiVoice>
+//	</Score>
+
 public struct Score: XMLObjectDeserialization {
 	var title: String
 	var subtitle: String
