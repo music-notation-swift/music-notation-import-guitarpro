@@ -9,6 +9,12 @@
 import Foundation
 import SWXMLHash
 
+//	<Bar id="0">
+//	  <Clef>G2</Clef>
+//	  <Voices>0 -1 -1 -1</Voices>
+//	</Bar>
+
+// The root element of this is the `<Bars>` array
 public struct Bar: XMLObjectDeserialization {
 	var clef: String
 	var voices: [Int]

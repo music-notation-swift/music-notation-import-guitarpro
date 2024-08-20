@@ -9,6 +9,7 @@
 import Foundation
 import SWXMLHash
 
+// The root element of this is the `<GPIF>` element.
 public struct GuitarProInterchangeFormat: XMLObjectDeserialization {
 	public var version: Version
 	public var revision: Revision

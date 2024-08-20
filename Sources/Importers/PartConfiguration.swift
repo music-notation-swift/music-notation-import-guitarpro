@@ -13,8 +13,8 @@ public struct PartsConfigurationBinaryFile {
 	let unknown1: UInt32
 }
 
-public struct PartConfiguration {
-	let rawValue: Int
+public struct PartConfiguration: Sendable {
+	let rawValue: UInt8
 
 	static let standard		= PartConfiguration(rawValue: 1 << 0)
 	static let tablature	= PartConfiguration(rawValue: 1 << 1)
@@ -27,19 +27,18 @@ public struct PartConfiguration {
 extension PartConfiguration {
 	static func partConfigurationArrayFrom(data: Data) throws -> [PartConfiguration] {
 		let dataSize = data.count
-		let minimumPartConfig = MemoryLayout<UInt32> /* Version */ +
-								MemoryLayout<UInt32> /* Unknown1 */ +
-								MemoryLayout<UInt8>  /* Notation settings count */
+		let minimumPartConfig = MemoryLayout<UInt32>.size /* Version */ +
+								MemoryLayout<UInt32>.size /* Unknown1 */ +
+								MemoryLayout<UInt8>.size  /* Notation settings count */
 
 		guard dataSize > minimumPartConfig else { throw PartConfigurationError.DataTooSmallToContainTracks }
 
 		let binaryData = BinaryDataReader(BinaryData(data: data, bigEndian: true), readIndex: 0)
-		let PartsConfiguration
 		let trackCount: UInt8 = try binaryData.read()
 
 		var partConfigurations: [PartConfiguration] = []
 		for _ in 0 ..< trackCount {
-			partConfigurations.append(PartConfiguration(options: try binaryData.read()))
+			partConfigurations.append(PartConfiguration(rawValue: try binaryData.read()))
 		}
 
 		return partConfigurations
