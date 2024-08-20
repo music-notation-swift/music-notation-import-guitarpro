@@ -10,39 +10,47 @@
 import Testing
 
 @Suite final class VersionTests {
-	@Test func invalidVersionString1() async throws {
+	@Test func invalidVersionStringText1() async throws {
 		#expect(throws: VersionError.versionStringMissingComponents) {
 			_ = try Version.withString("asdfasdfasdf")
 		}
 	}
 
-	@Test func invalidVersionString2() async throws {
+	@Test func invalidVersionStringText2() async throws {
 		#expect(throws: VersionError.versionStringMisformed) {
 			_ = try Version.withString("asdfa.sd.fasdf")
 		}
 	}
 
-	@Test func invalidVersionString3() async throws {
+	@Test func invalidVersionStringText3() async throws {
 		#expect(throws: VersionError.versionStringMisformed) {
 			_ = try Version.withString("1.sd.fasdf")
 		}
 	}
 
-	@Test func invalidVersionString4() async throws {
+	@Test func invalidVersionStringText4() async throws {
 		#expect(throws: VersionError.versionStringMisformed) {
 			_ = try Version.withString("1.1.fasdf")
 		}
 	}
 
-	@Test func invalidVersionString5() async throws {
+	@Test func invalidVersionStringText5() async throws {
 		#expect(throws: VersionError.versionStringMisformed) {
 			_ = try Version.withString("1.asd.1")
 		}
 	}
 
-	@Test func invalidVersionString6() async throws {
+	@Test func invalidVersionStringText6() async throws {
 		#expect(throws: VersionError.versionStringMissingComponents) {
 			_ = try Version.withString("1.asd")
 		}
+	}
+
+	@Test func validVersionString() async throws {
+		let version = try Version.withString("1.2.3-rc4")
+		#expect(version.major == 1)
+		#expect(version.minor == 2)
+		#expect(version.patch == 3)
+		#expect(version.prerelease == "rc4")
 	}
 }
