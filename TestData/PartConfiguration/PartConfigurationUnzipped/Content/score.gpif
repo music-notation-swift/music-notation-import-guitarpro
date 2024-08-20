@@ -1,1067 +1,1183 @@
 <?xml version="1.0" encoding="utf-8"?>
 <GPIF>
-<GPVersion>8.1.3</GPVersion>
-<GPRevision required="12026" recommended="13000">13007</GPRevision>
-<Encoding>
-<EncodingDescription>GP8</EncodingDescription>
-</Encoding>
-<Score>
-<Title><![CDATA[]]></Title>
-<SubTitle><![CDATA[]]></SubTitle>
-<Artist><![CDATA[]]></Artist>
-<Album><![CDATA[]]></Album>
-<Words><![CDATA[]]></Words>
-<Music><![CDATA[]]></Music>
-<WordsAndMusic><![CDATA[]]></WordsAndMusic>
-<Copyright><![CDATA[]]></Copyright>
-<Tabber><![CDATA[]]></Tabber>
-<Instructions><![CDATA[]]></Instructions>
-<Notices><![CDATA[]]></Notices>
-<FirstPageHeader><![CDATA[<html><head><meta name="qrichtext" content="1" /><style type="text/css">p, li { white-space: pre-wrap; }</style></head><body style=" font-family:'Times New Roman'; font-size:16pt; font-weight:400; font-style:normal;"><p align="center" style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-family:'Sans Serif'; font-size:10pt;"><span style=" font-family:'Times New Roman'; font-size:35pt;">%TITLE%</span></p><p align="center" style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-family:'Sans Serif'; font-size:10pt;"><span style=" font-family:'Times New Roman'; font-size:16pt;">%SUBTITLE%</span></p><p align="center" style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-family:'Sans Serif'; font-size:10pt;"><span style=" font-family:'Times New Roman'; font-size:16pt;">%ARTIST%</span></p><p align="center" style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-family:'Sans Serif'; font-size:10pt;"><span style=" font-family:'Times New Roman'; font-size:16pt;">%ALBUM%</span></p><p align="center" style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-family:'Sans Serif'; font-size:10pt;"><span style=" font-family:'Times New Roman'; font-size:12pt;">%WORDS&MUSIC%</span></p></body></html>]]></FirstPageHeader>
-<FirstPageFooter><![CDATA[<html><head><meta name="qrichtext" content="1" /><style type="text/css">p, li { white-space: pre-wrap; }</style></head><body style=" font-family:'Lucida Grande'; font-size:13pt; font-weight:400; font-style:normal;"><p align="right" style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-family:'Times'; font-size:14pt;">Page %page%/%pages%</p></body></html>]]></FirstPageFooter>
-<PageHeader><![CDATA[]]></PageHeader>
-<PageFooter><![CDATA[<html><head><meta name="qrichtext" content="1" /><style type="text/css">p, li { white-space: pre-wrap; }</style></head><body style=" font-family:'Lucida Grande'; font-size:13pt; font-weight:400; font-style:normal;"><p align="right" style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-family:'Times'; font-size:14pt;">Page %page%/%pages%</p></body></html>]]></PageFooter>
-<ScoreSystemsDefaultLayout>4</ScoreSystemsDefaultLayout>
-<ScoreSystemsLayout>4</ScoreSystemsLayout>
-<ScoreZoomPolicy>Value</ScoreZoomPolicy>
-<ScoreZoom>1</ScoreZoom>
-<MultiVoice>0></MultiVoice>
-</Score>
-<MasterTrack>
-<Tracks>0 1 2 3 4</Tracks>
-<Automations>
-<Automation>
-<Type>Tempo</Type>
-<Linear>false</Linear>
-<Bar>0</Bar>
-<Position>0</Position>
-<Visible>true</Visible>
-<Value>120 2</Value>
-</Automation>
-</Automations>
-<RSE>
-<Master>
-<Effect id="M06_DynamicAnalogDynamic">
-<ByPass />
-<Parameters>0 0 0.8 0 0.4 0.6 0.5 0.5</Parameters>
-</Effect>
-<Effect id="M03_StudioReverbRoomStudioA">
-<ByPass />
-<Parameters>0 0 0 0 0</Parameters>
-</Effect>
-<Effect id="M08_GraphicEQ10Band">
-<ByPass />
-<Parameters>0 0 0.5 0.5 0.5 0.5 0.5 0.5 0.5 0.5 0.5 0.5 0.5</Parameters>
-</Effect>
-<Effect id="I01_VolumeAndPan">
-<Parameters>0.76 0.5</Parameters>
-</Effect>
-</Master>
-</RSE>
-</MasterTrack>
-<Tracks>
-<Track id="0">
-<Name><![CDATA[one]]></Name>
-<ShortName><![CDATA[el.guit.]]></ShortName>
-<Color>235 152 125</Color>
-<SystemsDefautLayout>3</SystemsDefautLayout>
-<SystemsLayout>1</SystemsLayout>
-<AutoBrush />
-<PalmMute>0.3</PalmMute>
-<AutoAccentuation>0.2</AutoAccentuation>
-<PlayingStyle>StringedPick</PlayingStyle>
-<UseOneChannelPerString />
-<IconId>4</IconId>
-<InstrumentSet>
-<Name>Electric Guitar</Name>
-<Type>electricGuitar</Type>
-<LineCount>5</LineCount>
-<Elements>
-<Element>
-<Name>Pitched</Name>
-<Type>pitched</Type>
-<SoundbankName></SoundbankName>
-<Articulations>
-<Articulation>
-<Name></Name>
-<StaffLine>0</StaffLine>
-<Noteheads>noteheadBlack noteheadHalf noteheadWhole</Noteheads>
-<TechniquePlacement>outside</TechniquePlacement>
-<TechniqueSymbol></TechniqueSymbol>
-<InputMidiNumbers></InputMidiNumbers>
-<OutputRSESound></OutputRSESound>
-<OutputMidiNumber>0</OutputMidiNumber>
-</Articulation>
-</Articulations>
-</Element>
-</Elements>
-</InstrumentSet>
-
-<Transpose>
-<Chromatic>0</Chromatic>
-<Octave>-1</Octave>
-</Transpose>
-<RSE>
-<ChannelStrip version="E56">
-<Parameters>0.5 0.5 0.5 0.5 0.5 0.5 0.5 0.5 0.5 0 0.5 0.5 0.795 0.5 0.5 0.5</Parameters>
-<Automations>
-<Automation>
-<Type>DSPParam_11</Type>
-<Linear>false</Linear>
-<Bar>0</Bar>
-<Position>0</Position>
-<Visible>true</Visible>
-<Value>0.5</Value>
-</Automation>
-<Automation>
-<Type>DSPParam_12</Type>
-<Linear>false</Linear>
-<Bar>0</Bar>
-<Position>0</Position>
-<Visible>true</Visible>
-<Value>0.67</Value>
-</Automation>
-</Automations>
-</ChannelStrip>
-</RSE>
-<ForcedSound>-1</ForcedSound>
-<Sounds>
-<Sound>
-<Name><![CDATA[Clean Strat]]></Name>
-<Label><![CDATA[Clean Strat]]></Label>
-<Path>Stringed/Electric Guitars/Clean Guitar</Path>
-<Role>Factory</Role>
-<MIDI>
-<LSB>0</LSB>
-<MSB>0</MSB>
-<Program>27</Program>
-</MIDI>
-<RSE>
-<SoundbankPatch>Strat-Guitar</SoundbankPatch>
-<ElementsSettings>
-</ElementsSettings>
-<Pickups>
-<OverloudPosition>1</OverloudPosition>
-<Volumes>1 1</Volumes>
-<Tones>1 1</Tones>
-</Pickups>
-<EffectChain>
-<Effect id="A01_ComboTop30">
-<Parameters>0.61 0.59 0.38 0.511667 0.21 0.29 0 0</Parameters>
-</Effect>
-<Effect id="E30_EqGEq">
-<Parameters>0.5 0.5 0.5 0.5 0.5 0.5 0.5 0.541667</Parameters>
-</Effect>
-</EffectChain>
-</RSE>
-</Sound>
-</Sounds>
-<MidiConnection>
-<Port>0</Port>
-<PrimaryChannel>0</PrimaryChannel>
-<SecondaryChannel>1</SecondaryChannel>
-<ForeOneChannelPerString>false</ForeOneChannelPerString>
-</MidiConnection>
-<PlaybackState>Default</PlaybackState>
-<AudioEngineState>RSE</AudioEngineState>
-<Lyrics dispatched="true">
-<Line>
-<Text><![CDATA[]]></Text>
-<Offset>0</Offset>
-</Line>
-<Line>
-<Text><![CDATA[]]></Text>
-<Offset>0</Offset>
-</Line>
-<Line>
-<Text><![CDATA[]]></Text>
-<Offset>0</Offset>
-</Line>
-<Line>
-<Text><![CDATA[]]></Text>
-<Offset>0</Offset>
-</Line>
-<Line>
-<Text><![CDATA[]]></Text>
-<Offset>0</Offset>
-</Line>
-</Lyrics>
-<Staves>
-<Staff>
-<Properties>
-<Property name="CapoFret">
-<Fret>0</Fret>
-</Property>
-<Property name="FretCount">
-<Number>24</Number>
-</Property>
-<Property name="PartialCapoFret">
-<Fret>0</Fret>
-</Property>
-<Property name="PartialCapoStringFlags">
-<Bitset>000000</Bitset>
-</Property>
-<Property name="Tuning">
-<Pitches>40 45 50 55 59 64</Pitches>
-<Flat></Flat>
-<Instrument>Guitar</Instrument>
-<Label><![CDATA[]]></Label>
-<LabelVisible>true</LabelVisible>
-</Property>
-<Property name="ChordCollection">
-<Items/>
-
-</Property>
-<Property name="ChordWorkingSet">
-<Items/>
-
-</Property>
-<Property name="DiagramCollection">
-<Items/>
-
-</Property>
-<Property name="DiagramWorkingSet">
-<Items/>
-
-</Property>
-<Property name="TuningFlat">
-<Enable />
-</Property>
-<Name><![CDATA[Standard]]></Name>
-</Properties>
-</Staff>
-</Staves>
-<Automations>
-<Automation>
-<Type>Sound</Type>
-<Linear>false</Linear>
-<Bar>0</Bar>
-<Position>0</Position>
-<Visible>true</Visible>
-<Value><![CDATA[Stringed/Electric Guitars/Clean Guitar;Clean Strat;Factory]]></Value>
-</Automation>
-</Automations>
-</Track>
-<Track id="1">
-<Name><![CDATA[two]]></Name>
-<ShortName><![CDATA[el.guit.]]></ShortName>
-<Color>235 152 125</Color>
-<SystemsDefautLayout>3</SystemsDefautLayout>
-<SystemsLayout>1</SystemsLayout>
-<AutoBrush />
-<PalmMute>0.3</PalmMute>
-<AutoAccentuation>0.2</AutoAccentuation>
-<PlayingStyle>StringedPick</PlayingStyle>
-<UseOneChannelPerString />
-<IconId>4</IconId>
-<InstrumentSet>
-<Name>Electric Guitar</Name>
-<Type>electricGuitar</Type>
-<LineCount>5</LineCount>
-<Elements>
-<Element>
-<Name>Pitched</Name>
-<Type>pitched</Type>
-<SoundbankName></SoundbankName>
-<Articulations>
-<Articulation>
-<Name></Name>
-<StaffLine>0</StaffLine>
-<Noteheads>noteheadBlack noteheadHalf noteheadWhole</Noteheads>
-<TechniquePlacement>outside</TechniquePlacement>
-<TechniqueSymbol></TechniqueSymbol>
-<InputMidiNumbers></InputMidiNumbers>
-<OutputRSESound></OutputRSESound>
-<OutputMidiNumber>0</OutputMidiNumber>
-</Articulation>
-</Articulations>
-</Element>
-</Elements>
-</InstrumentSet>
-
-<Transpose>
-<Chromatic>0</Chromatic>
-<Octave>-1</Octave>
-</Transpose>
-<RSE>
-<ChannelStrip version="E56">
-<Parameters>0.5 0.5 0.5 0.5 0.5 0.5 0.5 0.5 0.5 0 0.5 0.5 0.795 0.5 0.5 0.5</Parameters>
-<Automations>
-<Automation>
-<Type>DSPParam_11</Type>
-<Linear>false</Linear>
-<Bar>0</Bar>
-<Position>0</Position>
-<Visible>true</Visible>
-<Value>0.5</Value>
-</Automation>
-<Automation>
-<Type>DSPParam_12</Type>
-<Linear>false</Linear>
-<Bar>0</Bar>
-<Position>0</Position>
-<Visible>true</Visible>
-<Value>0.67</Value>
-</Automation>
-</Automations>
-</ChannelStrip>
-</RSE>
-<ForcedSound>-1</ForcedSound>
-<Sounds>
-<Sound>
-<Name><![CDATA[Clean Strat]]></Name>
-<Label><![CDATA[Clean Strat]]></Label>
-<Path>Stringed/Electric Guitars/Clean Guitar</Path>
-<Role>Factory</Role>
-<MIDI>
-<LSB>0</LSB>
-<MSB>0</MSB>
-<Program>27</Program>
-</MIDI>
-<RSE>
-<SoundbankPatch>Strat-Guitar</SoundbankPatch>
-<ElementsSettings>
-</ElementsSettings>
-<Pickups>
-<OverloudPosition>1</OverloudPosition>
-<Volumes>1 1</Volumes>
-<Tones>1 1</Tones>
-</Pickups>
-<EffectChain>
-<Effect id="A01_ComboTop30">
-<Parameters>0.61 0.59 0.38 0.511667 0.21 0.29 0 0</Parameters>
-</Effect>
-<Effect id="E30_EqGEq">
-<Parameters>0.5 0.5 0.5 0.5 0.5 0.5 0.5 0.541667</Parameters>
-</Effect>
-</EffectChain>
-</RSE>
-</Sound>
-</Sounds>
-<MidiConnection>
-<Port>0</Port>
-<PrimaryChannel>2</PrimaryChannel>
-<SecondaryChannel>3</SecondaryChannel>
-<ForeOneChannelPerString>false</ForeOneChannelPerString>
-</MidiConnection>
-<PlaybackState>Default</PlaybackState>
-<AudioEngineState>RSE</AudioEngineState>
-<Lyrics dispatched="true">
-<Line>
-<Text><![CDATA[]]></Text>
-<Offset>0</Offset>
-</Line>
-<Line>
-<Text><![CDATA[]]></Text>
-<Offset>0</Offset>
-</Line>
-<Line>
-<Text><![CDATA[]]></Text>
-<Offset>0</Offset>
-</Line>
-<Line>
-<Text><![CDATA[]]></Text>
-<Offset>0</Offset>
-</Line>
-<Line>
-<Text><![CDATA[]]></Text>
-<Offset>0</Offset>
-</Line>
-</Lyrics>
-<Staves>
-<Staff>
-<Properties>
-<Property name="CapoFret">
-<Fret>0</Fret>
-</Property>
-<Property name="FretCount">
-<Number>24</Number>
-</Property>
-<Property name="PartialCapoFret">
-<Fret>0</Fret>
-</Property>
-<Property name="PartialCapoStringFlags">
-<Bitset>000000</Bitset>
-</Property>
-<Property name="Tuning">
-<Pitches>40 45 50 55 59 64</Pitches>
-<Flat></Flat>
-<Instrument>Guitar</Instrument>
-<Label><![CDATA[]]></Label>
-<LabelVisible>true</LabelVisible>
-</Property>
-<Property name="ChordCollection">
-<Items/>
-
-</Property>
-<Property name="ChordWorkingSet">
-<Items/>
-
-</Property>
-<Property name="DiagramCollection">
-<Items/>
-
-</Property>
-<Property name="DiagramWorkingSet">
-<Items/>
-
-</Property>
-<Property name="TuningFlat">
-<Enable />
-</Property>
-<Name><![CDATA[Standard]]></Name>
-</Properties>
-</Staff>
-</Staves>
-<Automations>
-<Automation>
-<Type>Sound</Type>
-<Linear>false</Linear>
-<Bar>0</Bar>
-<Position>0</Position>
-<Visible>true</Visible>
-<Value><![CDATA[Stringed/Electric Guitars/Clean Guitar;Clean Strat;Factory]]></Value>
-</Automation>
-</Automations>
-</Track>
-<Track id="2">
-<Name><![CDATA[three]]></Name>
-<ShortName><![CDATA[el.guit.]]></ShortName>
-<Color>235 152 125</Color>
-<SystemsDefautLayout>3</SystemsDefautLayout>
-<SystemsLayout>1</SystemsLayout>
-<AutoBrush />
-<PalmMute>0.3</PalmMute>
-<AutoAccentuation>0.2</AutoAccentuation>
-<PlayingStyle>StringedPick</PlayingStyle>
-<UseOneChannelPerString />
-<IconId>4</IconId>
-<InstrumentSet>
-<Name>Electric Guitar</Name>
-<Type>electricGuitar</Type>
-<LineCount>5</LineCount>
-<Elements>
-<Element>
-<Name>Pitched</Name>
-<Type>pitched</Type>
-<SoundbankName></SoundbankName>
-<Articulations>
-<Articulation>
-<Name></Name>
-<StaffLine>0</StaffLine>
-<Noteheads>noteheadBlack noteheadHalf noteheadWhole</Noteheads>
-<TechniquePlacement>outside</TechniquePlacement>
-<TechniqueSymbol></TechniqueSymbol>
-<InputMidiNumbers></InputMidiNumbers>
-<OutputRSESound></OutputRSESound>
-<OutputMidiNumber>0</OutputMidiNumber>
-</Articulation>
-</Articulations>
-</Element>
-</Elements>
-</InstrumentSet>
-
-<Transpose>
-<Chromatic>0</Chromatic>
-<Octave>-1</Octave>
-</Transpose>
-<RSE>
-<ChannelStrip version="E56">
-<Parameters>0.5 0.5 0.5 0.5 0.5 0.5 0.5 0.5 0.5 0 0.5 0.5 0.795 0.5 0.5 0.5</Parameters>
-<Automations>
-<Automation>
-<Type>DSPParam_11</Type>
-<Linear>false</Linear>
-<Bar>0</Bar>
-<Position>0</Position>
-<Visible>true</Visible>
-<Value>0.5</Value>
-</Automation>
-<Automation>
-<Type>DSPParam_12</Type>
-<Linear>false</Linear>
-<Bar>0</Bar>
-<Position>0</Position>
-<Visible>true</Visible>
-<Value>0.67</Value>
-</Automation>
-</Automations>
-</ChannelStrip>
-</RSE>
-<ForcedSound>-1</ForcedSound>
-<Sounds>
-<Sound>
-<Name><![CDATA[Clean Strat]]></Name>
-<Label><![CDATA[Clean Strat]]></Label>
-<Path>Stringed/Electric Guitars/Clean Guitar</Path>
-<Role>Factory</Role>
-<MIDI>
-<LSB>0</LSB>
-<MSB>0</MSB>
-<Program>27</Program>
-</MIDI>
-<RSE>
-<SoundbankPatch>Strat-Guitar</SoundbankPatch>
-<ElementsSettings>
-</ElementsSettings>
-<Pickups>
-<OverloudPosition>1</OverloudPosition>
-<Volumes>1 1</Volumes>
-<Tones>1 1</Tones>
-</Pickups>
-<EffectChain>
-<Effect id="A01_ComboTop30">
-<Parameters>0.61 0.59 0.38 0.511667 0.21 0.29 0 0</Parameters>
-</Effect>
-<Effect id="E30_EqGEq">
-<Parameters>0.5 0.5 0.5 0.5 0.5 0.5 0.5 0.541667</Parameters>
-</Effect>
-</EffectChain>
-</RSE>
-</Sound>
-</Sounds>
-<MidiConnection>
-<Port>0</Port>
-<PrimaryChannel>4</PrimaryChannel>
-<SecondaryChannel>5</SecondaryChannel>
-<ForeOneChannelPerString>false</ForeOneChannelPerString>
-</MidiConnection>
-<PlaybackState>Default</PlaybackState>
-<AudioEngineState>RSE</AudioEngineState>
-<Lyrics dispatched="true">
-<Line>
-<Text><![CDATA[]]></Text>
-<Offset>0</Offset>
-</Line>
-<Line>
-<Text><![CDATA[]]></Text>
-<Offset>0</Offset>
-</Line>
-<Line>
-<Text><![CDATA[]]></Text>
-<Offset>0</Offset>
-</Line>
-<Line>
-<Text><![CDATA[]]></Text>
-<Offset>0</Offset>
-</Line>
-<Line>
-<Text><![CDATA[]]></Text>
-<Offset>0</Offset>
-</Line>
-</Lyrics>
-<Staves>
-<Staff>
-<Properties>
-<Property name="CapoFret">
-<Fret>0</Fret>
-</Property>
-<Property name="FretCount">
-<Number>24</Number>
-</Property>
-<Property name="PartialCapoFret">
-<Fret>0</Fret>
-</Property>
-<Property name="PartialCapoStringFlags">
-<Bitset>000000</Bitset>
-</Property>
-<Property name="Tuning">
-<Pitches>40 45 50 55 59 64</Pitches>
-<Flat></Flat>
-<Instrument>Guitar</Instrument>
-<Label><![CDATA[]]></Label>
-<LabelVisible>true</LabelVisible>
-</Property>
-<Property name="ChordCollection">
-<Items/>
-
-</Property>
-<Property name="ChordWorkingSet">
-<Items/>
-
-</Property>
-<Property name="DiagramCollection">
-<Items/>
-
-</Property>
-<Property name="DiagramWorkingSet">
-<Items/>
-
-</Property>
-<Property name="TuningFlat">
-<Enable />
-</Property>
-<Name><![CDATA[Standard]]></Name>
-</Properties>
-</Staff>
-</Staves>
-<Automations>
-<Automation>
-<Type>Sound</Type>
-<Linear>false</Linear>
-<Bar>0</Bar>
-<Position>0</Position>
-<Visible>true</Visible>
-<Value><![CDATA[Stringed/Electric Guitars/Clean Guitar;Clean Strat;Factory]]></Value>
-</Automation>
-</Automations>
-</Track>
-<Track id="3">
-<Name><![CDATA[four]]></Name>
-<ShortName><![CDATA[el.guit.]]></ShortName>
-<Color>235 152 125</Color>
-<SystemsDefautLayout>3</SystemsDefautLayout>
-<SystemsLayout>1</SystemsLayout>
-<AutoBrush />
-<PalmMute>0.3</PalmMute>
-<AutoAccentuation>0.2</AutoAccentuation>
-<PlayingStyle>StringedPick</PlayingStyle>
-<UseOneChannelPerString />
-<IconId>4</IconId>
-<InstrumentSet>
-<Name>Electric Guitar</Name>
-<Type>electricGuitar</Type>
-<LineCount>5</LineCount>
-<Elements>
-<Element>
-<Name>Pitched</Name>
-<Type>pitched</Type>
-<SoundbankName></SoundbankName>
-<Articulations>
-<Articulation>
-<Name></Name>
-<StaffLine>0</StaffLine>
-<Noteheads>noteheadBlack noteheadHalf noteheadWhole</Noteheads>
-<TechniquePlacement>outside</TechniquePlacement>
-<TechniqueSymbol></TechniqueSymbol>
-<InputMidiNumbers></InputMidiNumbers>
-<OutputRSESound></OutputRSESound>
-<OutputMidiNumber>0</OutputMidiNumber>
-</Articulation>
-</Articulations>
-</Element>
-</Elements>
-</InstrumentSet>
-
-<Transpose>
-<Chromatic>0</Chromatic>
-<Octave>-1</Octave>
-</Transpose>
-<RSE>
-<ChannelStrip version="E56">
-<Parameters>0.5 0.5 0.5 0.5 0.5 0.5 0.5 0.5 0.5 0 0.5 0.5 0.795 0.5 0.5 0.5</Parameters>
-<Automations>
-<Automation>
-<Type>DSPParam_11</Type>
-<Linear>false</Linear>
-<Bar>0</Bar>
-<Position>0</Position>
-<Visible>true</Visible>
-<Value>0.5</Value>
-</Automation>
-<Automation>
-<Type>DSPParam_12</Type>
-<Linear>false</Linear>
-<Bar>0</Bar>
-<Position>0</Position>
-<Visible>true</Visible>
-<Value>0.67</Value>
-</Automation>
-</Automations>
-</ChannelStrip>
-</RSE>
-<ForcedSound>-1</ForcedSound>
-<Sounds>
-<Sound>
-<Name><![CDATA[Clean Strat]]></Name>
-<Label><![CDATA[Clean Strat]]></Label>
-<Path>Stringed/Electric Guitars/Clean Guitar</Path>
-<Role>Factory</Role>
-<MIDI>
-<LSB>0</LSB>
-<MSB>0</MSB>
-<Program>27</Program>
-</MIDI>
-<RSE>
-<SoundbankPatch>Strat-Guitar</SoundbankPatch>
-<ElementsSettings>
-</ElementsSettings>
-<Pickups>
-<OverloudPosition>1</OverloudPosition>
-<Volumes>1 1</Volumes>
-<Tones>1 1</Tones>
-</Pickups>
-<EffectChain>
-<Effect id="A01_ComboTop30">
-<Parameters>0.61 0.59 0.38 0.511667 0.21 0.29 0 0</Parameters>
-</Effect>
-<Effect id="E30_EqGEq">
-<Parameters>0.5 0.5 0.5 0.5 0.5 0.5 0.5 0.541667</Parameters>
-</Effect>
-</EffectChain>
-</RSE>
-</Sound>
-</Sounds>
-<MidiConnection>
-<Port>0</Port>
-<PrimaryChannel>6</PrimaryChannel>
-<SecondaryChannel>7</SecondaryChannel>
-<ForeOneChannelPerString>false</ForeOneChannelPerString>
-</MidiConnection>
-<PlaybackState>Default</PlaybackState>
-<AudioEngineState>RSE</AudioEngineState>
-<Lyrics dispatched="true">
-<Line>
-<Text><![CDATA[]]></Text>
-<Offset>0</Offset>
-</Line>
-<Line>
-<Text><![CDATA[]]></Text>
-<Offset>0</Offset>
-</Line>
-<Line>
-<Text><![CDATA[]]></Text>
-<Offset>0</Offset>
-</Line>
-<Line>
-<Text><![CDATA[]]></Text>
-<Offset>0</Offset>
-</Line>
-<Line>
-<Text><![CDATA[]]></Text>
-<Offset>0</Offset>
-</Line>
-</Lyrics>
-<Staves>
-<Staff>
-<Properties>
-<Property name="CapoFret">
-<Fret>0</Fret>
-</Property>
-<Property name="FretCount">
-<Number>24</Number>
-</Property>
-<Property name="PartialCapoFret">
-<Fret>0</Fret>
-</Property>
-<Property name="PartialCapoStringFlags">
-<Bitset>000000</Bitset>
-</Property>
-<Property name="Tuning">
-<Pitches>40 45 50 55 59 64</Pitches>
-<Flat></Flat>
-<Instrument>Guitar</Instrument>
-<Label><![CDATA[]]></Label>
-<LabelVisible>true</LabelVisible>
-</Property>
-<Property name="ChordCollection">
-<Items/>
-
-</Property>
-<Property name="ChordWorkingSet">
-<Items/>
-
-</Property>
-<Property name="DiagramCollection">
-<Items/>
-
-</Property>
-<Property name="DiagramWorkingSet">
-<Items/>
-
-</Property>
-<Property name="TuningFlat">
-<Enable />
-</Property>
-<Name><![CDATA[Standard]]></Name>
-</Properties>
-</Staff>
-</Staves>
-<Automations>
-<Automation>
-<Type>Sound</Type>
-<Linear>false</Linear>
-<Bar>0</Bar>
-<Position>0</Position>
-<Visible>true</Visible>
-<Value><![CDATA[Stringed/Electric Guitars/Clean Guitar;Clean Strat;Factory]]></Value>
-</Automation>
-</Automations>
-</Track>
-<Track id="4">
-<Name><![CDATA[five]]></Name>
-<ShortName><![CDATA[el.guit.]]></ShortName>
-<Color>235 152 125</Color>
-<SystemsDefautLayout>3</SystemsDefautLayout>
-<SystemsLayout>1</SystemsLayout>
-<AutoBrush />
-<PalmMute>0.3</PalmMute>
-<AutoAccentuation>0.2</AutoAccentuation>
-<PlayingStyle>StringedPick</PlayingStyle>
-<UseOneChannelPerString />
-<IconId>4</IconId>
-<InstrumentSet>
-<Name>Electric Guitar</Name>
-<Type>electricGuitar</Type>
-<LineCount>5</LineCount>
-<Elements>
-<Element>
-<Name>Pitched</Name>
-<Type>pitched</Type>
-<SoundbankName></SoundbankName>
-<Articulations>
-<Articulation>
-<Name></Name>
-<StaffLine>0</StaffLine>
-<Noteheads>noteheadBlack noteheadHalf noteheadWhole</Noteheads>
-<TechniquePlacement>outside</TechniquePlacement>
-<TechniqueSymbol></TechniqueSymbol>
-<InputMidiNumbers></InputMidiNumbers>
-<OutputRSESound></OutputRSESound>
-<OutputMidiNumber>0</OutputMidiNumber>
-</Articulation>
-</Articulations>
-</Element>
-</Elements>
-</InstrumentSet>
-
-<Transpose>
-<Chromatic>0</Chromatic>
-<Octave>0</Octave>
-</Transpose>
-<RSE>
-<ChannelStrip version="E56">
-<Parameters>0.5 0.5 0.5 0.5 0.5 0.5 0.5 0.5 0.5 0 0.5 0.5 0.795 0.5 0.5 0.5</Parameters>
-<Automations>
-<Automation>
-<Type>DSPParam_11</Type>
-<Linear>false</Linear>
-<Bar>0</Bar>
-<Position>0</Position>
-<Visible>true</Visible>
-<Value>0.5</Value>
-</Automation>
-<Automation>
-<Type>DSPParam_12</Type>
-<Linear>false</Linear>
-<Bar>0</Bar>
-<Position>0</Position>
-<Visible>true</Visible>
-<Value>0.67</Value>
-</Automation>
-</Automations>
-</ChannelStrip>
-</RSE>
-<ForcedSound>-1</ForcedSound>
-<Sounds>
-<Sound>
-<Name><![CDATA[Clean Strat]]></Name>
-<Label><![CDATA[Clean Strat]]></Label>
-<Path>Stringed/Electric Guitars/Clean Guitar</Path>
-<Role>Factory</Role>
-<MIDI>
-<LSB>0</LSB>
-<MSB>0</MSB>
-<Program>27</Program>
-</MIDI>
-<RSE>
-<SoundbankPatch>Strat-Guitar</SoundbankPatch>
-<ElementsSettings>
-</ElementsSettings>
-<Pickups>
-<OverloudPosition>1</OverloudPosition>
-<Volumes>1 1</Volumes>
-<Tones>1 1</Tones>
-</Pickups>
-<EffectChain>
-<Effect id="A01_ComboTop30">
-<Parameters>0.61 0.59 0.38 0.511667 0.21 0.29 0 0</Parameters>
-</Effect>
-<Effect id="E30_EqGEq">
-<Parameters>0.5 0.5 0.5 0.5 0.5 0.5 0.5 0.541667</Parameters>
-</Effect>
-</EffectChain>
-</RSE>
-</Sound>
-</Sounds>
-<MidiConnection>
-<Port>0</Port>
-<PrimaryChannel>8</PrimaryChannel>
-<SecondaryChannel>10</SecondaryChannel>
-<ForeOneChannelPerString>false</ForeOneChannelPerString>
-</MidiConnection>
-<PlaybackState>Default</PlaybackState>
-<AudioEngineState>RSE</AudioEngineState>
-<Lyrics dispatched="true">
-<Line>
-<Text><![CDATA[]]></Text>
-<Offset>0</Offset>
-</Line>
-<Line>
-<Text><![CDATA[]]></Text>
-<Offset>0</Offset>
-</Line>
-<Line>
-<Text><![CDATA[]]></Text>
-<Offset>0</Offset>
-</Line>
-<Line>
-<Text><![CDATA[]]></Text>
-<Offset>0</Offset>
-</Line>
-<Line>
-<Text><![CDATA[]]></Text>
-<Offset>0</Offset>
-</Line>
-</Lyrics>
-<Staves>
-<Staff>
-<Properties>
-<Property name="CapoFret">
-<Fret>0</Fret>
-</Property>
-<Property name="FretCount">
-<Number>24</Number>
-</Property>
-<Property name="PartialCapoFret">
-<Fret>0</Fret>
-</Property>
-<Property name="PartialCapoStringFlags">
-<Bitset>000000</Bitset>
-</Property>
-<Property name="Tuning">
-<Pitches>40 45 50 55 59 64</Pitches>
-<Flat></Flat>
-<Instrument>Guitar</Instrument>
-<Label><![CDATA[]]></Label>
-<LabelVisible>true</LabelVisible>
-</Property>
-<Property name="ChordCollection">
-<Items/>
-
-</Property>
-<Property name="ChordWorkingSet">
-<Items/>
-
-</Property>
-<Property name="DiagramCollection">
-<Items/>
-
-</Property>
-<Property name="DiagramWorkingSet">
-<Items/>
-
-</Property>
-<Property name="TuningFlat">
-<Enable />
-</Property>
-<Name><![CDATA[Standard]]></Name>
-</Properties>
-</Staff>
-<Staff>
-<Properties>
-<Property name="CapoFret">
-<Fret>0</Fret>
-</Property>
-<Property name="FretCount">
-<Number>24</Number>
-</Property>
-<Property name="PartialCapoFret">
-<Fret>0</Fret>
-</Property>
-<Property name="PartialCapoStringFlags">
-<Bitset>00000</Bitset>
-</Property>
-<Property name="Tuning">
-<Pitches>23 28 33 38 43</Pitches>
-<Instrument>Bass</Instrument>
-<Label><![CDATA[]]></Label>
-<LabelVisible>true</LabelVisible>
-</Property>
-<Property name="ChordCollection">
-<Items/>
-
-</Property>
-<Property name="ChordWorkingSet">
-<Items/>
-
-</Property>
-<Property name="DiagramCollection">
-<Items/>
-
-</Property>
-<Property name="DiagramWorkingSet">
-<Items/>
-
-</Property>
-<Name><![CDATA[Standard]]></Name>
-</Properties>
-</Staff>
-</Staves>
-<Automations>
-<Automation>
-<Type>Sound</Type>
-<Linear>false</Linear>
-<Bar>0</Bar>
-<Position>0</Position>
-<Visible>true</Visible>
-<Value><![CDATA[Stringed/Electric Guitars/Clean Guitar;Clean Strat;Factory]]></Value>
-</Automation>
-</Automations>
-</Track>
-</Tracks>
-<MasterBars>
-<!-- order is important here -->
-<MasterBar>
-<Key>
-<AccidentalCount>0</AccidentalCount>
-<Mode>Major</Mode>
-<TransposeAs>Sharps</TransposeAs>
-</Key>
-<Time>4/4</Time>
-<Bars>0 1 2 3 4 5</Bars>
-</MasterBar>
-</MasterBars>
-<Bars>
-<Bar id="0">
-<Clef>G2</Clef>
-<Voices>-1 -1 -1 -1</Voices>
-</Bar>
-<Bar id="1">
-<Clef>G2</Clef>
-<Voices>-1 -1 -1 -1</Voices>
-</Bar>
-<Bar id="2">
-<Clef>G2</Clef>
-<Voices>-1 -1 -1 -1</Voices>
-</Bar>
-<Bar id="3">
-<Clef>G2</Clef>
-<Voices>-1 -1 -1 -1</Voices>
-</Bar>
-<Bar id="4">
-<Clef>G2</Clef>
-<Voices>-1 -1 -1 -1</Voices>
-</Bar>
-<Bar id="5">
-<Clef>F4</Clef>
-<Voices>-1 -1 -1 -1</Voices>
-</Bar>
-</Bars>
-<Voices>
-</Voices>
-<Beats>
-</Beats>
-<Notes>
-</Notes>
-<Rhythms>
-</Rhythms>
-<ScoreViews>
-<ScoreView id="0"/>
-<ScoreView id="1"/>
-<ScoreView id="2"/>
-<ScoreView id="3"/>
-<ScoreView id="4"/>
-<ScoreView id="5"/>
-</ScoreViews>
+  <GPVersion>8.1.3</GPVersion>
+  <GPRevision required="12026" recommended="13000">13007</GPRevision>
+  <Encoding>
+    <EncodingDescription>GP8</EncodingDescription>
+  </Encoding>
+  <Score>
+    <Title>
+<![CDATA[]]>
+    </Title>
+    <SubTitle>
+<![CDATA[]]>
+    </SubTitle>
+    <Artist>
+<![CDATA[]]>
+    </Artist>
+    <Album>
+<![CDATA[]]>
+    </Album>
+    <Words>
+<![CDATA[]]>
+    </Words>
+    <Music>
+<![CDATA[]]>
+    </Music>
+    <WordsAndMusic>
+<![CDATA[]]>
+    </WordsAndMusic>
+    <Copyright>
+<![CDATA[]]>
+    </Copyright>
+    <Tabber>
+<![CDATA[]]>
+    </Tabber>
+    <Instructions>
+<![CDATA[]]>
+    </Instructions>
+    <Notices>
+<![CDATA[]]>
+    </Notices>
+    <FirstPageHeader>
+<![CDATA[<html><head><meta name="qrichtext" content="1" /><style type="text/css">p, li { white-space: pre-wrap; }</style></head><body style=" font-family:'Times New Roman'; font-size:16pt; font-weight:400; font-style:normal;"><p align="center" style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-family:'Sans Serif'; font-size:10pt;"><span style=" font-family:'Times New Roman'; font-size:35pt;">%TITLE%</span></p><p align="center" style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-family:'Sans Serif'; font-size:10pt;"><span style=" font-family:'Times New Roman'; font-size:16pt;">%SUBTITLE%</span></p><p align="center" style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-family:'Sans Serif'; font-size:10pt;"><span style=" font-family:'Times New Roman'; font-size:16pt;">%ARTIST%</span></p><p align="center" style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-family:'Sans Serif'; font-size:10pt;"><span style=" font-family:'Times New Roman'; font-size:16pt;">%ALBUM%</span></p><p align="center" style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-family:'Sans Serif'; font-size:10pt;"><span style=" font-family:'Times New Roman'; font-size:12pt;">%WORDS&MUSIC%</span></p></body></html>]]>
+    </FirstPageHeader>
+    <FirstPageFooter>
+<![CDATA[<html><head><meta name="qrichtext" content="1" /><style type="text/css">p, li { white-space: pre-wrap; }</style></head><body style=" font-family:'Lucida Grande'; font-size:13pt; font-weight:400; font-style:normal;"><p align="right" style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-family:'Times'; font-size:14pt;">Page %page%/%pages%</p></body></html>]]>
+    </FirstPageFooter>
+    <PageHeader>
+<![CDATA[]]>
+    </PageHeader>
+    <PageFooter>
+<![CDATA[<html><head><meta name="qrichtext" content="1" /><style type="text/css">p, li { white-space: pre-wrap; }</style></head><body style=" font-family:'Lucida Grande'; font-size:13pt; font-weight:400; font-style:normal;"><p align="right" style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-family:'Times'; font-size:14pt;">Page %page%/%pages%</p></body></html>]]>
+    </PageFooter>
+    <ScoreSystemsDefaultLayout>4</ScoreSystemsDefaultLayout>
+    <ScoreSystemsLayout>4</ScoreSystemsLayout>
+    <ScoreZoomPolicy>Value</ScoreZoomPolicy>
+    <ScoreZoom>1</ScoreZoom>
+    <MultiVoice>0&gt;</MultiVoice>
+  </Score>
+  <MasterTrack>
+    <Tracks>0 1 2 3 4</Tracks>
+    <Automations>
+      <Automation>
+        <Type>Tempo</Type>
+        <Linear>false</Linear>
+        <Bar>0</Bar>
+        <Position>0</Position>
+        <Visible>true</Visible>
+        <Value>120 2</Value>
+      </Automation>
+    </Automations>
+    <RSE>
+      <Master>
+        <Effect id="M06_DynamicAnalogDynamic">
+          <ByPass />
+          <Parameters>0 0 0.8 0 0.4 0.6 0.5 0.5</Parameters>
+        </Effect>
+        <Effect id="M03_StudioReverbRoomStudioA">
+          <ByPass />
+          <Parameters>0 0 0 0 0</Parameters>
+        </Effect>
+        <Effect id="M08_GraphicEQ10Band">
+          <ByPass />
+          <Parameters>0 0 0.5 0.5 0.5 0.5 0.5 0.5 0.5 0.5 0.5 0.5 0.5</Parameters>
+        </Effect>
+        <Effect id="I01_VolumeAndPan">
+          <Parameters>0.76 0.5</Parameters>
+        </Effect>
+      </Master>
+    </RSE>
+  </MasterTrack>
+  <Tracks>
+    <Track id="0">
+      <Name>
+<![CDATA[one]]>
+      </Name>
+      <ShortName>
+<![CDATA[el.guit.]]>
+      </ShortName>
+      <Color>235 152 125</Color>
+      <SystemsDefautLayout>3</SystemsDefautLayout>
+      <SystemsLayout>1</SystemsLayout>
+      <AutoBrush />
+      <PalmMute>0.3</PalmMute>
+      <AutoAccentuation>0.2</AutoAccentuation>
+      <PlayingStyle>StringedPick</PlayingStyle>
+      <UseOneChannelPerString />
+      <IconId>4</IconId>
+      <InstrumentSet>
+        <Name>Electric Guitar</Name>
+        <Type>electricGuitar</Type>
+        <LineCount>5</LineCount>
+        <Elements>
+          <Element>
+            <Name>Pitched</Name>
+            <Type>pitched</Type>
+            <SoundbankName></SoundbankName>
+            <Articulations>
+              <Articulation>
+                <Name></Name>
+                <StaffLine>0</StaffLine>
+                <Noteheads>noteheadBlack noteheadHalf noteheadWhole</Noteheads>
+                <TechniquePlacement>outside</TechniquePlacement>
+                <TechniqueSymbol></TechniqueSymbol>
+                <InputMidiNumbers></InputMidiNumbers>
+                <OutputRSESound></OutputRSESound>
+                <OutputMidiNumber>0</OutputMidiNumber>
+              </Articulation>
+            </Articulations>
+          </Element>
+        </Elements>
+      </InstrumentSet>
+      <Transpose>
+        <Chromatic>0</Chromatic>
+        <Octave>-1</Octave>
+      </Transpose>
+      <RSE>
+        <ChannelStrip version="E56">
+          <Parameters>0.5 0.5 0.5 0.5 0.5 0.5 0.5 0.5 0.5 0 0.5 0.5 0.795 0.5 0.5 0.5</Parameters>
+          <Automations>
+            <Automation>
+              <Type>DSPParam_11</Type>
+              <Linear>false</Linear>
+              <Bar>0</Bar>
+              <Position>0</Position>
+              <Visible>true</Visible>
+              <Value>0.5</Value>
+            </Automation>
+            <Automation>
+              <Type>DSPParam_12</Type>
+              <Linear>false</Linear>
+              <Bar>0</Bar>
+              <Position>0</Position>
+              <Visible>true</Visible>
+              <Value>0.67</Value>
+            </Automation>
+          </Automations>
+        </ChannelStrip>
+      </RSE>
+      <ForcedSound>-1</ForcedSound>
+      <Sounds>
+        <Sound>
+          <Name>
+<![CDATA[Clean Strat]]>
+          </Name>
+          <Label>
+<![CDATA[Clean Strat]]>
+          </Label>
+          <Path>Stringed/Electric Guitars/Clean Guitar</Path>
+          <Role>Factory</Role>
+          <MIDI>
+            <LSB>0</LSB>
+            <MSB>0</MSB>
+            <Program>27</Program>
+          </MIDI>
+          <RSE>
+            <SoundbankPatch>Strat-Guitar</SoundbankPatch>
+            <ElementsSettings></ElementsSettings>
+            <Pickups>
+              <OverloudPosition>1</OverloudPosition>
+              <Volumes>1 1</Volumes>
+              <Tones>1 1</Tones>
+            </Pickups>
+            <EffectChain>
+              <Effect id="A01_ComboTop30">
+                <Parameters>0.61 0.59 0.38 0.511667 0.21 0.29 0 0</Parameters>
+              </Effect>
+              <Effect id="E30_EqGEq">
+                <Parameters>0.5 0.5 0.5 0.5 0.5 0.5 0.5 0.541667</Parameters>
+              </Effect>
+            </EffectChain>
+          </RSE>
+        </Sound>
+      </Sounds>
+      <MidiConnection>
+        <Port>0</Port>
+        <PrimaryChannel>0</PrimaryChannel>
+        <SecondaryChannel>1</SecondaryChannel>
+        <ForeOneChannelPerString>false</ForeOneChannelPerString>
+      </MidiConnection>
+      <PlaybackState>Default</PlaybackState>
+      <AudioEngineState>RSE</AudioEngineState>
+      <Lyrics dispatched="true">
+        <Line>
+          <Text>
+<![CDATA[]]>
+          </Text>
+          <Offset>0</Offset>
+        </Line>
+        <Line>
+          <Text>
+<![CDATA[]]>
+          </Text>
+          <Offset>0</Offset>
+        </Line>
+        <Line>
+          <Text>
+<![CDATA[]]>
+          </Text>
+          <Offset>0</Offset>
+        </Line>
+        <Line>
+          <Text>
+<![CDATA[]]>
+          </Text>
+          <Offset>0</Offset>
+        </Line>
+        <Line>
+          <Text>
+<![CDATA[]]>
+          </Text>
+          <Offset>0</Offset>
+        </Line>
+      </Lyrics>
+      <Staves>
+        <Staff>
+          <Properties>
+            <Property name="CapoFret">
+              <Fret>0</Fret>
+            </Property>
+            <Property name="FretCount">
+              <Number>24</Number>
+            </Property>
+            <Property name="PartialCapoFret">
+              <Fret>0</Fret>
+            </Property>
+            <Property name="PartialCapoStringFlags">
+              <Bitset>000000</Bitset>
+            </Property>
+            <Property name="Tuning">
+              <Pitches>40 45 50 55 59 64</Pitches>
+              <Flat></Flat>
+              <Instrument>Guitar</Instrument>
+              <Label>
+<![CDATA[]]>
+              </Label>
+              <LabelVisible>true</LabelVisible>
+            </Property>
+            <Property name="ChordCollection">
+              <Items />
+            </Property>
+            <Property name="ChordWorkingSet">
+              <Items />
+            </Property>
+            <Property name="DiagramCollection">
+              <Items />
+            </Property>
+            <Property name="DiagramWorkingSet">
+              <Items />
+            </Property>
+            <Property name="TuningFlat">
+              <Enable />
+            </Property>
+            <Name>
+<![CDATA[Standard]]>
+            </Name>
+          </Properties>
+        </Staff>
+      </Staves>
+      <Automations>
+        <Automation>
+          <Type>Sound</Type>
+          <Linear>false</Linear>
+          <Bar>0</Bar>
+          <Position>0</Position>
+          <Visible>true</Visible>
+          <Value>
+<![CDATA[Stringed/Electric Guitars/Clean Guitar;Clean Strat;Factory]]>
+          </Value>
+        </Automation>
+      </Automations>
+    </Track>
+    <Track id="1">
+      <Name>
+<![CDATA[two]]>
+      </Name>
+      <ShortName>
+<![CDATA[el.guit.]]>
+      </ShortName>
+      <Color>235 152 125</Color>
+      <SystemsDefautLayout>3</SystemsDefautLayout>
+      <SystemsLayout>1</SystemsLayout>
+      <AutoBrush />
+      <PalmMute>0.3</PalmMute>
+      <AutoAccentuation>0.2</AutoAccentuation>
+      <PlayingStyle>StringedPick</PlayingStyle>
+      <UseOneChannelPerString />
+      <IconId>4</IconId>
+      <InstrumentSet>
+        <Name>Electric Guitar</Name>
+        <Type>electricGuitar</Type>
+        <LineCount>5</LineCount>
+        <Elements>
+          <Element>
+            <Name>Pitched</Name>
+            <Type>pitched</Type>
+            <SoundbankName></SoundbankName>
+            <Articulations>
+              <Articulation>
+                <Name></Name>
+                <StaffLine>0</StaffLine>
+                <Noteheads>noteheadBlack noteheadHalf noteheadWhole</Noteheads>
+                <TechniquePlacement>outside</TechniquePlacement>
+                <TechniqueSymbol></TechniqueSymbol>
+                <InputMidiNumbers></InputMidiNumbers>
+                <OutputRSESound></OutputRSESound>
+                <OutputMidiNumber>0</OutputMidiNumber>
+              </Articulation>
+            </Articulations>
+          </Element>
+        </Elements>
+      </InstrumentSet>
+      <Transpose>
+        <Chromatic>0</Chromatic>
+        <Octave>-1</Octave>
+      </Transpose>
+      <RSE>
+        <ChannelStrip version="E56">
+          <Parameters>0.5 0.5 0.5 0.5 0.5 0.5 0.5 0.5 0.5 0 0.5 0.5 0.795 0.5 0.5 0.5</Parameters>
+          <Automations>
+            <Automation>
+              <Type>DSPParam_11</Type>
+              <Linear>false</Linear>
+              <Bar>0</Bar>
+              <Position>0</Position>
+              <Visible>true</Visible>
+              <Value>0.5</Value>
+            </Automation>
+            <Automation>
+              <Type>DSPParam_12</Type>
+              <Linear>false</Linear>
+              <Bar>0</Bar>
+              <Position>0</Position>
+              <Visible>true</Visible>
+              <Value>0.67</Value>
+            </Automation>
+          </Automations>
+        </ChannelStrip>
+      </RSE>
+      <ForcedSound>-1</ForcedSound>
+      <Sounds>
+        <Sound>
+          <Name>
+<![CDATA[Clean Strat]]>
+          </Name>
+          <Label>
+<![CDATA[Clean Strat]]>
+          </Label>
+          <Path>Stringed/Electric Guitars/Clean Guitar</Path>
+          <Role>Factory</Role>
+          <MIDI>
+            <LSB>0</LSB>
+            <MSB>0</MSB>
+            <Program>27</Program>
+          </MIDI>
+          <RSE>
+            <SoundbankPatch>Strat-Guitar</SoundbankPatch>
+            <ElementsSettings></ElementsSettings>
+            <Pickups>
+              <OverloudPosition>1</OverloudPosition>
+              <Volumes>1 1</Volumes>
+              <Tones>1 1</Tones>
+            </Pickups>
+            <EffectChain>
+              <Effect id="A01_ComboTop30">
+                <Parameters>0.61 0.59 0.38 0.511667 0.21 0.29 0 0</Parameters>
+              </Effect>
+              <Effect id="E30_EqGEq">
+                <Parameters>0.5 0.5 0.5 0.5 0.5 0.5 0.5 0.541667</Parameters>
+              </Effect>
+            </EffectChain>
+          </RSE>
+        </Sound>
+      </Sounds>
+      <MidiConnection>
+        <Port>0</Port>
+        <PrimaryChannel>2</PrimaryChannel>
+        <SecondaryChannel>3</SecondaryChannel>
+        <ForeOneChannelPerString>false</ForeOneChannelPerString>
+      </MidiConnection>
+      <PlaybackState>Default</PlaybackState>
+      <AudioEngineState>RSE</AudioEngineState>
+      <Lyrics dispatched="true">
+        <Line>
+          <Text>
+<![CDATA[]]>
+          </Text>
+          <Offset>0</Offset>
+        </Line>
+        <Line>
+          <Text>
+<![CDATA[]]>
+          </Text>
+          <Offset>0</Offset>
+        </Line>
+        <Line>
+          <Text>
+<![CDATA[]]>
+          </Text>
+          <Offset>0</Offset>
+        </Line>
+        <Line>
+          <Text>
+<![CDATA[]]>
+          </Text>
+          <Offset>0</Offset>
+        </Line>
+        <Line>
+          <Text>
+<![CDATA[]]>
+          </Text>
+          <Offset>0</Offset>
+        </Line>
+      </Lyrics>
+      <Staves>
+        <Staff>
+          <Properties>
+            <Property name="CapoFret">
+              <Fret>0</Fret>
+            </Property>
+            <Property name="FretCount">
+              <Number>24</Number>
+            </Property>
+            <Property name="PartialCapoFret">
+              <Fret>0</Fret>
+            </Property>
+            <Property name="PartialCapoStringFlags">
+              <Bitset>000000</Bitset>
+            </Property>
+            <Property name="Tuning">
+              <Pitches>40 45 50 55 59 64</Pitches>
+              <Flat></Flat>
+              <Instrument>Guitar</Instrument>
+              <Label>
+<![CDATA[]]>
+              </Label>
+              <LabelVisible>true</LabelVisible>
+            </Property>
+            <Property name="ChordCollection">
+              <Items />
+            </Property>
+            <Property name="ChordWorkingSet">
+              <Items />
+            </Property>
+            <Property name="DiagramCollection">
+              <Items />
+            </Property>
+            <Property name="DiagramWorkingSet">
+              <Items />
+            </Property>
+            <Property name="TuningFlat">
+              <Enable />
+            </Property>
+            <Name>
+<![CDATA[Standard]]>
+            </Name>
+          </Properties>
+        </Staff>
+      </Staves>
+      <Automations>
+        <Automation>
+          <Type>Sound</Type>
+          <Linear>false</Linear>
+          <Bar>0</Bar>
+          <Position>0</Position>
+          <Visible>true</Visible>
+          <Value>
+<![CDATA[Stringed/Electric Guitars/Clean Guitar;Clean Strat;Factory]]>
+          </Value>
+        </Automation>
+      </Automations>
+    </Track>
+    <Track id="2">
+      <Name>
+<![CDATA[three]]>
+      </Name>
+      <ShortName>
+<![CDATA[el.guit.]]>
+      </ShortName>
+      <Color>235 152 125</Color>
+      <SystemsDefautLayout>3</SystemsDefautLayout>
+      <SystemsLayout>1</SystemsLayout>
+      <AutoBrush />
+      <PalmMute>0.3</PalmMute>
+      <AutoAccentuation>0.2</AutoAccentuation>
+      <PlayingStyle>StringedPick</PlayingStyle>
+      <UseOneChannelPerString />
+      <IconId>4</IconId>
+      <InstrumentSet>
+        <Name>Electric Guitar</Name>
+        <Type>electricGuitar</Type>
+        <LineCount>5</LineCount>
+        <Elements>
+          <Element>
+            <Name>Pitched</Name>
+            <Type>pitched</Type>
+            <SoundbankName></SoundbankName>
+            <Articulations>
+              <Articulation>
+                <Name></Name>
+                <StaffLine>0</StaffLine>
+                <Noteheads>noteheadBlack noteheadHalf noteheadWhole</Noteheads>
+                <TechniquePlacement>outside</TechniquePlacement>
+                <TechniqueSymbol></TechniqueSymbol>
+                <InputMidiNumbers></InputMidiNumbers>
+                <OutputRSESound></OutputRSESound>
+                <OutputMidiNumber>0</OutputMidiNumber>
+              </Articulation>
+            </Articulations>
+          </Element>
+        </Elements>
+      </InstrumentSet>
+      <Transpose>
+        <Chromatic>0</Chromatic>
+        <Octave>-1</Octave>
+      </Transpose>
+      <RSE>
+        <ChannelStrip version="E56">
+          <Parameters>0.5 0.5 0.5 0.5 0.5 0.5 0.5 0.5 0.5 0 0.5 0.5 0.795 0.5 0.5 0.5</Parameters>
+          <Automations>
+            <Automation>
+              <Type>DSPParam_11</Type>
+              <Linear>false</Linear>
+              <Bar>0</Bar>
+              <Position>0</Position>
+              <Visible>true</Visible>
+              <Value>0.5</Value>
+            </Automation>
+            <Automation>
+              <Type>DSPParam_12</Type>
+              <Linear>false</Linear>
+              <Bar>0</Bar>
+              <Position>0</Position>
+              <Visible>true</Visible>
+              <Value>0.67</Value>
+            </Automation>
+          </Automations>
+        </ChannelStrip>
+      </RSE>
+      <ForcedSound>-1</ForcedSound>
+      <Sounds>
+        <Sound>
+          <Name>
+<![CDATA[Clean Strat]]>
+          </Name>
+          <Label>
+<![CDATA[Clean Strat]]>
+          </Label>
+          <Path>Stringed/Electric Guitars/Clean Guitar</Path>
+          <Role>Factory</Role>
+          <MIDI>
+            <LSB>0</LSB>
+            <MSB>0</MSB>
+            <Program>27</Program>
+          </MIDI>
+          <RSE>
+            <SoundbankPatch>Strat-Guitar</SoundbankPatch>
+            <ElementsSettings></ElementsSettings>
+            <Pickups>
+              <OverloudPosition>1</OverloudPosition>
+              <Volumes>1 1</Volumes>
+              <Tones>1 1</Tones>
+            </Pickups>
+            <EffectChain>
+              <Effect id="A01_ComboTop30">
+                <Parameters>0.61 0.59 0.38 0.511667 0.21 0.29 0 0</Parameters>
+              </Effect>
+              <Effect id="E30_EqGEq">
+                <Parameters>0.5 0.5 0.5 0.5 0.5 0.5 0.5 0.541667</Parameters>
+              </Effect>
+            </EffectChain>
+          </RSE>
+        </Sound>
+      </Sounds>
+      <MidiConnection>
+        <Port>0</Port>
+        <PrimaryChannel>4</PrimaryChannel>
+        <SecondaryChannel>5</SecondaryChannel>
+        <ForeOneChannelPerString>false</ForeOneChannelPerString>
+      </MidiConnection>
+      <PlaybackState>Default</PlaybackState>
+      <AudioEngineState>RSE</AudioEngineState>
+      <Lyrics dispatched="true">
+        <Line>
+          <Text>
+<![CDATA[]]>
+          </Text>
+          <Offset>0</Offset>
+        </Line>
+        <Line>
+          <Text>
+<![CDATA[]]>
+          </Text>
+          <Offset>0</Offset>
+        </Line>
+        <Line>
+          <Text>
+<![CDATA[]]>
+          </Text>
+          <Offset>0</Offset>
+        </Line>
+        <Line>
+          <Text>
+<![CDATA[]]>
+          </Text>
+          <Offset>0</Offset>
+        </Line>
+        <Line>
+          <Text>
+<![CDATA[]]>
+          </Text>
+          <Offset>0</Offset>
+        </Line>
+      </Lyrics>
+      <Staves>
+        <Staff>
+          <Properties>
+            <Property name="CapoFret">
+              <Fret>0</Fret>
+            </Property>
+            <Property name="FretCount">
+              <Number>24</Number>
+            </Property>
+            <Property name="PartialCapoFret">
+              <Fret>0</Fret>
+            </Property>
+            <Property name="PartialCapoStringFlags">
+              <Bitset>000000</Bitset>
+            </Property>
+            <Property name="Tuning">
+              <Pitches>40 45 50 55 59 64</Pitches>
+              <Flat></Flat>
+              <Instrument>Guitar</Instrument>
+              <Label>
+<![CDATA[]]>
+              </Label>
+              <LabelVisible>true</LabelVisible>
+            </Property>
+            <Property name="ChordCollection">
+              <Items />
+            </Property>
+            <Property name="ChordWorkingSet">
+              <Items />
+            </Property>
+            <Property name="DiagramCollection">
+              <Items />
+            </Property>
+            <Property name="DiagramWorkingSet">
+              <Items />
+            </Property>
+            <Property name="TuningFlat">
+              <Enable />
+            </Property>
+            <Name>
+<![CDATA[Standard]]>
+            </Name>
+          </Properties>
+        </Staff>
+      </Staves>
+      <Automations>
+        <Automation>
+          <Type>Sound</Type>
+          <Linear>false</Linear>
+          <Bar>0</Bar>
+          <Position>0</Position>
+          <Visible>true</Visible>
+          <Value>
+<![CDATA[Stringed/Electric Guitars/Clean Guitar;Clean Strat;Factory]]>
+          </Value>
+        </Automation>
+      </Automations>
+    </Track>
+    <Track id="3">
+      <Name>
+<![CDATA[four]]>
+      </Name>
+      <ShortName>
+<![CDATA[el.guit.]]>
+      </ShortName>
+      <Color>235 152 125</Color>
+      <SystemsDefautLayout>3</SystemsDefautLayout>
+      <SystemsLayout>1</SystemsLayout>
+      <AutoBrush />
+      <PalmMute>0.3</PalmMute>
+      <AutoAccentuation>0.2</AutoAccentuation>
+      <PlayingStyle>StringedPick</PlayingStyle>
+      <UseOneChannelPerString />
+      <IconId>4</IconId>
+      <InstrumentSet>
+        <Name>Electric Guitar</Name>
+        <Type>electricGuitar</Type>
+        <LineCount>5</LineCount>
+        <Elements>
+          <Element>
+            <Name>Pitched</Name>
+            <Type>pitched</Type>
+            <SoundbankName></SoundbankName>
+            <Articulations>
+              <Articulation>
+                <Name></Name>
+                <StaffLine>0</StaffLine>
+                <Noteheads>noteheadBlack noteheadHalf noteheadWhole</Noteheads>
+                <TechniquePlacement>outside</TechniquePlacement>
+                <TechniqueSymbol></TechniqueSymbol>
+                <InputMidiNumbers></InputMidiNumbers>
+                <OutputRSESound></OutputRSESound>
+                <OutputMidiNumber>0</OutputMidiNumber>
+              </Articulation>
+            </Articulations>
+          </Element>
+        </Elements>
+      </InstrumentSet>
+      <Transpose>
+        <Chromatic>0</Chromatic>
+        <Octave>-1</Octave>
+      </Transpose>
+      <RSE>
+        <ChannelStrip version="E56">
+          <Parameters>0.5 0.5 0.5 0.5 0.5 0.5 0.5 0.5 0.5 0 0.5 0.5 0.795 0.5 0.5 0.5</Parameters>
+          <Automations>
+            <Automation>
+              <Type>DSPParam_11</Type>
+              <Linear>false</Linear>
+              <Bar>0</Bar>
+              <Position>0</Position>
+              <Visible>true</Visible>
+              <Value>0.5</Value>
+            </Automation>
+            <Automation>
+              <Type>DSPParam_12</Type>
+              <Linear>false</Linear>
+              <Bar>0</Bar>
+              <Position>0</Position>
+              <Visible>true</Visible>
+              <Value>0.67</Value>
+            </Automation>
+          </Automations>
+        </ChannelStrip>
+      </RSE>
+      <ForcedSound>-1</ForcedSound>
+      <Sounds>
+        <Sound>
+          <Name>
+<![CDATA[Clean Strat]]>
+          </Name>
+          <Label>
+<![CDATA[Clean Strat]]>
+          </Label>
+          <Path>Stringed/Electric Guitars/Clean Guitar</Path>
+          <Role>Factory</Role>
+          <MIDI>
+            <LSB>0</LSB>
+            <MSB>0</MSB>
+            <Program>27</Program>
+          </MIDI>
+          <RSE>
+            <SoundbankPatch>Strat-Guitar</SoundbankPatch>
+            <ElementsSettings></ElementsSettings>
+            <Pickups>
+              <OverloudPosition>1</OverloudPosition>
+              <Volumes>1 1</Volumes>
+              <Tones>1 1</Tones>
+            </Pickups>
+            <EffectChain>
+              <Effect id="A01_ComboTop30">
+                <Parameters>0.61 0.59 0.38 0.511667 0.21 0.29 0 0</Parameters>
+              </Effect>
+              <Effect id="E30_EqGEq">
+                <Parameters>0.5 0.5 0.5 0.5 0.5 0.5 0.5 0.541667</Parameters>
+              </Effect>
+            </EffectChain>
+          </RSE>
+        </Sound>
+      </Sounds>
+      <MidiConnection>
+        <Port>0</Port>
+        <PrimaryChannel>6</PrimaryChannel>
+        <SecondaryChannel>7</SecondaryChannel>
+        <ForeOneChannelPerString>false</ForeOneChannelPerString>
+      </MidiConnection>
+      <PlaybackState>Default</PlaybackState>
+      <AudioEngineState>RSE</AudioEngineState>
+      <Lyrics dispatched="true">
+        <Line>
+          <Text>
+<![CDATA[]]>
+          </Text>
+          <Offset>0</Offset>
+        </Line>
+        <Line>
+          <Text>
+<![CDATA[]]>
+          </Text>
+          <Offset>0</Offset>
+        </Line>
+        <Line>
+          <Text>
+<![CDATA[]]>
+          </Text>
+          <Offset>0</Offset>
+        </Line>
+        <Line>
+          <Text>
+<![CDATA[]]>
+          </Text>
+          <Offset>0</Offset>
+        </Line>
+        <Line>
+          <Text>
+<![CDATA[]]>
+          </Text>
+          <Offset>0</Offset>
+        </Line>
+      </Lyrics>
+      <Staves>
+        <Staff>
+          <Properties>
+            <Property name="CapoFret">
+              <Fret>0</Fret>
+            </Property>
+            <Property name="FretCount">
+              <Number>24</Number>
+            </Property>
+            <Property name="PartialCapoFret">
+              <Fret>0</Fret>
+            </Property>
+            <Property name="PartialCapoStringFlags">
+              <Bitset>000000</Bitset>
+            </Property>
+            <Property name="Tuning">
+              <Pitches>40 45 50 55 59 64</Pitches>
+              <Flat></Flat>
+              <Instrument>Guitar</Instrument>
+              <Label>
+<![CDATA[]]>
+              </Label>
+              <LabelVisible>true</LabelVisible>
+            </Property>
+            <Property name="ChordCollection">
+              <Items />
+            </Property>
+            <Property name="ChordWorkingSet">
+              <Items />
+            </Property>
+            <Property name="DiagramCollection">
+              <Items />
+            </Property>
+            <Property name="DiagramWorkingSet">
+              <Items />
+            </Property>
+            <Property name="TuningFlat">
+              <Enable />
+            </Property>
+            <Name>
+<![CDATA[Standard]]>
+            </Name>
+          </Properties>
+        </Staff>
+      </Staves>
+      <Automations>
+        <Automation>
+          <Type>Sound</Type>
+          <Linear>false</Linear>
+          <Bar>0</Bar>
+          <Position>0</Position>
+          <Visible>true</Visible>
+          <Value>
+<![CDATA[Stringed/Electric Guitars/Clean Guitar;Clean Strat;Factory]]>
+          </Value>
+        </Automation>
+      </Automations>
+    </Track>
+    <Track id="4">
+      <Name>
+<![CDATA[five]]>
+      </Name>
+      <ShortName>
+<![CDATA[el.guit.]]>
+      </ShortName>
+      <Color>235 152 125</Color>
+      <SystemsDefautLayout>3</SystemsDefautLayout>
+      <SystemsLayout>1</SystemsLayout>
+      <AutoBrush />
+      <PalmMute>0.3</PalmMute>
+      <AutoAccentuation>0.2</AutoAccentuation>
+      <PlayingStyle>StringedPick</PlayingStyle>
+      <UseOneChannelPerString />
+      <IconId>4</IconId>
+      <InstrumentSet>
+        <Name>Electric Guitar</Name>
+        <Type>electricGuitar</Type>
+        <LineCount>5</LineCount>
+        <Elements>
+          <Element>
+            <Name>Pitched</Name>
+            <Type>pitched</Type>
+            <SoundbankName></SoundbankName>
+            <Articulations>
+              <Articulation>
+                <Name></Name>
+                <StaffLine>0</StaffLine>
+                <Noteheads>noteheadBlack noteheadHalf noteheadWhole</Noteheads>
+                <TechniquePlacement>outside</TechniquePlacement>
+                <TechniqueSymbol></TechniqueSymbol>
+                <InputMidiNumbers></InputMidiNumbers>
+                <OutputRSESound></OutputRSESound>
+                <OutputMidiNumber>0</OutputMidiNumber>
+              </Articulation>
+            </Articulations>
+          </Element>
+        </Elements>
+      </InstrumentSet>
+      <Transpose>
+        <Chromatic>0</Chromatic>
+        <Octave>0</Octave>
+      </Transpose>
+      <RSE>
+        <ChannelStrip version="E56">
+          <Parameters>0.5 0.5 0.5 0.5 0.5 0.5 0.5 0.5 0.5 0 0.5 0.5 0.795 0.5 0.5 0.5</Parameters>
+          <Automations>
+            <Automation>
+              <Type>DSPParam_11</Type>
+              <Linear>false</Linear>
+              <Bar>0</Bar>
+              <Position>0</Position>
+              <Visible>true</Visible>
+              <Value>0.5</Value>
+            </Automation>
+            <Automation>
+              <Type>DSPParam_12</Type>
+              <Linear>false</Linear>
+              <Bar>0</Bar>
+              <Position>0</Position>
+              <Visible>true</Visible>
+              <Value>0.67</Value>
+            </Automation>
+          </Automations>
+        </ChannelStrip>
+      </RSE>
+      <ForcedSound>-1</ForcedSound>
+      <Sounds>
+        <Sound>
+          <Name>
+<![CDATA[Clean Strat]]>
+          </Name>
+          <Label>
+<![CDATA[Clean Strat]]>
+          </Label>
+          <Path>Stringed/Electric Guitars/Clean Guitar</Path>
+          <Role>Factory</Role>
+          <MIDI>
+            <LSB>0</LSB>
+            <MSB>0</MSB>
+            <Program>27</Program>
+          </MIDI>
+          <RSE>
+            <SoundbankPatch>Strat-Guitar</SoundbankPatch>
+            <ElementsSettings></ElementsSettings>
+            <Pickups>
+              <OverloudPosition>1</OverloudPosition>
+              <Volumes>1 1</Volumes>
+              <Tones>1 1</Tones>
+            </Pickups>
+            <EffectChain>
+              <Effect id="A01_ComboTop30">
+                <Parameters>0.61 0.59 0.38 0.511667 0.21 0.29 0 0</Parameters>
+              </Effect>
+              <Effect id="E30_EqGEq">
+                <Parameters>0.5 0.5 0.5 0.5 0.5 0.5 0.5 0.541667</Parameters>
+              </Effect>
+            </EffectChain>
+          </RSE>
+        </Sound>
+      </Sounds>
+      <MidiConnection>
+        <Port>0</Port>
+        <PrimaryChannel>8</PrimaryChannel>
+        <SecondaryChannel>10</SecondaryChannel>
+        <ForeOneChannelPerString>false</ForeOneChannelPerString>
+      </MidiConnection>
+      <PlaybackState>Default</PlaybackState>
+      <AudioEngineState>RSE</AudioEngineState>
+      <Lyrics dispatched="true">
+        <Line>
+          <Text>
+<![CDATA[]]>
+          </Text>
+          <Offset>0</Offset>
+        </Line>
+        <Line>
+          <Text>
+<![CDATA[]]>
+          </Text>
+          <Offset>0</Offset>
+        </Line>
+        <Line>
+          <Text>
+<![CDATA[]]>
+          </Text>
+          <Offset>0</Offset>
+        </Line>
+        <Line>
+          <Text>
+<![CDATA[]]>
+          </Text>
+          <Offset>0</Offset>
+        </Line>
+        <Line>
+          <Text>
+<![CDATA[]]>
+          </Text>
+          <Offset>0</Offset>
+        </Line>
+      </Lyrics>
+      <Staves>
+        <Staff>
+          <Properties>
+            <Property name="CapoFret">
+              <Fret>0</Fret>
+            </Property>
+            <Property name="FretCount">
+              <Number>24</Number>
+            </Property>
+            <Property name="PartialCapoFret">
+              <Fret>0</Fret>
+            </Property>
+            <Property name="PartialCapoStringFlags">
+              <Bitset>000000</Bitset>
+            </Property>
+            <Property name="Tuning">
+              <Pitches>40 45 50 55 59 64</Pitches>
+              <Flat></Flat>
+              <Instrument>Guitar</Instrument>
+              <Label>
+<![CDATA[]]>
+              </Label>
+              <LabelVisible>true</LabelVisible>
+            </Property>
+            <Property name="ChordCollection">
+              <Items />
+            </Property>
+            <Property name="ChordWorkingSet">
+              <Items />
+            </Property>
+            <Property name="DiagramCollection">
+              <Items />
+            </Property>
+            <Property name="DiagramWorkingSet">
+              <Items />
+            </Property>
+            <Property name="TuningFlat">
+              <Enable />
+            </Property>
+            <Name>
+<![CDATA[Standard]]>
+            </Name>
+          </Properties>
+        </Staff>
+        <Staff>
+          <Properties>
+            <Property name="CapoFret">
+              <Fret>0</Fret>
+            </Property>
+            <Property name="FretCount">
+              <Number>24</Number>
+            </Property>
+            <Property name="PartialCapoFret">
+              <Fret>0</Fret>
+            </Property>
+            <Property name="PartialCapoStringFlags">
+              <Bitset>00000</Bitset>
+            </Property>
+            <Property name="Tuning">
+              <Pitches>23 28 33 38 43</Pitches>
+              <Instrument>Bass</Instrument>
+              <Label>
+<![CDATA[]]>
+              </Label>
+              <LabelVisible>true</LabelVisible>
+            </Property>
+            <Property name="ChordCollection">
+              <Items />
+            </Property>
+            <Property name="ChordWorkingSet">
+              <Items />
+            </Property>
+            <Property name="DiagramCollection">
+              <Items />
+            </Property>
+            <Property name="DiagramWorkingSet">
+              <Items />
+            </Property>
+            <Name>
+<![CDATA[Standard]]>
+            </Name>
+          </Properties>
+        </Staff>
+      </Staves>
+      <Automations>
+        <Automation>
+          <Type>Sound</Type>
+          <Linear>false</Linear>
+          <Bar>0</Bar>
+          <Position>0</Position>
+          <Visible>true</Visible>
+          <Value>
+<![CDATA[Stringed/Electric Guitars/Clean Guitar;Clean Strat;Factory]]>
+          </Value>
+        </Automation>
+      </Automations>
+    </Track>
+  </Tracks>
+  <MasterBars>
+    <!-- order is important here -->
+    <MasterBar>
+      <Key>
+        <AccidentalCount>0</AccidentalCount>
+        <Mode>Major</Mode>
+        <TransposeAs>Sharps</TransposeAs>
+      </Key>
+      <Time>4/4</Time>
+      <Bars>0 1 2 3 4 5</Bars>
+    </MasterBar>
+  </MasterBars>
+  <Bars>
+    <Bar id="0">
+      <Clef>G2</Clef>
+      <Voices>-1 -1 -1 -1</Voices>
+    </Bar>
+    <Bar id="1">
+      <Clef>G2</Clef>
+      <Voices>-1 -1 -1 -1</Voices>
+    </Bar>
+    <Bar id="2">
+      <Clef>G2</Clef>
+      <Voices>-1 -1 -1 -1</Voices>
+    </Bar>
+    <Bar id="3">
+      <Clef>G2</Clef>
+      <Voices>-1 -1 -1 -1</Voices>
+    </Bar>
+    <Bar id="4">
+      <Clef>G2</Clef>
+      <Voices>-1 -1 -1 -1</Voices>
+    </Bar>
+    <Bar id="5">
+      <Clef>F4</Clef>
+      <Voices>-1 -1 -1 -1</Voices>
+    </Bar>
+  </Bars>
+  <Voices></Voices>
+  <Beats></Beats>
+  <Notes></Notes>
+  <Rhythms></Rhythms>
+  <ScoreViews>
+    <ScoreView id="0" />
+    <ScoreView id="1" />
+    <ScoreView id="2" />
+    <ScoreView id="3" />
+    <ScoreView id="4" />
+    <ScoreView id="5" />
+  </ScoreViews>
 </GPIF>
