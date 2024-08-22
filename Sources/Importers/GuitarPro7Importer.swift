@@ -97,7 +97,19 @@ public struct GuitarPro7Importer {
 
 		// Collect score field names
 
-		return MusicNotation.Score(parts: parts)
+        var score = MusicNotation.Score()
+        score.title = interchangeFormat.score.title
+        score.subtitle = interchangeFormat.score.subtitle
+        score.artist = interchangeFormat.score.artist
+        score.album = interchangeFormat.score.album
+        score.words = interchangeFormat.score.words
+        score.wordsAndMusic = interchangeFormat.score.wordsAndMusic
+        score.transcriber = interchangeFormat.score.tabber
+        score.instructions = interchangeFormat.score.instructions
+        score.notices = interchangeFormat.score.notices
+        score.append(contentsOf: parts)
+
+        return score
 	}
 }
 
