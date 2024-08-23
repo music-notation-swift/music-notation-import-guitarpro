@@ -13,13 +13,17 @@ public struct PartsConfigurationBinaryFile {
 	let unknown1: UInt32
 }
 
-public struct PartConfiguration: Sendable {
-	let rawValue: UInt8
+public struct PartConfiguration: OptionSet, Sendable {
+	public let rawValue: UInt8
 
 	static let standard		= PartConfiguration(rawValue: 1 << 0)
 	static let tablature	= PartConfiguration(rawValue: 1 << 1)
 	static let slash		= PartConfiguration(rawValue: 1 << 2)
 	static let numbered 	= PartConfiguration(rawValue: 1 << 3)
+
+    public init(rawValue: UInt8) {
+        self.rawValue = rawValue
+    }
 }
 
 // MARK: - BinaryData Importer
