@@ -34,7 +34,13 @@ extension PartConfiguration {
 		guard dataSize > minimumPartConfig else { throw PartConfigurationError.DataTooSmallToContainTracks }
 
 		let binaryData = BinaryDataReader(BinaryData(data: data, bigEndian: true), readIndex: 0)
-		let trackCount: UInt8 = try binaryData.read()
+        let version: UInt32 = try binaryData.read()
+        let unknown: UInt32 = try binaryData.read()
+
+        guard version == 6 else { throw PartConfigurationError.UnhandledVersion }
+        guard unknown == 0 else { throw PartConfigurationError.UnhandledUnknownBytes }
+
+        let trackCount: UInt8 = try binaryData.read()
 
 		var partConfigurations: [PartConfiguration] = []
 		for _ in 0 ..< trackCount {
@@ -47,4 +53,6 @@ extension PartConfiguration {
 
 enum PartConfigurationError: Error {
 	case DataTooSmallToContainTracks
+    case UnhandledVersion
+    case UnhandledUnknownBytes
 }

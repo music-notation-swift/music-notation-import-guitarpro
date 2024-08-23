@@ -26,8 +26,8 @@ import Testing
         0x00, 0x00, 0x00, 0x05
     ))
 
-    @Test func parse() async throws {
+    @Test func parseBinaryFileAndGetSize() async throws {
         let partConfigs = try PartConfiguration.partConfigurationArrayFrom(data: data)
-        #expect(partConfigs.count == 8)
+        #expect(partConfigs.count == 5)
     }
 }
