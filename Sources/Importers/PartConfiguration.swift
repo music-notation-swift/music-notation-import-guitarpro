@@ -8,10 +8,14 @@
 
 import Foundation
 
-public struct PartsConfigurationBinaryFile {
-	let version: UInt32
-	let unknown1: UInt32
-}
+// The first two words seem to be a 32 bit version #, and then 32 bit of zero
+// 00000006 00000000
+// Then the PartConfiguration stuff we know, which is how do we view the score, standard, tab, etc
+// 05020104 0808
+// I've tried changing more of the guitar pro panel where this is set, but things only change in
+// either the score.gpif of one of the `gpsv` files. There appears to be one `gpsv` file per track.
+// The rest of the file is currently undeciphered.
+// 0000 00000102 00000000 01010000 00000104 00000000 01080000 00000108 00000005
 
 public struct PartConfiguration: OptionSet, Sendable {
 	public let rawValue: UInt8
