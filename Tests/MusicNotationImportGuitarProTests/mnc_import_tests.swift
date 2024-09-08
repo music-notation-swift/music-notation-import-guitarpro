@@ -155,15 +155,15 @@ extension AttributeItemStringRawRepresentable: Equatable {
 	}
 
 	@Test func shouldThrowWhenConvertingEmptyToNonOptional() async throws {
-//		#expect(throws: XMLDeserializationError.nodeHasNoValue) {
-//			try (parser!["root"]["empty"].value() as ComplexItem)
-//		}
+		#expect(throws: XMLDeserializationError.self) {
+			try (parser!["root"]["empty"].value() as ComplexItem)
+		}
 	}
 
 	@Test func shouldThrowWhenConvertingMissingToNonOptional() async throws {
-//		#expect(throws: XMLDeserializationError) {
-//			try (parser!["root"]["missing"].value() as ComplexItem)
-//		}
+		#expect(throws: XMLDeserializationError.self) {
+			try (parser!["root"]["missing"].value() as ComplexItem)
+		}
 	}
 
 	@Test func shouldConvertComplexitemToOptional() async throws {
@@ -172,9 +172,9 @@ extension AttributeItemStringRawRepresentable: Equatable {
 	}
 
 	@Test func shouldConvertEmptyToOptional() async throws {
-//		#expect(throws: XMLDeserializationError) {
-//			try (parser!["root"]["empty"].value() as ComplexItem?)
-//		}
+		#expect(throws: XMLDeserializationError.self) {
+			try (parser!["root"]["empty"].value() as ComplexItem?)
+		}
 	}
 
 	@Test func shouldConvertMissingToOptional() async throws {
