@@ -15,7 +15,7 @@ let package = Package(
 
 	dependencies: [
 		.package(url: "https://github.com/music-notation-swift/music-notation.git", from: "0.2.5"),
-		.package(url: "https://github.com/drmohundro/SWXMLHash.git", from: "7.0.2"),
+		.package(url: "https://github.com/drmohundro/SWXMLHash.git", from: "8.0.0"),
 		.package(url: "https://github.com/weichsel/ZIPFoundation.git", from: "0.9.19")
 	],
 
