@@ -20,7 +20,29 @@ The source files in the GuitarPro7 folder are those specific to parsing this fil
 
 `music-notation-import-guitarpro` supports specifying the `gpif` file alone, or specifying the container `gp` file. Using the [ZIPFoundation](https://github.com/weichsel/ZIPFoundation) the process will pull out the `score.gpif` file and parse that directly.
 
-####
+#### Staff Object
+
+The Staff object which in the `score.gpif` is represented by
+
+```XML
+<Staves>
+	<Staff></Staff>
+	...
+</Staves> 
+```
+
+seems to describe the tuning section of the new track dialog
+
+![Guitar Pro 8 File Format](images/TrackInstrumentSettings.png)
+
+You can see this reflected in the Track sidepanel of Guitar Pro in the Tuning section.
+
+![Guitar Pro 8 File Format](images/GPTrack.png)
+
+You can see in that screen snapshot that the staff indicator will tell you whether to expect one or two staves in the `<Staves>` section of the XML file.
+
+- The notation staff kind (single or grand staff) interface, is labelled `A` in the picture above.
+- The tuning section describes (in a guitar centric way) the tuning of the staves and can be found in the `property` of of each `<Staff>`
 
 ## Dependencies
 

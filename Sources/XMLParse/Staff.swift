@@ -119,11 +119,51 @@ extension StaffProperty: Equatable {
 	}
 }
 
+/// Near Equality. In this case it means the enums are equal, but the associated values may not be
+infix operator =~
+extension StaffProperty {
+	public static func =~ (lhs: StaffProperty, rhs: StaffProperty) -> Bool {
+		switch (lhs, rhs) {
+		case (.capoFret(_), .capoFret(_)):
+			return true
+		case (.fretCount(_), .fretCount(_)):
+			return true
+		case (.partialCapoFret(_), .partialCapoFret(_)):
+			return true
+		case (.chordCollection(_), .chordCollection(_)):
+			return true
+		case (.chordWorkingSet(_), .chordWorkingSet(_)):
+			return true
+		case (.diagramCollection(_), .diagramCollection(_)):
+			return true
+		case (.diagramWorkingSet(_), .diagramWorkingSet(_)):
+			return true
+		case (.tuning(_, _, _, _, _), .tuning(_, _, _, _, _)):
+			return true
+		case (.tuningFlat(_), .tuningFlat(_)):
+			return true
+		default:
+			return false
+		}
+	}
+}
+
 // NB: The <Properties> array is malformed XML in that it isn't just a list of <Property> entries, but also
 // contains a <Name> entry. I will have to manually pull all of array entries out and then the <Name>.
 public struct Staff: XMLObjectDeserialization {
 	var properties: [StaffProperty]
 	var name: String
+
+	var fretCount: Int {
+		var fretCountValue = 24
+		let fretCountProperty = properties.first(where: { $0 =~ .fretCount(0) })
+
+		if let fretCountProperty, case let .fretCount(value) = fretCountProperty {
+			fretCountValue = value
+		}
+
+		return fretCountValue
+	}
 
 	public static func deserialize(_ node: XMLIndexer) throws -> Self {
 		try Staff(
