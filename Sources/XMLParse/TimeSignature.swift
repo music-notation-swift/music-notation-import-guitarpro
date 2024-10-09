@@ -51,8 +51,9 @@ public enum TimeSignature: XMLObjectDeserialization {
 
 	/// Based on the provided parameters, determine what kind of regular type the time signature represents.
 	/// - Note: This is not meant for `.fractional` or `.additive` time signatures.
+
 	// TODO: This is not a good way to determine the type. It should be calculated based on rules instead of a list of
-	/// cases that fit in each bucket.
+	// cases that fit in each bucket.
 	static func commonType(beatsPerBar: Int, beatUnit: Int) -> Self {
 		switch (beatsPerBar, beatUnit) {
 		case (2, 4), (3, 4), (4, 4), (_, 4):

@@ -1,5 +1,5 @@
 //
-//	GuitarPro7Importer.swift
+//	GuitarPro8Importer.swift
 //	music-notation-import-guitarpro
 //
 //	Created by Steven Woolgar on 2024-08-06.
@@ -11,7 +11,7 @@ import MusicNotation
 import SWXMLHash
 import ZIPFoundation
 
-public struct GuitarPro7Importer {
+public struct GuitarPro8Importer {
 	public let file: URL
 	public let verbose: Bool
 	public let lazy: Bool

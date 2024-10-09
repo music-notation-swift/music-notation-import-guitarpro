@@ -16,7 +16,7 @@ Guitar Pro 8 is a zipped file format (`.gp`) which expands into a folder that ha
 
 The `score.gpif` file is an application specific XML file.
 
-The source files in the GuitarPro7 folder are those specific to parsing this file format.
+The source files in the GuitarPro8 folder are those specific to parsing this file format.
 
 `music-notation-import-guitarpro` supports specifying the `gpif` file alone, or specifying the container `gp` file. Using the [ZIPFoundation](https://github.com/weichsel/ZIPFoundation) the process will pull out the `score.gpif` file and parse that directly.
 
@@ -54,7 +54,7 @@ You can see in that screen snapshot that the staff indicator will tell you wheth
 
   Used to find the XML file within the GuitarPro file (which is just a folder zipped with some files in it)
 
-There are two main folders of code in the Guitar Pro 7 parser. One contains the parsing code (XML to Swift structured data), the other contains extension to the `music-notation` library that adds initializers that understand the parse data from the XML file.
+There are two main folders of code in the Guitar Pro 8 parser. One contains the parsing code (XML to Swift structured data), the other contains extension to the `music-notation` library that adds initializers that understand the parse data from the XML file.
 
 ## Notes
 
