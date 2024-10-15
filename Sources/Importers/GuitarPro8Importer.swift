@@ -36,29 +36,18 @@ public struct GuitarPro8Importer {
 	}
 
 	func createFromFile() throws -> (String, Data) {
-		var xmlString: String
-		var partConfigurationsData: Data
-
-		switch file.pathExtension {
-		case "gpif":
+		if file.pathExtension == "gpif" {
 			guard let string = try? String(contentsOf: file) else { throw GuitarProImportError(file: file, "Could not open gpif file") }
-			xmlString = string
-			partConfigurationsData = Data()
-
-		case "gp":
+			return (string, Data())
+		} else if file.pathExtension == "gp" {
 			guard let archive = try? Archive(url: file, accessMode: .read, pathEncoding: nil) else { throw GuitarProImportError(file: file, "Could not open gp archive") }
 			guard let scoreEntry = archive["Content/score.gpif"] else { throw GuitarProImportError(file: file, "Could not open score.gpif inside gp archive") }
 			guard let partConfigurationEntry = archive["Content/PartConfiguration"] else { throw GuitarProImportError(file: file, "Could not open PartConfiguration inside gp archive") }
 
-			xmlString = try unzipToString(archive, entry: scoreEntry)
-			partConfigurationsData = try unzipToData(archive, entry: partConfigurationEntry)
-
-		default:
-			xmlString = ""
-			partConfigurationsData = Data()
+			return (try unzipToString(archive, entry: scoreEntry), try unzipToData(archive, entry: partConfigurationEntry))
 		}
 
-		return (xmlString, partConfigurationsData)
+		throw GuitarProImportError(file: file, "Unsupported filetype")
 	}
 
 	func unzipToString(_ archive: Archive, entry: Entry) throws -> String {

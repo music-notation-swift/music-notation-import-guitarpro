@@ -32,7 +32,8 @@ let package = Package(
 		),
 		.testTarget(
 			name: "MusicNotationImportGuitarProTests",
-			dependencies: ["MusicNotationImportGuitarPro"]
+			dependencies: ["MusicNotationImportGuitarPro"],
+			resources: [.copy("TestFiles")]
 		)
 	],
 

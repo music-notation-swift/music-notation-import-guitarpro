@@ -6,8 +6,8 @@
 //	Copyright © 2021 Steven Woolgar. All rights reserved.
 //
 
-import Foundation
 @testable import MusicNotationImportGuitarPro
+import Foundation
 import Testing
 
 @Suite final class PartConfigurationTests {
