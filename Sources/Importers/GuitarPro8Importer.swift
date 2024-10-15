@@ -26,6 +26,16 @@ public struct GuitarPro8Importer {
 		if verbose { print("--- Starting parsing of: \(file) ---") }
 		defer { if verbose { print("--- Ending parsing of: \(file) ---") } }
 
+		let both = try createFromFile()
+		let notation = try createNotation(
+			with: try parseXML(both.0),
+			partConfigurations: try PartConfiguration.partConfigurationArrayFrom(data: both.1)
+		)
+
+		return notation
+	}
+
+	func createFromFile() throws -> (String, Data) {
 		var xmlString: String
 		var partConfigurationsData: Data
 
@@ -48,12 +58,7 @@ public struct GuitarPro8Importer {
 			partConfigurationsData = Data()
 		}
 
-		let notation = try createNotation(
-			with: try parseXML(xmlString),
-			partConfigurations: try PartConfiguration.partConfigurationArrayFrom(data: partConfigurationsData)
-		)
-
-		return notation
+		return (xmlString, partConfigurationsData)
 	}
 
 	func unzipToString(_ archive: Archive, entry: Entry) throws -> String {
