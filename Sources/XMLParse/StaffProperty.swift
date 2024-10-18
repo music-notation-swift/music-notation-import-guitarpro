@@ -66,11 +66,12 @@ public enum StaffProperty: XMLObjectDeserialization {
 			let pitchesArray = pitchesString.split(separator: " ")
 			let pitches = pitchesArray.compactMap { Int($0) }
 
-			let flat: String = try node["Flat"].value()
+			// <Flat></Flat> can be entirely missing.
+			let flat: String? = try node["Flat"].value()
 
 			return .tuning(
 				pitches: pitches,
-				flat: Int(flat),
+				flat: Int(flat ?? ""),
 				instrument: try node["Instrument"].value(),
 				label: try node["Label"].value(),
 				labelVisible: try node["LabelVisible"].value())

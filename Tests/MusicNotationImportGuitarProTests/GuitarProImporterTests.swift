@@ -66,6 +66,13 @@ import ZIPFoundation
 		}
 	}
 
+	@Test func parseXML() async throws {
+		let importer = try importer(from: "Test1.gpif")
+		let (xmlString, _) = try importer.createFromFile()
+		let interchangeFormat = try importer.parseXML(xmlString)
+		#expect(interchangeFormat.bars.count > 0)
+	}
+
 	func filePathURL(from filename: String) throws -> URL {
 		let filenamePath = FilePath(filename)
 		guard let filePath = Bundle.module.path(

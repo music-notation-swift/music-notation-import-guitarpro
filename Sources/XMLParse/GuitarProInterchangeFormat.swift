@@ -19,10 +19,10 @@ public struct GuitarProInterchangeFormat: XMLObjectDeserialization {
 	public var tracks: [Track]
 	public var masterBars: [MasterBar]
 	public var bars: [Bar]
-	public var voices: [Voice]
-	public var beats: [Beat]
-	public var notes: [Note]
-	public var rhythms: [Rhythm]
+	public var voices: [Voice]?
+	public var beats: [Beat]?
+	public var notes: [Note]?
+	public var rhythms: [Rhythm]?
 
 	public static func deserialize(_ node: XMLIndexer) throws -> Self {
 		try GuitarProInterchangeFormat(

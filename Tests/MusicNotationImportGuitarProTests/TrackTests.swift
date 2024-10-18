@@ -14,7 +14,7 @@ let testTrack0 = track0Open + testTrackBody + trackClose
 let testTrack1 = track1Open + testTrackBody + trackClose
 let testTrack2 = track2Open + testTrackBody + trackClose
 
-/// GuitarPro 7 has a concept of a Track. This is part of a song, which roughly corresponds to a MusicNotation.Part.
+/// GuitarPro has a concept of a Track. This is part of a song, which roughly corresponds to a MusicNotation.Part.
 @Suite final class TrackTests {
 	@Test func parse() async throws {
 		let xmlParser = XMLHash.parse(testTrack0)

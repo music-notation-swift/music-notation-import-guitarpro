@@ -66,8 +66,6 @@ public struct Track: XMLObjectDeserialization {
 		let colorsArray = colors.split(separator: " ")
 		let layouts: String = try node["SystemsLayout"].value()
 		let layoutsArray = layouts.split(separator: " ")
-		let id: Int = try node.value(ofAttribute: "id")
-		print("Track(id=\(id))")
 
 		return try Track(
 			id: node.value(ofAttribute: "id"),
@@ -80,9 +78,9 @@ public struct Track: XMLObjectDeserialization {
 			playingStyle: PlayingStyle.withString(node["PlayingStyle"].value()),
 			palmMute: node["PalmMute"].value(),
 			autoAccentuation: node["AutoAccentuation"].value(),
-			letRingThroughout: (node["LetRingThroughout"].element != nil) ? true : false,
-			autoBrush: (node["AutoBrush"].element != nil) ? true : false,
-			useOneChannelPerString: (node["UseOneChannelPerString"].element != nil) ? true : false,
+			letRingThroughout: try node["LetRingThroughout"].value(found: true, notFound: false),
+			autoBrush: try node["AutoBrush"].value(found: true, notFound: false),
+			useOneChannelPerString: try node["UseOneChannelPerString"].value(found: true, notFound: false),
 			forcedSound: node["ForcedSound"].value(),
 			playbackState: node["PlaybackState"].value(),
 			audioEngineState: node["AudioEngineState"].value(),
