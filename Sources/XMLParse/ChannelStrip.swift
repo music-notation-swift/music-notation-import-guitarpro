@@ -12,31 +12,33 @@ import SWXMLHash
 // <ChannelStrip version="E56">
 //  <Parameters>0.5 0.5 0.5 0.5 0.5 0.5 0.5 0.5 0.5 0 0.5 0.5 0.99 0.5 0.5 0.5</Parameters>
 //  <Automations>
-//	<Automation>
-//	  <Type>DSPParam_11</Type>
-//	  <Linear>false</Linear>
-//	  <Bar>0</Bar>
-//	  <Position>0</Position>
-//	  <Visible>true</Visible>
-//	  <Value>0.5</Value>
-//	</Automation>
-//	<Automation>
-//	  <Type>DSPParam_12</Type>
-//	  <Linear>false</Linear>
-//	  <Bar>0</Bar>
-//	  <Position>0</Position>
-//	  <Visible>true</Visible>
-//	  <Value>0.99</Value>
-//	</Automation>
+//	  <Automation>
+//	    <Type>DSPParam_11</Type>
+//	    <Linear>false</Linear>
+//	    <Bar>0</Bar>
+//	    <Position>0</Position>
+//	    <Visible>true</Visible>
+//	    <Value>0.5</Value>
+//	  </Automation>
+//	  <Automation>
+//	    <Type>DSPParam_12</Type>
+//	    <Linear>false</Linear>
+//	    <Bar>0</Bar>
+//	    <Position>0</Position>
+//	    <Visible>true</Visible>
+//	    <Value>0.99</Value>
+//	  </Automation>
 //  </Automations>
 // </ChannelStrip>
 
 public struct ChannelStrip: XMLObjectDeserialization {
-	var parameters: String
+	public var parameters: String
+	public var automations: [Automation]?
 
 	public static func deserialize(_ node: XMLIndexer) throws -> Self {
 		try ChannelStrip(
-			parameters: node["Parameters"].value()
+			parameters: node["Parameters"].value(),
+			automations: node["Automations"]["Automation"].value()
 		)
 	}
 }
