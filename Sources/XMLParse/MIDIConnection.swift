@@ -18,10 +18,16 @@ import SWXMLHash
 
 public struct MIDIConnection: XMLObjectDeserialization {
 	var port: Int
+	var primaryChannel: Int
+	var secondaryChannel: Int
+	var forceOneChannelPerString: Bool
 
 	public static func deserialize(_ node: XMLIndexer) throws -> Self {
 		try MIDIConnection(
-			port: node["Port"].value()
+			port: node["Port"].value(),
+			primaryChannel: node["PrimaryChannel"].value(),
+			secondaryChannel: node["SecondaryChannel"].value(),
+			forceOneChannelPerString: node["ForeOneChannelPerString"].value()
 		)
 	}
 }

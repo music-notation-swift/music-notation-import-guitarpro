@@ -16,10 +16,12 @@ import SWXMLHash
 
 public struct Transpose: XMLObjectDeserialization {
 	var chromatic: Bool
+	var octave: Int
 
 	public static func deserialize(_ node: XMLIndexer) throws -> Self {
 		try Transpose(
-			chromatic: Bool(node["Chromatic"].value())
+			chromatic: Bool(node["Chromatic"].value()),
+			octave: node["Octave"].value()
 		)
 	}
 }
