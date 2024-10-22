@@ -11,32 +11,25 @@ import SWXMLHash
 
 // <Lyrics dispatched="true">
 //	<Line>
+//	  <Text>Something, something, something</Text>
+//	  <Offset>0</Offset>
+//	</Line>
+//	<Line>
+//	  <Text>Else, else, else</Text>
+//	  <Offset>0</Offset>
+//	</Line>
+//	<Line>
 //	  <Text>
-// <![CDATA[]]>
 //	  </Text>
 //	  <Offset>0</Offset>
 //	</Line>
 //	<Line>
 //	  <Text>
-// <![CDATA[]]>
 //	  </Text>
 //	  <Offset>0</Offset>
 //	</Line>
 //	<Line>
 //	  <Text>
-// <![CDATA[]]>
-//	  </Text>
-//	  <Offset>0</Offset>
-//	</Line>
-//	<Line>
-//	  <Text>
-// <![CDATA[]]>
-//	  </Text>
-//	  <Offset>0</Offset>
-//	</Line>
-//	<Line>
-//	  <Text>
-// <![CDATA[]]>
 //	  </Text>
 //	  <Offset>0</Offset>
 //	</Line>
@@ -44,10 +37,12 @@ import SWXMLHash
 
 public struct Lyrics: XMLObjectDeserialization {
 	var dispatched: Bool
+	var lines: [Line]
 
 	public static func deserialize(_ node: XMLIndexer) throws -> Self {
 		try Lyrics(
-			dispatched: node.value(ofAttribute: "dispatched")
+			dispatched: node.value(ofAttribute: "dispatched"),
+			lines: node["Line"].value()
 		)
 	}
 }
