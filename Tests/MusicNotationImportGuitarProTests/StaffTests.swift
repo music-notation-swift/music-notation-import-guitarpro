@@ -14,7 +14,6 @@ import Testing
 @Suite final class StaffTests {
 	@Test func parse() async throws {
 		let xmlParser = XMLHash.parse(testStaff0)
-		print("\(testStaff0)")
 
 		let staff1: Staff = try xmlParser["Staff"].value()
 		#expect(staff1.name == "Standard")
@@ -25,7 +24,6 @@ import Testing
 
 	@Test func multipleStaves() async throws {
 		let xmlParser = XMLHash.parse(testStaves0)
-		print("\(testStaves0)")
 
 		let staves: [Staff] = try xmlParser["Staves"]["Staff"].value()
 		#expect(staves.count == 1)
