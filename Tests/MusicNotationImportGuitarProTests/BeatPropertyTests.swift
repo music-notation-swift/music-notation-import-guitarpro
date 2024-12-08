@@ -57,11 +57,56 @@ import Testing
 		let xmlString = "<Properties></Properties>"
 		let xmlParser = XMLHash.parse(xmlString)
 
-		let beatProperties: [BeatProperty]? = try xmlParser["Beats"]["Beat"].value()
+		let beatProperties: [BeatProperty]? = try xmlParser["Properties"]["Property"].value()
 		#expect(beatProperties == nil)
 	}
 }
 
 enum BeatPropertyError: Error {
 	case caseLetError
+}
+
+@Suite final class ExtraPropertyTests {
+	@Test func extraPropertyDeserialize() async throws {
+		let xmlString = """
+<XProperties>
+<XProperty id="1124139010">
+<Int>10</Int>
+</XProperty>
+<XProperty id="1124139521">
+<Double>1.0</Double>
+</XProperty>
+<XProperty id="1124139264">
+<Int>10</Int>
+</XProperty>
+<XProperty id="1124139265">
+<Int>10</Int>
+</XProperty>
+<XProperty id="1124139266">
+<Int>10</Int>
+</XProperty>
+<XProperty id="1124139267">
+<Int>10</Int>
+</XProperty>
+<XProperty id="1124139268">
+<Int>10</Int>
+</XProperty>
+<XProperty id="1124139269">
+<Int>10</Int>
+</XProperty>
+</XProperties>
+"""
+
+		let xmlParser = XMLHash.parse(xmlString)
+		let xProperties: [ExtraProperty] = try xmlParser["XProperties"]["XProperty"].value()
+		#expect(xProperties.count == 8)
+	}
+
+	@Test func parseEmptyXArray() async throws {
+		let xmlString = "<XProperties></XProperties>"
+		let xmlParser = XMLHash.parse(xmlString)
+
+		let extraProperties: [ExtraProperty]? = try xmlParser["XProperties"]["XProperty"].value()
+		#expect(extraProperties == nil)
+	}
 }

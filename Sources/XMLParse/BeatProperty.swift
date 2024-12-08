@@ -37,6 +37,7 @@ public enum BeatProperty: XMLObjectDeserialization {
 		case "PrimaryPickupVolume":	return .primaryPickupVolume(try node["Float"].value())
 		case "PrimaryPickupTone":	return .primaryPickupTone(try node["Float"].value())
 		case "Brush":				return .brush(try node["Direction"].value())
+		case "XProperties":			return .brush(try node["Direction"].value())
 
 		default:
 			throw BeatPropertyParseError.unsupportedPropertyAttribute(propertyAttribute)
