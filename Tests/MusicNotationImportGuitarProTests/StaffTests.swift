@@ -15,7 +15,7 @@ import Testing
 	@Test func parse() async throws {
 		let xmlParser = XMLHash.parse(testStaff0)
 
-		let staff1: Staff = try xmlParser["Staff"].value()
+		let staff1: Staff = try xmlParser[Staff.key].value()
 		#expect(staff1.name == "Standard")
 		#expect(staff1.properties.count == 10)
 		#expect(staff1.properties[0] == .capoFret(0))
@@ -25,7 +25,7 @@ import Testing
 	@Test func multipleStaves() async throws {
 		let xmlParser = XMLHash.parse(testStaves0)
 
-		let staves: [Staff] = try xmlParser["Staves"]["Staff"].value()
+		let staves: [Staff] = try xmlParser["Staves"][Staff.key].value()
 		#expect(staves.count == 1)
 		#expect(staves[0].properties[0] == .capoFret(0))
 	}

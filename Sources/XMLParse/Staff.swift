@@ -28,6 +28,8 @@ import SWXMLHash
 // NB: The <Properties> array is malformed XML in that it isn't just a list of <Property> entries, but also
 // contains a <Name> entry. I will have to manually pull all of array entries out and then the <Name>.
 public struct Staff: XMLObjectDeserialization {
+	static let key = "Staff"
+
 	var properties: [StaffProperty]
 	var name: String
 

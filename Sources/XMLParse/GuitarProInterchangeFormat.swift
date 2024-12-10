@@ -29,14 +29,14 @@ public struct GuitarProInterchangeFormat: XMLObjectDeserialization {
 			version: Version.withString(node["GPVersion"].value()),
 			revision: node["GPRevision"].value(),
 			encoding: node["Encoding"].value(),
-			score: node["Score"].value(),
+			score: node[Score.key].value(),
 			masterTrack: node["MasterTrack"].value(),
-			tracks: node["Tracks"]["Track"].value(),
+			tracks: node["Tracks"][Track.key].value(),
 			masterBars: node["MasterBars"]["MasterBar"].value(),
 			bars: node["Bars"]["Bar"].value(),
 			voices: node["Voices"]["Voice"].value(),
 			beats: node["Beats"]["Beat"].value(),
-			notes: node["Notes"]["Note"].value(),
+			notes: node["Notes"][Note.key].value(),
 			rhythms: node["Rhythms"]["Rhythm"].value()
 		)
 	}

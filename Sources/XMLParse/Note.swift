@@ -251,6 +251,8 @@ public struct Tie: XMLObjectDeserialization {
 // </Note>
 
 public struct Note: XMLObjectDeserialization {
+	static let key = "Note"
+
 	var id: Int
 	public var tie: Tie?
 	public var accent: Int?
