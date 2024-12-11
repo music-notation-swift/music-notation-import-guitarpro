@@ -9,6 +9,7 @@
 import Foundation
 import SWXMLHash
 
+//<Voices>
 // <Voice id="0">
 //  <Beats>0</Beats>
 // </Voice>
@@ -114,8 +115,10 @@ import SWXMLHash
 // <Voice id="34">
 //  <Beats>4 5 6 7 8 9</Beats>
 // </Voice>
+//</Voices>
 
 public struct Voice: XMLObjectDeserialization {
+	static let nodeKey = "Voice"
 	var id: Int
 	public var beats: String
 

@@ -29,6 +29,7 @@ import SWXMLHash
 // </Automations>
 
 public struct Automation: XMLObjectDeserialization {
+	static let nodeKey = "Automation"
 	var type: String
 	var linear: Bool
 	var bar: Int
@@ -43,7 +44,7 @@ public struct Automation: XMLObjectDeserialization {
 		return try Automation(
 			type: node["Type"].value(),
 			linear: node["Linear"].value(),
-			bar: node["Bar"].value(),
+			bar: node[Bar.nodeKey].value(),
 			position: node["Position"].value(),
 			visible: node["Visible"].value(),
 			value: valuesArray.compactMap { Float($0) }

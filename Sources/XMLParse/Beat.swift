@@ -25,6 +25,7 @@ import SWXMLHash
 // </Beat>
 
 public struct Beat: XMLObjectDeserialization {
+	static let nodeKey = "Beat"
 	var id: Int
 	var dynamic: String
 	var rhythm: Int
@@ -40,7 +41,7 @@ public struct Beat: XMLObjectDeserialization {
 			rhythm: node["Rhythm"].value(ofAttribute: "ref"),
 			transposedPitchStemOrientation: node["TransposedPitchStemOrientation"].value(),
 			concertPitchStemOrientation: node["ConcertPitchStemOrientation"].value(),
-			properties: node["Properties"]["Property"].value(),
+			properties: node["Properties"][BeatProperty.nodeKey].value(),
 			extraProperties: node["XProperties"]["XProperty"].value()
 		)
 	}

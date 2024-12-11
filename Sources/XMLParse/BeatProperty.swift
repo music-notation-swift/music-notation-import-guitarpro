@@ -26,6 +26,7 @@ public enum Direction: XMLObjectDeserialization {
 public enum BeatDirectionPropertyParseError: Error { case unsupportedPropertyAttribute(String) }
 
 public enum BeatProperty: XMLObjectDeserialization {
+	static let nodeKey = "Property"
 	case primaryPickupVolume(Float)
 	case primaryPickupTone(Float)
 	case brush(Direction)

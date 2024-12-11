@@ -8,7 +8,13 @@
 
 import SWXMLHash
 
+//<GPIF>
+//  <GPVersion>8.1.3</GPVersion>
+//  <GPRevision required="12024" recommended="13000">13007</GPRevision>
+// ...
+
 public struct Revision: XMLObjectDeserialization {
+	static let nodeKey = "GPRevision"
 	var value: Int
 
 	var required: Int

@@ -37,7 +37,7 @@ import Testing
   """
 		let xmlParser = XMLHash.parse(xmlString)
 
-		let channelStrip: ChannelStrip = try xmlParser["ChannelStrip"].value()
+		let channelStrip: ChannelStrip = try xmlParser[ChannelStrip.nodeKey].value()
 		#expect(channelStrip.parameters != nil)
 		#expect(channelStrip.automations != nil)
 		#expect(channelStrip.automations?[0].type == "DSPParam_11")
@@ -52,7 +52,7 @@ import Testing
 """
 		let xmlParser = XMLHash.parse(xmlString)
 
-		let channelStrip: ChannelStrip = try xmlParser["ChannelStrip"].value()
+		let channelStrip: ChannelStrip = try xmlParser[ChannelStrip.nodeKey].value()
 		#expect(channelStrip.parameters != nil)
 		#expect(channelStrip.automations == nil)
 	}

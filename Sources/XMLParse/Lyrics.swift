@@ -36,13 +36,14 @@ import SWXMLHash
 // </Lyrics>
 
 public struct Lyrics: XMLObjectDeserialization {
+	static let nodeKey = "Lyrics"
 	var dispatched: Bool
 	var lines: [Line]
 
 	public static func deserialize(_ node: XMLIndexer) throws -> Self {
 		try Lyrics(
 			dispatched: node.value(ofAttribute: "dispatched"),
-			lines: node["Line"].value()
+			lines: node[Line.nodeKey].value()
 		)
 	}
 }

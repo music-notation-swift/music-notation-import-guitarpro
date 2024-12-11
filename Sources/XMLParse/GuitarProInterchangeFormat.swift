@@ -27,16 +27,16 @@ public struct GuitarProInterchangeFormat: XMLObjectDeserialization {
 	public static func deserialize(_ node: XMLIndexer) throws -> Self {
 		try GuitarProInterchangeFormat(
 			version: Version.withString(node["GPVersion"].value()),
-			revision: node["GPRevision"].value(),
+			revision: node[Revision.nodeKey].value(),
 			encoding: node["Encoding"].value(),
-			score: node[Score.key].value(),
-			masterTrack: node["MasterTrack"].value(),
-			tracks: node["Tracks"][Track.key].value(),
-			masterBars: node["MasterBars"]["MasterBar"].value(),
-			bars: node["Bars"]["Bar"].value(),
-			voices: node["Voices"]["Voice"].value(),
-			beats: node["Beats"]["Beat"].value(),
-			notes: node["Notes"][Note.key].value(),
+			score: node[Score.nodeKey].value(),
+			masterTrack: node[MasterTrack.nodeKey].value(),
+			tracks: node["Tracks"][Track.nodeKey].value(),
+			masterBars: node["MasterBars"][MasterBar.nodeKey].value(),
+			bars: node["Bars"][Bar.nodeKey].value(),
+			voices: node["Voices"][Voice.nodeKey].value(),
+			beats: node["Beats"][Beat.nodeKey].value(),
+			notes: node["Notes"][Note.nodeKey].value(),
 			rhythms: node["Rhythms"]["Rhythm"].value()
 		)
 	}

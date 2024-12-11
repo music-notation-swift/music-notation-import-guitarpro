@@ -46,7 +46,7 @@ import Testing
   """
 		let xmlParser = XMLHash.parse(xmlString)
 
-		let beats: [Beat] = try xmlParser["Beats"]["Beat"].value()
+		let beats: [Beat] = try xmlParser["Beats"][Beat.nodeKey].value()
 		#expect(beats.count == 2)
 		#expect(beats[0].id == 0)
 		#expect(beats[1].id == 1)
@@ -59,7 +59,7 @@ import Testing
 		let xmlString = "<Beats></Beats>"
 		let xmlParser = XMLHash.parse(xmlString)
 
-		let beats: [Beat]? = try xmlParser["Beats"]["Beat"].value()
+		let beats: [Beat]? = try xmlParser["Beats"][Beat.nodeKey].value()
 		#expect(beats == nil)
 	}
 }

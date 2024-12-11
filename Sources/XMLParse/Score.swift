@@ -90,7 +90,7 @@ import SWXMLHash
 //	</Score>
 
 public struct Score: XMLObjectDeserialization {
-	static let key = "Score"
+	static let nodeKey = "Score"
 
 	var title: String
 	var subtitle: String

@@ -19,7 +19,7 @@ let testTrack2 = track2Open + testTrackBody + trackClose
 	@Test func parse() async throws {
 		let xmlParser = XMLHash.parse(testTrack0)
 
-		let track0: Track = try xmlParser[Track.key].value()
+		let track0: Track = try xmlParser[Track.nodeKey].value()
 
 		#expect(track0.id == 0)
 		#expect(track0.name == "trackNameString")
@@ -41,11 +41,11 @@ let testTrack2 = track2Open + testTrackBody + trackClose
 		let xmlParser1 = XMLHash.parse(testTrack1)
 		let xmlParser2 = XMLHash.parse(testTrack2)
 
-		let track0: Track = try xmlParser0[Track.key].value()
+		let track0: Track = try xmlParser0[Track.nodeKey].value()
 		#expect(track0.id == 0)
-		let track1: Track = try xmlParser1[Track.key].value()
+		let track1: Track = try xmlParser1[Track.nodeKey].value()
 		#expect(track1.id == 1)
-		let track2: Track = try xmlParser2[Track.key].value()
+		let track2: Track = try xmlParser2[Track.nodeKey].value()
 		#expect(track2.id == 2)
 	}
 }

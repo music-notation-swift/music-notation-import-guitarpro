@@ -15,6 +15,7 @@ import SWXMLHash
 //</Rhythm>
 
 public struct PrimaryTuplet: XMLObjectDeserialization {
+	static let nodeKey = "PrimaryTuplet"
 	var number: Int
 	var density: Int
 

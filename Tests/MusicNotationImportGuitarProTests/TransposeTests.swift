@@ -20,7 +20,7 @@ import Testing
   """
 		let xmlParser = XMLHash.parse(xmlString)
 
-		let transpose: Transpose = try xmlParser["Transpose"].value()
+		let transpose: Transpose = try xmlParser[Transpose.nodeKey].value()
 		#expect(transpose.chromatic == false)
 		#expect(transpose.octave == 0)
 	}

@@ -37,7 +37,7 @@ public enum PlayingStyle: String {
 }
 
 public struct Track: XMLObjectDeserialization {
-	static let key = "Track"
+	static let nodeKey = "Track"
 	var id: Int
 
 	public var name: String
@@ -85,8 +85,8 @@ public struct Track: XMLObjectDeserialization {
 			forcedSound: node["ForcedSound"].value(),
 			playbackState: node["PlaybackState"].value(),
 			audioEngineState: node["AudioEngineState"].value(),
-			staves: node["Staves"][Staff.key].value(),
-			automations: node["Automations"]["Automation"].value()
+			staves: node["Staves"][Staff.nodeKey].value(),
+			automations: node["Automations"][Automation.nodeKey].value()
 		)
 	}
 }

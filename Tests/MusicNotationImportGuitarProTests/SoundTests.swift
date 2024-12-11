@@ -52,7 +52,7 @@ import Testing
   """
 		let xmlParser = XMLHash.parse(xmlString)
 
-		let sound: [Sound] = try xmlParser["Sounds"]["Sound"].value()
+		let sound: [Sound] = try xmlParser["Sounds"][Sound.nodeKey].value()
 		#expect(sound.count == 1)
 	}
 
@@ -60,7 +60,7 @@ import Testing
 		let xmlString = "<Sounds></Sounds>"
 		let xmlParser = XMLHash.parse(xmlString)
 
-		let sounds: Sound? = try xmlParser["Sounds"]["Sound"].value()
+		let sounds: Sound? = try xmlParser["Sounds"][Sound.nodeKey].value()
 		#expect(sounds == nil)
 	}
 }

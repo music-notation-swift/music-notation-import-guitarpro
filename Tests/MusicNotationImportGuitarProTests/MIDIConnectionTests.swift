@@ -22,7 +22,7 @@ import Testing
   """
 		let xmlParser = XMLHash.parse(xmlString)
 
-		let midiConnection: MIDIConnection = try xmlParser["MidiConnection"].value()
+		let midiConnection: MIDIConnection = try xmlParser[MIDIConnection.nodeKey].value()
 		#expect(midiConnection.port == 0)
 	}
 }

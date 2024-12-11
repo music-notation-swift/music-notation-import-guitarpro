@@ -27,7 +27,7 @@ import Testing
   """
 		let xmlParser = XMLHash.parse(xmlString)
 
-		let beatProperties: [BeatProperty] = try xmlParser["Properties"]["Property"].value()
+		let beatProperties: [BeatProperty] = try xmlParser["Properties"][BeatProperty.nodeKey].value()
 		guard case let .primaryPickupVolume(volume) = beatProperties[0] else { throw BeatPropertyError.caseLetError }
 		guard case let .primaryPickupTone(tone) = beatProperties[1] else { throw BeatPropertyError.caseLetError }
 		guard case let .brush(direction) = beatProperties[2] else { throw BeatPropertyError.caseLetError }
@@ -49,7 +49,7 @@ import Testing
 		let xmlParser = XMLHash.parse(xmlString)
 
 		#expect(throws: BeatPropertyParseError.self) {
-			let _: [BeatProperty]? = try xmlParser["Properties"]["Property"].value()
+			let _: [BeatProperty]? = try xmlParser["Properties"][BeatProperty.nodeKey].value()
 		}
 	}
 
@@ -57,7 +57,7 @@ import Testing
 		let xmlString = "<Properties></Properties>"
 		let xmlParser = XMLHash.parse(xmlString)
 
-		let beatProperties: [BeatProperty]? = try xmlParser["Properties"]["Property"].value()
+		let beatProperties: [BeatProperty]? = try xmlParser["Properties"][BeatProperty.nodeKey].value()
 		#expect(beatProperties == nil)
 	}
 }

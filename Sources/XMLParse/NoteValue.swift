@@ -10,6 +10,8 @@ import Foundation
 import SWXMLHash
 
 public enum NoteValue: XMLObjectDeserialization {
+	static let nodeKey = "NoteValue"
+
 	case whole
 	case half
 	case quarter

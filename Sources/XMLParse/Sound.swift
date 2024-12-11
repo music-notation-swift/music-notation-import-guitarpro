@@ -50,6 +50,7 @@ import SWXMLHash
 // </Sound>
 
 public struct Sound: XMLObjectDeserialization {
+	static let nodeKey = "Sound"
 	var name: String
 
 	public static func deserialize(_ node: XMLIndexer) throws -> Self {

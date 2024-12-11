@@ -20,6 +20,8 @@ import SWXMLHash
 /// See `MusicNotation.TimeSignature` for a full explanation (or the README.md).
 
 public enum TimeSignature: XMLObjectDeserialization {
+	static let nodeKey = "Time"
+
 	case simple(_ beatsPerBar: Int, _ beatUnit: Int)		// `2/4`, `3/4`, `4/4`, `common` and `cut-common`
 	case compound(_ beatsPerBar: Int, _ beatUnit: Int)		// `9/8` and `12/8`
 	case additive(_ beatsPerBar: [Int], _ beatUnit: Int)	// `3 + 2/8 + 3` (NB: I have seen `3/8 & 2/8`)

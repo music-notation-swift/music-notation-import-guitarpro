@@ -16,6 +16,7 @@ import SWXMLHash
 // </Key>
 
 public struct Key: XMLObjectDeserialization {
+	static let nodeKey = "Key"
 	var accidentalCount: Int
 	var mode: String
 	var transposeAs: String

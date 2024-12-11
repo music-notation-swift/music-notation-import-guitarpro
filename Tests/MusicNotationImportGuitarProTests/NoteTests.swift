@@ -75,7 +75,7 @@ import Testing
   """
 		let xmlParser = XMLHash.parse(xmlString)
 
-		let notes: [Note] = try xmlParser["Notes"][Note.key].value()
+		let notes: [Note] = try xmlParser["Notes"][Note.nodeKey].value()
 		#expect(notes.count == 2)
 	}
 
@@ -83,7 +83,7 @@ import Testing
 		let xmlString = "<Notes></Notes>"
 		let xmlParser = XMLHash.parse(xmlString)
 
-		let notes: [Note]? = try xmlParser["Notes"][Note.key].value()
+		let notes: [Note]? = try xmlParser["Notes"][Note.nodeKey].value()
 		#expect(notes == nil)
 	}
 }

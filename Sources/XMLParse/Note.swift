@@ -251,7 +251,7 @@ public struct Tie: XMLObjectDeserialization {
 // </Note>
 
 public struct Note: XMLObjectDeserialization {
-	static let key = "Note"
+	static let nodeKey = "Note"
 
 	var id: Int
 	public var tie: Tie?

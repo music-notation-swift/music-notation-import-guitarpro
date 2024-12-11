@@ -35,6 +35,7 @@ import SWXMLHash
 //  </InstrumentSet>
 
 public struct InstrumentSet: XMLObjectDeserialization {
+	static let nodeKey = "InstrumentSet"
 	var name: String
 	var instrumentType: String
 

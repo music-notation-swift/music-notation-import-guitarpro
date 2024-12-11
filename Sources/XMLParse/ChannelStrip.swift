@@ -32,13 +32,14 @@ import SWXMLHash
 // </ChannelStrip>
 
 public struct ChannelStrip: XMLObjectDeserialization {
+	static let nodeKey = "ChannelStrip"
 	public var parameters: String
 	public var automations: [Automation]?
 
 	public static func deserialize(_ node: XMLIndexer) throws -> Self {
 		try ChannelStrip(
 			parameters: node["Parameters"].value(),
-			automations: node["Automations"]["Automation"].value()
+			automations: node["Automations"][Automation.nodeKey].value()
 		)
 	}
 }

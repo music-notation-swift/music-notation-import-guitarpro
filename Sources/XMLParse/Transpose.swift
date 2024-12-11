@@ -15,6 +15,7 @@ import SWXMLHash
 // </Transpose>
 
 public struct Transpose: XMLObjectDeserialization {
+	static let nodeKey = "Transpose"
 	var chromatic: Bool
 	var octave: Int
 

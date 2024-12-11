@@ -17,6 +17,7 @@ import SWXMLHash
 // </MidiConnection>
 
 public struct MIDIConnection: XMLObjectDeserialization {
+	static let nodeKey = "MidiConnection"
 	var port: Int
 	var primaryChannel: Int
 	var secondaryChannel: Int

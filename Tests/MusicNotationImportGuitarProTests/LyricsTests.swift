@@ -103,7 +103,7 @@ import Testing
   """
 		let xmlParser = XMLHash.parse(xmlString)
 
-		let lyrics: Lyrics = try xmlParser["Lyrics"].value()
+		let lyrics: Lyrics = try xmlParser[Lyrics.nodeKey].value()
 		#expect(lyrics.lines.count == 5)
 		#expect(lyrics.dispatched == true)
 	}

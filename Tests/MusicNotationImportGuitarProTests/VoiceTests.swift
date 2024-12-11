@@ -29,7 +29,7 @@ import Testing
   """
 		let xmlParser = XMLHash.parse(xmlString)
 
-		let voices: [Voice] = try xmlParser["Voices"]["Voice"].value()
+		let voices: [Voice] = try xmlParser["Voices"][Voice.nodeKey].value()
 		#expect(voices.count == 4)
 	}
 

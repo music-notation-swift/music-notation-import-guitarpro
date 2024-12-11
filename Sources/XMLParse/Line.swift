@@ -18,6 +18,7 @@ import SWXMLHash
 //</Line>
 
 public struct Line: XMLObjectDeserialization {
+	static let nodeKey = "Line"
 	var text: String
 	var offset: Int
 

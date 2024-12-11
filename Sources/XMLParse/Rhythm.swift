@@ -18,9 +18,9 @@ public struct Rhythm: XMLObjectDeserialization {
 	public static func deserialize(_ node: XMLIndexer) throws -> Self {
 		try Rhythm(
 			id: node.value(ofAttribute: "id"),
-			noteValue: node["NoteValue"].value(),
+			noteValue: node[NoteValue.nodeKey].value(),
 			augmentationDot: node["AugmentationDot"].value(ofAttribute: "count"),
-			primaryTuplet: node["PrimaryTuplet"].value()
+			primaryTuplet: node[PrimaryTuplet.nodeKey].value()
 		)
 	}
 }

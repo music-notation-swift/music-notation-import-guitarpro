@@ -38,6 +38,8 @@ public struct StaffPropertyItem: XMLObjectDeserialization, Equatable {
 }
 
 public enum StaffProperty: XMLObjectDeserialization {
+	static let nodeKey = "Property"
+
 	case capoFret(_ fret: Int)
 	case fretCount(_ frets: Int)
 	case partialCapoFret(Int)

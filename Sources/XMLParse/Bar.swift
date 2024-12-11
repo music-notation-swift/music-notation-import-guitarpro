@@ -16,6 +16,7 @@ import SWXMLHash
 
 // The root element of this is the `<Bars>` array
 public struct Bar: XMLObjectDeserialization {
+	static let nodeKey = "Bar"
 	var clef: String
 	var voices: [Int]
 

@@ -40,7 +40,7 @@ import Testing
   """
 		let xmlParser = XMLHash.parse(xmlString)
 
-		let instrumentSet: InstrumentSet = try xmlParser["InstrumentSet"].value()
+		let instrumentSet: InstrumentSet = try xmlParser[InstrumentSet.nodeKey].value()
 		#expect(instrumentSet.name == "Electric Piano")
 //		#expect(instrumentSet.elements.count == 1)
 	}
