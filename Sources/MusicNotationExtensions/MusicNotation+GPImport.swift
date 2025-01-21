@@ -22,7 +22,7 @@ extension MusicNotation.Part {
 			MusicNotation.Staff(with: $0)
 		}
 
-		self.init(name: guitarProTrack.name, shortName: guitarProTrack.shortName, staves: staves)
+		self.init(/*name: guitarProTrack.name, shortName: guitarProTrack.shortName,*/ staves: staves)
 	}
 }
 
@@ -35,7 +35,6 @@ extension MusicNotation.Staff {
 	init(with guitarProStaff: Staff) {
 		self.init(
 			clef: .treble,
-			instrument: .init(with: guitarProStaff.properties),
 			measure: [Measure(
 				timeSignature: MusicNotation.TimeSignature(numerator: 4, denominator: 4, tempo: 120),
 				key: MusicNotation.Key(noteLetter: .c)
